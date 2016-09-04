@@ -23,10 +23,6 @@ module.exports = {
   },
 
   server: {
-<<<<<<< HEAD
     port: Number.parseInt(process.env.PORT) || 8000
-=======
-    port: 8000
->>>>>>> Initial commit
   }
 };

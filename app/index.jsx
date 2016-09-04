@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import App from './components/App';
-=======
-import App from 'components/app';
->>>>>>> Initial commit
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import React from 'react';
 import ReactDOM from 'react-dom';
