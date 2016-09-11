@@ -1,6 +1,4 @@
-'use strict';
-
-const { camelizeKeys, decamelizeKeys } = requrie('humps');
+const { camelizeKeys, decamelizeKeys } = require('humps');
 const bcrypt = require('bcrypt-as-promised');
 const boom = require('boom');
 const ev = require('expresss-validation');
@@ -20,7 +18,7 @@ router.post('/users', ev(validations.post), (req, res, next) => {
     .first()
     .then((exists) => {
       if (exists) {
-        throw boom.create(409, 'Username in use')
+        throw boom.create(409, 'Username in use');
       }
     })
     .then('users')
@@ -29,10 +27,10 @@ router.post('/users', ev(validations.post), (req, res, next) => {
       .first()
       .then((exists) => {
         if (exists) {
-          throw boom.create(409, 'Email in use')
+          throw boom.create(409, 'Email in use');
         }
 
-        return bcrpyt.hash(password, 12);
+        return bcrypt.hash(password, 12);
       })
     .then((hashedPassword) => {
       const newUser = { username, email, hashedPassword };
@@ -51,6 +49,6 @@ router.post('/users', ev(validations.post), (req, res, next) => {
     .catch((err) => {
       next(err);
     });
-};
+});
 
 module.exports = router;
