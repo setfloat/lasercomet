@@ -21,29 +21,49 @@ router.get('/photos', ev(validations.get), (req, res, next) => {
   axios.get(`https://pixabay.com/api/?key=${apiKey}&q=${searchQuery}&image_type=photo`)
     .then((res) => {
 
-      // eslint-disable-next-line no-console
-      console.log(res);
+      const searchResponse = res.body.hits[0]
+      const newResults = {};
 
+
+      for (prop in searchResponse) {
+        newResults.prop = prop.replace(/"/g,"");
+      }
+
+      searchResponse.comments = '';
+      searchResponse.pixid = searchResponse.id;
+
+      // delete {
+      //   id,
+      //   downloads,
+      //   favorites,
+      //   likes,
+      //   type,
+      //   user,
+      //   userImageURL,
+      //   user_id,
+      //   views
+      // } = searchResponse;
+
+      delete searchResponse.id;
+      delete searchResponse.downloads;
+      delete searchResponse.favorites;
+      delete searchResponse.likes;
+      delete searchResponse.type;
+      delete searchResponse.user;
+      delete searchResponse.userImageURL;
+      delete searchResponse.user_id;
+      delete searchResponse.views;
+
+      res.send(searchResponse);
     })
     .catch((err) => next(err));
 });
 
-  //
   // data: {
   //   key: process.env.API_KEY,
   //   baseURL: 'https://pixabay.com/api/',
   //   category,
   //   webformatURL
   // }
-
-//   knex('photos')
-//   .orderBy('id')
-//   .then((rows) => {
-//     const photos = camelizeKeys(rows);
-//
-//     res.send(photos);
-//   })
-//   .catch((err) => next(err));
-// });
 
 module.exports = router;
