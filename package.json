@@ -47,6 +47,7 @@
     "eslint": "^3.4.0",
     "eslint-config-ryansobol": "^9.1.1",
     "javascript-brunch": "^2.0.0",
+    "nodemon": "^1.10.2",
     "postcss-brunch": "^2.0.1",
     "uglify-js-brunch": "^2.0.1"
   }

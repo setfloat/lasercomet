@@ -5,7 +5,7 @@ const axios = require('axios');
 const { camelizeKeys } = require('humps');
 const ev = require('express-validation');
 const express = require('express');
-const knex = require('../knex');
+// const knex = require('../knex');
 const validations = require('../validations/photos')
 
 // eslint-disable-next-line new-cap
@@ -13,7 +13,7 @@ const router = express.Router();
 
 
 router.get('/photos', ev(validations.get), (req, res, next) => {
-  const searchQuery = req.body.searchQuery;
+  let searchQuery = req.body.searchQuery;
 
   searchQuery = searchQuery.trim().split(' ');
   searchQuery = searchQuery.join('+');

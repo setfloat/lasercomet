@@ -1,7 +1,7 @@
 const { camelizeKeys, decamelizeKeys } = require('humps');
 const bcrypt = require('bcrypt-as-promised');
 const boom = require('boom');
-const ev = require('expresss-validation');
+const ev = require('express-validation');
 const express = require('express');
 const knex = require('knex');
 const validations = require('../validations/users');
