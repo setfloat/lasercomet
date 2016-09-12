@@ -1,7 +1,7 @@
 'use strict';
 
 exports.up = function(knex) {
-  return knex.schema.createTable('collections', (table) => {
+  return knex.schema.createTable('clusters', (table) => {
     table.increments();
     table.integer('user_id')
       .notNullable()
@@ -15,7 +15,7 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-  return knex.schema.dropTable('collections');
+  return knex.schema.dropTable('clusters');
 };
 
 // increments

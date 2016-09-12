@@ -9,7 +9,7 @@ exports.seed = function(knex) {
     .insert([
       {
         id: 1,
-        collection_id: 1,
+        cluster_id: 1,
         comments: '',
         pixid: 907709,
         image_height: 2988,
@@ -27,7 +27,7 @@ exports.seed = function(knex) {
       },
       {
         id: 2,
-        collection_id: 1,
+        cluster_id: 1,
         comments: '',
         pixid: 694842,
         image_height: 5000,
@@ -45,7 +45,7 @@ exports.seed = function(knex) {
       },
       {
         id: 3,
-        collection_id: 1,
+        cluster_id: 1,
         comments: '',
         pixid: 549425,
         image_height: 8000,
@@ -63,7 +63,7 @@ exports.seed = function(knex) {
       },
       {
         id: 4,
-        collection_id: 1,
+        cluster_id: 1,
         comments: '',
         pixid: 11593,
         image_height: 2048,
@@ -81,7 +81,7 @@ exports.seed = function(knex) {
       },
       {
         id: 5,
-        collection_id: 1,
+        cluster_id: 1,
         comments: '',
         pixid: 11008,
         image_height: 2048,
@@ -99,7 +99,7 @@ exports.seed = function(knex) {
       },
       {
         id: 6,
-        collection_id: 1,
+        cluster_id: 1,
         comments: '',
         pixid: 11015,
         image_height: 3075,
@@ -117,7 +117,7 @@ exports.seed = function(knex) {
       },
       {
         id: 7,
-        collection_id: 1,
+        cluster_id: 1,
         comments: '',
         pixid: 749673,
         image_height: 2657,
@@ -135,7 +135,7 @@ exports.seed = function(knex) {
       },
       {
         id: 8,
-        collection_id: 1,
+        cluster_id: 1,
         comments: '',
         pixid: 415501,
         image_height: 766,
@@ -153,7 +153,7 @@ exports.seed = function(knex) {
       },
       {
         id: 9,
-        collection_id: 1,
+        cluster_id: 1,
         comments: '',
         pixid: 11009,
         image_height: 2048,
@@ -171,7 +171,7 @@ exports.seed = function(knex) {
       },
       {
         id: 10,
-        collection_id: 1,
+        cluster_id: 1,
         comments: '',
         pixid: 11613,
         image_height: 5085,
@@ -189,7 +189,7 @@ exports.seed = function(knex) {
       },
       {
         id: 11,
-        collection_id: 1,
+        cluster_id: 1,
         comments: '',
         pixid: 566537,
         image_height: 5600,
@@ -207,7 +207,7 @@ exports.seed = function(knex) {
       },
       {
         id: 12,
-        collection_id: 1,
+        cluster_id: 1,
         comments: '',
         pixid: 174239,
         image_height: 4500,
@@ -225,7 +225,7 @@ exports.seed = function(knex) {
       },
       {
         id: 13,
-        collection_id: 3,
+        cluster_id: 3,
         comments: '',
         pixid: 1650374,
         image_height: 2969,
@@ -243,7 +243,7 @@ exports.seed = function(knex) {
       },
       {
         id: 14,
-        collection_id: 3,
+        cluster_id: 3,
         comments: '',
         pixid: 1578528,
         image_height: 2832,
@@ -261,7 +261,7 @@ exports.seed = function(knex) {
       },
       {
         id: 15,
-        collection_id: 3,
+        cluster_id: 3,
         comments: '',
         pixid: 1643476,
         image_height: 3247,
@@ -279,7 +279,7 @@ exports.seed = function(knex) {
       },
       {
         id: 16,
-        collection_id: 3,
+        cluster_id: 3,
         comments: '',
         pixid: 675847,
         image_height: 1365,
@@ -297,7 +297,7 @@ exports.seed = function(knex) {
       },
       {
         id: 17,
-        collection_id: 3,
+        cluster_id: 3,
         comments: '',
         pixid: 459794,
         image_height: 3316,
@@ -315,7 +315,7 @@ exports.seed = function(knex) {
       },
       {
         id: 18,
-        collection_id: 3,
+        cluster_id: 3,
         comments: '',
         pixid: 1589949,
         image_height: 4000,
@@ -333,7 +333,7 @@ exports.seed = function(knex) {
       },
       {
         id: 19,
-        collection_id: 3,
+        cluster_id: 3,
         comments: '',
         pixid: 1473281,
         image_height: 3456,
@@ -351,7 +351,7 @@ exports.seed = function(knex) {
       },
       {
         id: 20,
-        collection_id: 3,
+        cluster_id: 3,
         comments: '',
         pixid: 652598,
         image_height: 2048,
@@ -369,7 +369,7 @@ exports.seed = function(knex) {
       },
       {
         id: 21,
-        collection_id: 3,
+        cluster_id: 3,
         comments: '',
         pixid: 952292,
         image_height: 3854,
@@ -387,7 +387,7 @@ exports.seed = function(knex) {
       },
       {
         id: 22,
-        collection_id: 3,
+        cluster_id: 3,
         comments: '',
         pixid: 331744,
         image_height: 2806,
@@ -405,7 +405,7 @@ exports.seed = function(knex) {
       },
       {
         id: 23,
-        collection_id: 3,
+        cluster_id: 3,
         comments: '',
         pixid: 652598,
         image_height: 2048,
@@ -423,7 +423,7 @@ exports.seed = function(knex) {
       },
       {
         id: 24,
-        collection_id: 3,
+        cluster_id: 3,
         comments: '',
         pixid: 1624522,
         image_height: 2000,
@@ -441,7 +441,7 @@ exports.seed = function(knex) {
       },
       {
         id: 25,
-        collection_id: 4,
+        cluster_id: 4,
         comments: '',
         pixid: 629046,
         image_height: 3456,
@@ -459,7 +459,7 @@ exports.seed = function(knex) {
       },
       {
         id: 26,
-        collection_id: 4,
+        cluster_id: 4,
         comments: '',
         pixid: 91862,
         image_height: 3000,
@@ -477,7 +477,7 @@ exports.seed = function(knex) {
       },
       {
         id: 27,
-        collection_id: 4,
+        cluster_id: 4,
         comments: '',
         pixid: 91866,
         image_height: 3000,
@@ -495,7 +495,7 @@ exports.seed = function(knex) {
       },
       {
         id: 28,
-        collection_id: 4,
+        cluster_id: 4,
         comments: '',
         pixid: 600982,
         image_height: 2667,
@@ -513,7 +513,7 @@ exports.seed = function(knex) {
       },
       {
         id: 29,
-        collection_id: 4,
+        cluster_id: 4,
         comments: '',
         pixid: 1079524,
         image_height: 2637,
@@ -533,7 +533,7 @@ exports.seed = function(knex) {
   )
   .then(() => {
     return knex.raw(
-      "SELECT setval('collections_id_seq', (SELECT MAX(id) FROM users));"
+      "SELECT setval('clusters_id_seq', (SELECT MAX(id) FROM users));"
     );
   });
 };

@@ -3,10 +3,10 @@
 exports.up = function(knex) {
   return knex.schema.createTable('photos', (table) => {
     table.increments();
-    table.integer('collection_id')
+    table.integer('cluster_id')
       .notNullable()
       .references('id')
-      .inTable('collections')
+      .inTable('clusters')
       .onDelete('CASCADE')
       .index();
     table.string('comments')

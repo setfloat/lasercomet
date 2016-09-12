@@ -42,11 +42,11 @@ const cookieParser = require('cookie-parser');
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-const collections = require('./routes/collections');
+const clusters = require('./routes/clusters');
 const photos = require('./routes/photos');
 const users = require('./routes/users');
 
-app.use('/api', collections);
+app.use('/api', clusters);
 app.use('/api', photos);
 app.use('/api', users);
 

@@ -3,8 +3,8 @@
 /* eslint-disable camelcase, max-len */
 
 exports.seed = function(knex) {
-  return knex('collections').del()
-    .then(() => knex('collections').insert([
+  return knex('clusters').del()
+    .then(() => knex('clusters').insert([
       {
         id: 1,
         user_id: 1,
@@ -58,7 +58,7 @@ exports.seed = function(knex) {
   )
   .then(() => {
     return knex.raw(
-      "SELECT setval('collections_id_seq', (SELECT MAX(id) FROM collections));"
+      "SELECT setval('clusters_id_seq', (SELECT MAX(id) FROM clusters));"
     );
   });
 };
