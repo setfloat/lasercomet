@@ -5,7 +5,7 @@ const ev = require('express-validation');
 const express = require('express');
 const knex = require('../knex');
 const router = express.Router();
-const validations = require('../validations/clusters');
+// const validations = require('../validations/clusters');
 
 router.post('/clusters', checkAuth, ev(validations.post), (req, res, next) => {
   // determine what I am defining to come in with the request
