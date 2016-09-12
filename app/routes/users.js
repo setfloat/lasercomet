@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt-as-promised');
 const boom = require('boom');
 const ev = require('express-validation');
 const express = require('express');
-const knex = require('knex');
+const knex = require('../knex');
 const validations = require('../validations/users');
 
 // eslint-disable-next-line new-cap
