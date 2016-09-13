@@ -4,24 +4,45 @@ import React from 'react';
 
 const PhotoTile = React.createClass({
   render() {
-    const stylePaper = {
-      backgroundColor: 'blue',
-      display: 'inline-block'
-    };
+    const styles = {
+      root: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'space-around'
+      },
 
-    const styleImage = {
-      width: '649px',
-      height: '649px'
+      gridList: {
+        width: 500,
+        height: 500,
+        overflowY: 'auto',
+        marginBottom: 24
+      },
+
+      stylePaper: {
+        backgroundColor: 'blue',
+        margin: 'auto'
+
+        // display: 'inline-block'
+      },
+
+      styleImage: {
+        width: '95%',
+        height: '95%'
+      },
+
+      styleDiv: {
+        margin: 'auto'
+      }
     };
 
     return <div>
       <GridTile>
         <Paper
-          style={stylePaper}
+          style={styles.stylePaper}
         >
           <img
             src="../images/dolphinfiller.jpg"
-            style={styleImage}
+            style={styles.styleImage}
           />
         </Paper>
       </GridTile>
