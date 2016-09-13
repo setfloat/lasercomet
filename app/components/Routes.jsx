@@ -16,14 +16,11 @@ const Routes = React.createClass({
           <Route component={Hero} path="/Hero" />
           <Route component={Clusters} path="/Clusters" />
         </Route>
-        <Route component={ResultsPage} path="/Results">
-          {/* contains page view for results cards */}
-        </Route>
+        <Route component={ResultsPage} path="/Results" />
         <Route component={ClusterPage} path="/Cluster" />
       </Route>
     </Router>;
   }
 });
-
 
 export default Routes;

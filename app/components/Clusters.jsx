@@ -1,15 +1,20 @@
+import ClusterTile from 'components/ClusterTile';
+import GridList from 'material-ui/GridList';
 import React from 'react';
-import ClusterTile from 'ClusterTile';
 
 const Clusters = React.createClass({
   render() {
     return <section>
-      <ClusterTile />
-      <ClusterTile />
-      <ClusterTile />
-      <ClusterTile />
-      <ClusterTile />
-      <ClusterTile />
-    </section>
+      <GridList>
+        <ClusterTile />
+        <ClusterTile />
+        <ClusterTile />
+        <ClusterTile />
+        <ClusterTile />
+        <ClusterTile />
+      </GridList>
+    </section>;
   }
 });
+
+export default Clusters;

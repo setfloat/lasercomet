@@ -1,3 +1,5 @@
+'use strict';
+
 const { camelizeKeys, decamelizeKeys } = require('humps');
 const bcrypt = require('bcrypt-as-promised');
 const boom = require('boom');

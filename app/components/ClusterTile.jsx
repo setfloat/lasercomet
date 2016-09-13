@@ -1,7 +1,14 @@
+import GridTile from 'material-ui/GridList';
 import React from 'react';
 
-const ClusterTile = React.create(Class){
+const ClusterTile = React.createClass({
   render() {
-    return <div><h4>Cluster Tile</h4></div>
+    return <div>
+      <GridTile>
+        <div><h4>Cluster Tile</h4></div>;
+      </GridTile>
+    </div>;
   }
-}
+});
+
+export default ClusterTile;
