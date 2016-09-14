@@ -2,6 +2,7 @@ import ClusterTitleCard from 'components/ClusterTitleCard';
 import { GridList } from 'material-ui/GridList';
 import PhotoTile from 'components/PhotoTile';
 import React from 'react';
+import Radium from 'radium';
 
 const ClusterPage = React.createClass({
   render() {
@@ -11,19 +12,28 @@ const ClusterPage = React.createClass({
         flexWrap: 'wrap',
         justifyContent: 'space-around'
       },
+      mediaQueries: {
+
+        '@media screen and (min-width: 764px)': {
+          maxWidth: '33%'
+        },
+
+        '@media screen and (min-width: 200px)': 1,
+        '@media screen and (min-width: 400px)': 1,
+        '@media screen and (min-width: 900px)': 3
+      },
 
       sGridList: {
-        width: 500,
-        height: 500,
+        width: 'viewport',
+        height: 'viewport',
         overflowY: 'auto',
         marginBottom: 24
       },
 
       sPhotoTile: {
         display: 'inline-block',
-        height: '200px',
-        width: '200px',
-        margin: '10px'
+        height: '100%',
+        width: '50px'
       },
 
       sClusterTitle: {
@@ -41,23 +51,28 @@ const ClusterPage = React.createClass({
         style={styles.sRoot}
       >
         <GridList
+          cellHeight={500}
+          cols={styles.mediaQueries}
           style={styles.sGridList}
-          cols={3}
         >
-          <PhotoTile style={styles.sPhotoTile} />
-          <PhotoTile style={styles.sPhotoTile} />
-          <PhotoTile style={styles.sPhotoTile} />
-          <PhotoTile style={styles.sPhotoTile} />
-          <PhotoTile style={styles.sPhotoTile} />
-          <PhotoTile style={styles.sPhotoTile} />
-          <PhotoTile style={styles.sPhotoTile} />
-          <PhotoTile style={styles.sPhotoTile} />
-          <PhotoTile style={styles.sPhotoTile} />
-          <PhotoTile style={styles.sPhotoTile} />
+          <div style={styles.sPhotoTile} ><PhotoTile /></div>
+          <div style={styles.sPhotoTile} ><PhotoTile /></div>
+          <div style={styles.sPhotoTile} ><PhotoTile /></div>
+          <div style={styles.sPhotoTile} ><PhotoTile /></div>
+          <div style={styles.sPhotoTile} ><PhotoTile /></div>
+          <div style={styles.sPhotoTile} ><PhotoTile /></div>
+          <div style={styles.sPhotoTile} ><PhotoTile /></div>
+          <div style={styles.sPhotoTile} ><PhotoTile /></div>
+          <div style={styles.sPhotoTile} ><PhotoTile /></div>
+          <div style={styles.sPhotoTile} ><PhotoTile /></div>
+          <div style={styles.sPhotoTile} ><PhotoTile /></div>
+          <div style={styles.sPhotoTile} ><PhotoTile /></div>
+          <div style={styles.sPhotoTile} ><PhotoTile /></div>
+          <div style={styles.sPhotoTile} ><PhotoTile /></div>
         </GridList>
       </div>
     </div>;
   }
 });
 
-export default ClusterPage;
+export default Radium(ClusterPage);

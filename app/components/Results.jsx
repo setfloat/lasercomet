@@ -9,7 +9,7 @@ const styles = {
     justifyContent: 'space-around'
   },
   gridList: {
-    width: 500,
+    width: 'viewport',
     height: 500,
     overflowY: 'auto',
     marginBottom: 24

@@ -35,7 +35,9 @@ const PhotoTile = React.createClass({
       }
     };
 
-    return <div>
+    return <div
+      style={styles.styleDiv}
+    >
       <GridTile>
         <Paper
           style={styles.stylePaper}
@@ -50,4 +52,5 @@ const PhotoTile = React.createClass({
   }
 });
 
+// eslint-disable-next-line
 export default PhotoTile;
