@@ -1,8 +1,8 @@
 import ClusterTitleCard from 'components/ClusterTitleCard';
 import { GridList } from 'material-ui/GridList';
 import PhotoTile from 'components/PhotoTile';
-import React from 'react';
 import Radium from 'radium';
+import React from 'react';
 
 const ClusterPage = React.createClass({
   render() {
@@ -52,7 +52,6 @@ const ClusterPage = React.createClass({
       >
         <GridList
           cellHeight={500}
-          cols={styles.mediaQueries}
           style={styles.sGridList}
         >
           <div style={styles.sPhotoTile} ><PhotoTile /></div>
