@@ -122,8 +122,8 @@ const navStyles = {
     paddingTop: '10px',
     // fontWeight: '500',
     fontSize: '2em',
-    color: colors.secondBold,
-    ':hover': { color: colors.secondMain }
+    color: colors.secondMain,
+    // ':hover': { color: colors.primeBold }
   },
   permClusterHover: {
     top: '0',
@@ -145,6 +145,11 @@ const NavBar = React.createClass({
           style={navStyles.iconPosit}
         >
           <img src={'images/atom-variant.svg'} style={navStyles.icon} />
+        </div>
+        <div key={62} style={[navStyles.clusters, navStyles.clusterHover]}>
+          <div key={33} style={navStyles.clusterText}>
+            <h4>LaserComet</h4>
+          </div>
         </div>
         <div
           style={navStyles.space}
@@ -182,6 +187,11 @@ const NavBar = React.createClass({
         <div key={5} style={[navStyles.iconPosit, navStyles.permIcon]}>
           <img key={2} src={'images/atom-variant.svg'} style={navStyles.icon} />
         </div>
+        <div key={23} style={[navStyles.clusters, navStyles.clusterHover]}>
+          <div key={53} style={navStyles.permClusterText}>
+            <h4>LaserComet</h4>
+          </div>
+          </div>
         <div
           style={navStyles.space}
         >

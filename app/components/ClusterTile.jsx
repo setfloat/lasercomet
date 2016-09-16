@@ -11,15 +11,16 @@ const styles = {
 
   paper: {
     position: 'absolute',
-    top: '1.5px',
-    bottom: '1.5px',
-    left: '1.5px',
-    right: '1.5px',
+    top: '3.5px',
+    bottom: '3.5px',
+    left: '3.5px',
+    right: '3.5px',
     textAlign: 'center',
     margin: '0',
     ':hover': {
       zDepth: 5
-    }
+    },
+    background: 'url("images/oceanfill.jpg") center center / cover no-repeat'
   }
 
   // depthFind: {
@@ -45,10 +46,8 @@ const ClusterTile = React.createClass({
       style={[styles.div, styles.paper]}
     ><Paper
       style={styles.paper}
-      // zDepth={styles.depthFind}
+      zDepth={5}
     >
-
-      <h4>Cluster Tile</h4>
       </Paper>
     </div>;
   }

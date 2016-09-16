@@ -2,6 +2,7 @@ import ClusterTile from 'components/ClusterTile';
 import Radium from 'radium';
 import React from 'react';
 import Paper from 'material-ui/Paper';
+import colors from 'components/Colors';
 
 const styles = {
   base: {
@@ -17,6 +18,9 @@ const styles = {
     display: 'inline-block',
     margin: '0',
     position: 'relative',
+    ':hover': {
+      background: 'yellow'
+    },
 
 
     // ':hover': {
@@ -37,38 +41,22 @@ const styles = {
 
     '@media (max-width: 1440px)': {
       width: '25%',
-      paddingBottom: '24%',
-
-      ':hover': {
-        // background: 'purple',
-      }
+      paddingBottom: '24%'
     },
 
     '@media (max-width: 1220px)': {
       width: `${100/3}%`,
-      paddingBottom: '33%',
-
-      ':hover': {
-        background: 'yellow',
-      }
+      paddingBottom: '33%'
     },
 
     '@media (max-width: 900px)': {
       width: '50%',
-      paddingBottom: '45%',
-
-      ':hover': {
-        // background: 'honeydew',
-      }
+      paddingBottom: '45%'
     },
 
     '@media (max-width: 560px)': {
       width: '100%',
-      paddingBottom: '92%',
-
-      ':hover': {
-        background: 'white',
-      }
+      paddingBottom: '92%'
     }
   },
 
@@ -87,7 +75,8 @@ const styles = {
       // justifyContent: 'center',
       alignContent: 'space-around',
       alignItems: 'center',
-      flexWrap: 'wrap'
+      flexWrap: 'wrap',
+      backgroundColor: colors.primeBoldTrans
   },
   tile: {
     position: 'absolute',

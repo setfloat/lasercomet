@@ -8,10 +8,12 @@ const styleHero = {
   },
   heroImg: {
     backgroundColor: 'blue',
+
     // backgroundImage: 'url("assets/images/dolphinfiller.jpg")',
     // backgroundSize: 'cover',
     background: 'url("images/flyover.gif") center center / cover no-repeat',
     width: '100%',
+
     // backgroundPosition: 'center',
     height: '60vh'
   },
@@ -29,17 +31,17 @@ const Hero = React.createClass({
       >
         <div
           style={styleHero.heroImg}
-        >
-        </div>
+        />
       </section>
       <section
         style={[styleHero.heroFlex, styleHero.infoSec]}
-      >
-      <div
         height={'100px'}
       >
+        <div
+        height={'100px'}
+        >
         Oi, Boludo
-      </div>
+        </div>
       </section>
     </div>;
   }
