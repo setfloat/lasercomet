@@ -1,4 +1,6 @@
 import React from 'react';
+import colors from 'components/Colors';
+import Paper from 'material-ui/Paper'
 
 const styleHero = {
   heroFlex: {
@@ -8,9 +10,6 @@ const styleHero = {
   },
   heroImg: {
     backgroundColor: 'blue',
-
-    // backgroundImage: 'url("assets/images/dolphinfiller.jpg")',
-    // backgroundSize: 'cover',
     background: 'url("images/flyover.gif") center center / cover no-repeat',
     width: '100%',
 
@@ -20,6 +19,22 @@ const styleHero = {
   infoSec: {
     height: '30vh',
     backgroundColor: '#4283fa'
+  },
+  info: {
+    backgroundColor: colors.primeBoldTrans,
+    // background: 'url("images/dolphinfiller.jpg") center center / cover no-repeat',
+    width: '100%',
+    height: '30em',
+  },
+  feature: {
+    display: 'inline-block',
+    height: '85%',
+    width: `28%`,
+    boxSizing: 'border-box',
+    position: 'relative',
+    alignItems: 'space-around',
+    backgroundColor: 'rgba(0,0,0,0)',
+    margin: '10%, 4%, 10%, 4%'
   }
 };
 
@@ -34,13 +49,26 @@ const Hero = React.createClass({
         />
       </section>
       <section
-        style={[styleHero.heroFlex, styleHero.infoSec]}
-        height={'100px'}
+        style={[styleHero.heroFlex, styleHero.feature]}
       >
         <div
-        height={'100px'}
+          style={styleHero.info}
         >
-        Oi, Boludo
+          <Paper
+            style={styleHero.feature}
+          >
+            Lorem Ipsum Textsum Brexit
+          </Paper>
+          <Paper
+            style={styleHero.feature}
+          >
+            Lorem Ipsum Textsum Brexit
+          </Paper>
+          <Paper
+            style={styleHero.feature}
+          >
+            Lorem Ipsum Textsum Brextsum
+          </Paper>
         </div>
       </section>
     </div>;
