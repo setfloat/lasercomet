@@ -1,17 +1,24 @@
 const colors = {
   primeMain: 'rgba(255,100, 88, 1)',
   primeAlt: 'rgba(255, 63, 47, 1)',
-  primeSoft: 'rgba(255,244,243, 1)',
+  primeAltTrans: 'rgba(255, 63, 47, 0.3)',
+  primeSoft: 'rgba(255,244,243, 0.3)',
   primeBold: 'rgba(222, 16,  0, 1)',
+  primeBoldTrans: 'rgba(222, 16,  0, 0.4)',
   primeDark: 'rgba( 40,  3,  0, 1)',
+  primeDarkTrans: 'rgba( 40,  3,  0, 0.7)',
   secondMain: 'rgba(103,167,255,1)',
+  secondMainTrans: 'rgba(103,167,255,0.5)',
   secondAlt: 'rgba( 50,112,196,1)',
   secondSoft: 'rgba(203,207,212,1)',
+  secondSoftTrans: 'rgba(203,207,212,0.4)',
   secondBold: 'rgba( 12, 68,146,1)',
   secondDark: 'rgba(  1, 12, 27,1)',
+  secondDarkTrans: 'rgba(  1, 12, 27,0.1)',
   thirdMain: 'rgba(104,255, 88,1)',
   thirdAlt: 'rgba( 59,224, 42,1)',
   thirdSoft: 'rgba(222,232,221,1)',
+  thirdSoftTrans: 'rgba(222,232,221,0.4)',
   thirdBold: 'rgba( 17,182,  0,1)',
   thirdDark: 'rgba(  3, 33,  0,1)'
 };
@@ -19,17 +26,24 @@ const colors = {
 export default {
   primeMain: colors.primeMain,
   primeAlt: colors.primeAlt,
+  primeAltTrans: colors.primeAltTrans,
   primeSoft: colors.primeSoft,
   primeBold: colors.primeBold,
+  primeBoldTrans: colors.primeBoldTrans,
   primeDark: colors.primeDark,
+  primeDarkTrans: colors.primeDarkTrans,
   secondMain: colors.secondMain,
+  secondMainTrans: colors.secondMainTrans,
   secondAlt: colors.secondAlt,
   secondSoft: colors.secondSoft,
+  secondSoftTrans: colors.secondSoftTrans,
   secondBold: colors.secondBold,
   secondDark: colors.secondDark,
+  secondDarkTrans: colors.secondDarkTrans,
   thirdMain: colors.thirdMain,
   thirdAlt: colors.thirdAlt,
   thirdSoft: colors.thirdSoft,
+  thirdSoftTrans: colors.thirdSoftTrans,
   thirdBold: colors.thirdBold,
   thirdDark: colors.thirdDark
 };
@@ -45,25 +59,25 @@ export default {
 //     color: 'white'
 //   }
 // };
-
-const baseColors = {
-  primeMain: 'rgba(255,100, 88, 1)',
-  primeAlt: 'rgba(255, 63, 47, 1)',
-  primeSoft: 'rgba(255,244,243, 1)',
-  primeBold: 'rgba(222, 16,  0, 1)',
-  primeDark: 'rgba( 40,  3,  0, 1)',
-  secondMain: 'rgba(103,167,255,1)',
-  secondAlt: 'rgba( 50,112,196,1)',
-  secondSoft: 'rgba(203,207,212,1)',
-  secondBold: 'rgba( 12, 68,146,1)',
-  secondDark: 'rgba(  1, 12, 27,1)',
-  thirdMain: 'rgba(104,255, 88,1)',
-  thirdAlt: 'rgba( 59,224, 42,1)',
-  thirdSoft: 'rgba(222,232,221,1)',
-  thirdBold: 'rgba( 17,182,  0,1)',
-  thirdDark: 'rgba(  3, 33,  0,1)'
-
-}
+//
+// const baseColors = {
+//   primeMain: 'rgba(255,100, 88, 1)',
+//   primeAlt: 'rgba(255, 63, 47, 1)',
+//   primeSoft: 'rgba(255,244,243, 1)',
+//   primeBold: 'rgba(222, 16,  0, 1)',
+//   primeDark: 'rgba( 40,  3,  0, 1)',
+//   secondMain: 'rgba(103,167,255,1)',
+//   secondAlt: 'rgba( 50,112,196,1)',
+//   secondSoft: 'rgba(203,207,212,1)',
+//   secondBold: 'rgba( 12, 68,146,1)',
+//   secondDark: 'rgba(  1, 12, 27,1)',
+//   thirdMain: 'rgba(104,255, 88,1)',
+//   thirdAlt: 'rgba( 59,224, 42,1)',
+//   thirdSoft: 'rgba(222,232,221,1)',
+//   thirdBold: 'rgba( 17,182,  0,1)',
+//   thirdDark: 'rgba(  3, 33,  0,1)'
+//
+// }
 
 //
 // *** Primary color:

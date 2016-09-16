@@ -30,7 +30,6 @@ const Hero = React.createClass({
         <div
           style={styleHero.heroImg}
         >
-          Hello
         </div>
       </section>
       <section
