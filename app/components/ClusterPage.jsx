@@ -145,19 +145,6 @@ const ClusterPage = React.createClass({
         <section
           style={styles.sect}
         >
-          {/* <div
-            style={styles.base}
-            key={2}
-          >
-          <Paper
-            style={styles.paper}
-            zDepth={5}
-          >
-            <ClusterPhotoTile
-              key={3}
-            />
-            </Paper>
-          </div> */}
           <div
             style={styles.base}
             key={4}
