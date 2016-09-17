@@ -2,6 +2,7 @@
 import ResultTile from 'components/ResultTile';
 import Radium from 'radium';
 import React from 'react';
+import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
 import colors from 'components/Colors';
 
@@ -330,6 +331,7 @@ const Results = React.createClass({
             key={51}
           />
         </div>
+        <RaisedButton label="More" style={colors.primeBold} />
       </section>
     </div>;
   }
