@@ -3,6 +3,7 @@ import Paper from 'material-ui/Paper';
 import Radium from 'radium';
 import React from 'react';
 import colors from 'components/Colors';
+import { withRouter } from 'react-router';
 
 const styleResultsHeader = {
   section: {
@@ -15,33 +16,31 @@ const styleResultsHeader = {
     width: '80%',
     paddingTop: '10%',
     marginLeft: '10%',
-    align: 'middle',
+    // align: 'middle',
     display: 'flex',
     flexWrap: 'wrap',
     flexDirection: 'row',
     maxHeight: '200px',
     boxSizing: 'border-box'
   },
-  paperContent: {
-    // paddingTop: '10%',
-    // paddingBottom: '40%',
-    display: 'absolute',
-    paddingLeft: '10%',
-    paddingRight: '10%',
-    text: '3vw'
-  },
   search: {
-
+    position: 'relative',
+    top: '50%',
+    transform: 'translateY(-50%)',
+    margin: 'auto',
+    width: '50%',
     // padding: '20%'
   },
   searchField: {
+
     color: 'white',
-    backgroundColor: 'rgba(0,0,0,0.1)',
+    backgroundColor: 'rgba(0,0,0,0)',
     borderColor: colors.secondSoft,
     borderWidth: '0 0 2px 0',
+    fontSize: '160%',
+    width: '49%',
     ':focus': {
-      color: 'white',
-
+      color: colors.thirdMain,
       // backgroundColor: 'rgba(0,0,0,0.3)',
       borderColor: colors.thirdMain,
       borderWidth: '0 0 2px 0',
@@ -50,12 +49,18 @@ const styleResultsHeader = {
     ':active': {
       backgroundColor: 'rgba(0,0,0,0.6)'
     }
-
-    // borderRadius: '4px'
-  }
+  },
+  icon: {
+    fill: 'white'
+  },
 };
 
 const ResultsHeader = React.createClass({
+  handleSearchSubmit(event) {
+    event.preventDefault();
+    this.props.router.push('/Results');
+  },
+
   render() {
     return <section
       style={styleResultsHeader.section}
@@ -65,17 +70,36 @@ const ResultsHeader = React.createClass({
         zDepth={3}
       >
         <div
-          style={styleResultsHeader.paperContent}
+          style={styleResultsHeader.search}
         >
-          <h3>Results for:
+        {/*  */}
+        <form
+          onSubmit={this.handleSearchSubmit}
+        >
+          <img
+            height={'50em'}
+            src={'images/search.svg'}
+            style={styleResultsHeader.icon}
+
+            // style={styleHero.search}
+          />
+          <input
+            onSubmit={this.handleSearchSubmit}
+            placeholder={'Find some photos'}
+            style={styleResultsHeader.searchField}
+            type={'text'}
+          />
+        </form>
+        {/*  */}
+          {/* <h3>Results for:
             <input
               style={styleResultsHeader.searchField}
             />
-          </h3>
+          </h3> */}
         </div>
       </Paper>
     </section>;
   }
 });
 
-export default Radium(ResultsHeader);
+export default withRouter(Radium(ResultsHeader));

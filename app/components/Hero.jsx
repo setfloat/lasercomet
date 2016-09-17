@@ -2,6 +2,7 @@
 import Radium from 'radium';
 import React from 'react';
 import colors from 'components/Colors';
+import { withRouter } from 'react-router';
 
 const styleHero = {
   heroFlex: {
@@ -29,17 +30,23 @@ const styleHero = {
     height: '30em'
   },
   search: {
-
+    position: 'relative',
+    top: '50%',
+    transform: 'translateY(-50%)',
+    margin: 'auto',
+    width: '50%',
     // padding: '20%'
   },
   searchField: {
+
     color: 'white',
     backgroundColor: 'rgba(0,0,0,0.1)',
     borderColor: colors.secondSoft,
     borderWidth: '0 0 2px 0',
+    fontSize: '160%',
+    width: '49%',
     ':focus': {
       color: 'white',
-
       // backgroundColor: 'rgba(0,0,0,0.3)',
       borderColor: colors.thirdMain,
       borderWidth: '0 0 2px 0',
@@ -50,26 +57,60 @@ const styleHero = {
     }
 
     // borderRadius: '4px'
+  },
+  icon: {
+    fill: 'white'
+  },
+  title: {
+    fontSize: '600%',
+    color: 'white',
+    paddingBottom: '15%'
   }
 };
 
 const Hero = React.createClass({
+  handleSearchSubmit(event) {
+    event.preventDefault();
+    console.log('submit working working');
+    this.props.router.push('/Results');
+    // this.props.router.push('/Clusters')
+  },
+
   render() {
     return <div>
       <section style={styleHero.heroFlex} >
         <div style={styleHero.heroImg} >
-          <img
-            height={'50em'}
-            src={'images/search.svg'}
+          <div
             style={styleHero.search}
-          />
-          <input
-            style={styleHero.searchField}
-          />
+          >
+            <span style={styleHero.title} >Laser</span>
+            <span style={styleHero.title}>Comet</span>
+          </div>
+          <div
+            style={styleHero.search}
+          >
+            <form
+              onSubmit={this.handleSearchSubmit}
+            >
+              <img
+                height={'50em'}
+                src={'images/search.svg'}
+                style={styleHero.icon}
+
+                // style={styleHero.search}
+              />
+              <input
+                onSubmit={this.handleSearchSubmit}
+                placeholder={'Find some photos'}
+                style={styleHero.searchField}
+                type={'text'}
+              />
+            </form>
+          </div>
         </div>
       </section>
     </div>;
   }
 });
 
-export default Radium(Hero);
+export default withRouter(Radium(Hero));

@@ -318,8 +318,8 @@ const Results = React.createClass({
             key={51}
           />
         </div>
-        <RaisedButton label="More" style={colors.primeBold} />
       </section>
+      <RaisedButton label="More" style={colors.primeBold} />
     </div>;
   }
 });
