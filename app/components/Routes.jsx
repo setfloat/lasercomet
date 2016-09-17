@@ -6,6 +6,7 @@ import Hero from 'components/Hero';
 import MainPage from 'components/MainPage';
 import React from 'react';
 import ResultsPage from 'components/ResultsPage';
+import NotFound from 'components/NotFound';
 
 const Routes = React.createClass({
   render() {
@@ -18,6 +19,7 @@ const Routes = React.createClass({
         </Route>
         <Route component={ResultsPage} path="/Results" />
         <Route component={ClusterPage} path="/Cluster" />
+        <Route component={NotFound} path="*" />
       </Route>
     </Router>;
   }
