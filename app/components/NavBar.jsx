@@ -130,7 +130,7 @@ const navStyles = {
     ':hover': { backgroundColor: colors.primeSoftTrans }
   },
   space: {
-    width: '20%'
+    width: '40%'
   }
 }
 
@@ -150,14 +150,6 @@ const NavBar = React.createClass({
           <div key={33} style={navStyles.clusterText}>
             <h4>LaserComet</h4>
           </div>
-        </div>
-        <div
-          style={navStyles.space}
-        >
-        </div>
-        <div
-          style={navStyles.space}
-        >
         </div>
         <div
           style={navStyles.space}
