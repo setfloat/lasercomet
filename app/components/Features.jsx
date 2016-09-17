@@ -1,3 +1,4 @@
+// shows advertising 3 across of features, main page
 import React from 'react';
 import colors from 'components/Colors';
 import Radium from 'radium';

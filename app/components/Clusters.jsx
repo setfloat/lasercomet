@@ -1,3 +1,4 @@
+// view of cluster title cards as seen on front page
 import ClusterTile from 'components/ClusterTile';
 import Radium from 'radium';
 import React from 'react';

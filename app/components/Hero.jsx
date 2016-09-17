@@ -1,7 +1,7 @@
 // import Paper from 'material-ui/Paper';
+import Radium from 'radium';
 import React from 'react';
 import colors from 'components/Colors';
-import Radium from 'radium';
 
 const styleHero = {
   heroFlex: {
@@ -29,6 +29,7 @@ const styleHero = {
     height: '30em'
   },
   search: {
+
     // padding: '20%'
   },
   searchField: {
@@ -38,6 +39,7 @@ const styleHero = {
     borderWidth: '0 0 2px 0',
     ':focus': {
       color: 'white',
+
       // backgroundColor: 'rgba(0,0,0,0.3)',
       borderColor: colors.thirdMain,
       borderWidth: '0 0 2px 0',
@@ -45,7 +47,7 @@ const styleHero = {
     },
     ':active': {
       backgroundColor: 'rgba(0,0,0,0.6)'
-    },
+    }
 
     // borderRadius: '4px'
   }

@@ -1,4 +1,4 @@
-// view of main cluster photo shown on cluster view of main page
+// individual photo of cluster as seen on individual cluster view.
 import Paper from 'material-ui/Paper';
 import Radium from 'radium';
 import React from 'react';
@@ -6,7 +6,6 @@ import React from 'react';
 const styles = {
   div: {
     ':hover': {
-
       // backgroundColor: 'green'
     }
   },
@@ -31,7 +30,7 @@ const styles = {
   // }
 };
 
-const ClusterTile = React.createClass({
+const ClusterPhotoTile = React.createClass({
 
   render() {
     // return <div
@@ -55,4 +54,4 @@ const ClusterTile = React.createClass({
   }
 });
 
-export default Radium(ClusterTile);
+export default Radium(ClusterPhotoTile);

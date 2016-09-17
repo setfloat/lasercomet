@@ -1,7 +1,7 @@
 import Clusters from 'components/Clusters';
+import Features from 'components/Features';
 import Hero from 'components/Hero';
 import React from 'react';
-import Features from 'components/Features';
 
 const MainPage = React.createClass({
   render() {

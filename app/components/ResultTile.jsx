@@ -1,4 +1,4 @@
-// view of main cluster photo shown on cluster view of main page
+// individual photo tile returned on Results page
 import Paper from 'material-ui/Paper';
 import Radium from 'radium';
 import React from 'react';
@@ -31,7 +31,7 @@ const styles = {
   // }
 };
 
-const ClusterTile = React.createClass({
+const ResultTile = React.createClass({
 
   render() {
     // return <div
@@ -46,13 +46,13 @@ const ClusterTile = React.createClass({
     // </div>;
     return <div
       style={[styles.div, styles.paper]}
-    ><Paper
-      style={styles.paper}
-      zDepth={5}
     >
-      </Paper>
+      <Paper
+        style={styles.paper}
+        zDepth={5}
+      />
     </div>;
   }
 });
 
-export default Radium(ClusterTile);
+export default Radium(ResultTile);
