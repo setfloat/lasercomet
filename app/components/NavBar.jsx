@@ -7,6 +7,8 @@ import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import Radium from 'radium';
 import React from 'react';
 import colors from 'components/Colors';
+import { Link } from 'react-router'
+
 
 const navBarHeight = 3;
 
@@ -122,7 +124,7 @@ const navStyles = {
     paddingTop: '10px',
     // fontWeight: '500',
     fontSize: '2em',
-    color: colors.secondMain,
+    color: colors.secondMain
     // ':hover': { color: colors.primeBold }
   },
   permClusterHover: {
@@ -131,8 +133,11 @@ const navStyles = {
   },
   space: {
     width: '40%'
+  },
+  textDecoration: {
+    textDecoration: 'none'
   }
-}
+};
 
 const NavBar = React.createClass({
   render() {
@@ -163,7 +168,8 @@ const NavBar = React.createClass({
           <div
             // style={navStyles.clusterText}
           >
-            <h4>Clusters</h4>
+
+            <h4><Link style={navStyles.textDecoration} to="/">Clusters</Link></h4>
           </div>
         </div>
         <div key={2} style={[navStyles.clusters, navStyles.clusterHover]}>
@@ -204,7 +210,7 @@ const NavBar = React.createClass({
           <div
             // style={navStyles.clusterText}
           >
-            <h4>Clusters</h4>
+            <h4><Link style={navStyles.textDecoration} to="/">Clusters</Link></h4>
           </div>
         </div>
         <div key={2234} style={[navStyles.clusters, navStyles.permClusterHover]}>

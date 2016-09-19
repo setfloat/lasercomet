@@ -1,6 +1,7 @@
 // import Paper from 'material-ui/Paper';
 import Radium from 'radium';
 import React from 'react';
+import axios from 'axios';
 import colors from 'components/Colors';
 import { withRouter } from 'react-router';
 
@@ -75,7 +76,16 @@ const Hero = React.createClass({
     event.preventDefault();
     this.props.router.push('/Results');
 
-    // this.props.router.push('/Clusters')
+    // axios.post('/api/photos', {
+    //   searchQuery: event.target.value
+    // })
+    // .then((res) => {
+    //   //add to store
+    //   //dynamically create tiles to display them.
+    // })
+    // .catch((err) => {
+    //   // error handling
+    // })
   },
 
   render() {
