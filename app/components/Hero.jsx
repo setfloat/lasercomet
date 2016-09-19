@@ -34,7 +34,8 @@ const styleHero = {
     top: '50%',
     transform: 'translateY(-50%)',
     margin: 'auto',
-    width: '50%',
+    width: '50%'
+
     // padding: '20%'
   },
   searchField: {
@@ -47,6 +48,7 @@ const styleHero = {
     width: '49%',
     ':focus': {
       color: 'white',
+
       // backgroundColor: 'rgba(0,0,0,0.3)',
       borderColor: colors.thirdMain,
       borderWidth: '0 0 2px 0',
@@ -71,8 +73,8 @@ const styleHero = {
 const Hero = React.createClass({
   handleSearchSubmit(event) {
     event.preventDefault();
-    console.log('submit working working');
     this.props.router.push('/Results');
+
     // this.props.router.push('/Clusters')
   },
 

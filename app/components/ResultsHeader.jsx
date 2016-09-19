@@ -16,6 +16,7 @@ const styleResultsHeader = {
     width: '80%',
     paddingTop: '10%',
     marginLeft: '10%',
+
     // align: 'middle',
     display: 'flex',
     flexWrap: 'wrap',
@@ -28,7 +29,8 @@ const styleResultsHeader = {
     top: '50%',
     transform: 'translateY(-50%)',
     margin: 'auto',
-    width: '50%',
+    width: '50%'
+
     // padding: '20%'
   },
   searchField: {
@@ -41,6 +43,7 @@ const styleResultsHeader = {
     width: '49%',
     ':focus': {
       color: colors.thirdMain,
+
       // backgroundColor: 'rgba(0,0,0,0.3)',
       borderColor: colors.thirdMain,
       borderWidth: '0 0 2px 0',
@@ -52,7 +55,7 @@ const styleResultsHeader = {
   },
   icon: {
     fill: 'white'
-  },
+  }
 };
 
 const ResultsHeader = React.createClass({
@@ -73,23 +76,23 @@ const ResultsHeader = React.createClass({
           style={styleResultsHeader.search}
         >
         {/*  */}
-        <form
-          onSubmit={this.handleSearchSubmit}
-        >
-          <img
-            height={'50em'}
-            src={'images/search.svg'}
-            style={styleResultsHeader.icon}
-
-            // style={styleHero.search}
-          />
-          <input
+          <form
             onSubmit={this.handleSearchSubmit}
-            placeholder={'Find some photos'}
-            style={styleResultsHeader.searchField}
-            type={'text'}
-          />
-        </form>
+          >
+            <img
+              height={'50em'}
+              src={'images/search.svg'}
+              style={styleResultsHeader.icon}
+
+              // style={styleHero.search}
+            />
+            <input
+              onSubmit={this.handleSearchSubmit}
+              placeholder={'Find some photos'}
+              style={styleResultsHeader.searchField}
+              type={'text'}
+            />
+          </form>
         {/*  */}
           {/* <h3>Results for:
             <input
