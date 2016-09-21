@@ -1,7 +1,8 @@
 // import Paper from 'material-ui/Paper';
 import Radium from 'radium';
 import React from 'react';
-import axios from 'axios';
+
+// import axios from 'axios';
 import colors from 'components/Colors';
 import { withRouter } from 'react-router';
 
@@ -72,9 +73,27 @@ const styleHero = {
 };
 
 const Hero = React.createClass({
+  getInitialState() {
+    return {
+      errors: {}
+    };
+  },
+
+  handleChange(event) {
+    // const nextSearchField = Object.assign({}, this.state.searchQuery,
+    //   {
+    //     [event.target.name]: event.target.value
+    //   });
+    this.setState({ searchInput: event.target.value });
+
+    // this.state.updateAddress(nextAddress);
+  },
+
   handleSearchSubmit(event) {
     event.preventDefault();
     this.props.router.push('/Results');
+
+    this.props.fetchPhotos(this.state.searchInput);
 
     // axios.post('/api/photos', {
     //   searchQuery: event.target.value
@@ -106,8 +125,10 @@ const Hero = React.createClass({
             >
               <img
                 height={'50em'}
+                onChange={this.handleChange}
                 src={'images/search.svg'}
                 style={styleHero.icon}
+                value={this.state.value}
 
                 // style={styleHero.search}
               />

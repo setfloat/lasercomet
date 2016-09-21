@@ -6,98 +6,130 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
 import colors from 'components/Colors';
 
-const styles = {
-  base: {
-    boxSizing: 'border-box',
-    // backgroundColor: '#cccff1',
-    // borderColor: 'honeydew',
-    // padding: '1.5em',
-    width: '20%',
-    // height: '200px',
-    paddingBottom: '20%',
-    // borderWidth: '1px',
-    borderStyle: 'solid',
-    display: 'inline-block',
-    margin: '0',
-    position: 'relative',
-    ':hover': {
-      background: 'yellow'
-    },
+const Results = React.createClass({
+  render() {
+    const styles = {
+      base: {
+        boxSizing: 'border-box',
+        // backgroundColor: '#cccff1',
+        // borderColor: 'honeydew',
+        // padding: '1.5em',
+        width: '20%',
+        // height: '200px',
+        paddingBottom: '20%',
+        // borderWidth: '1px',
+        borderStyle: 'solid',
+        display: 'inline-block',
+        margin: '0',
+        position: 'relative',
+        ':hover': {
+          background: 'yellow'
+        },
 
+        // ':hover': {
+        //   backgroundColor: 'red'
+        // },
+        //
+        // ':focus': {
+        //   backgroundColor: 'green'
+        // },
+        //
+        // ':blur': {
+        //   backgroundColor: 'orange'
+        // },
+        //
+        // ':active': {
+        //   backgroundColor: 'yellow'
+        // },
 
-    // ':hover': {
-    //   backgroundColor: 'red'
-    // },
-    //
-    // ':focus': {
-    //   backgroundColor: 'green'
-    // },
-    //
-    // ':blur': {
-    //   backgroundColor: 'orange'
-    // },
-    //
-    // ':active': {
-    //   backgroundColor: 'yellow'
-    // },
+        '@media (max-width: 1440px)': {
+          width: '25%',
+          paddingBottom: '24%'
+        },
 
-    '@media (max-width: 1440px)': {
-      width: '25%',
-      paddingBottom: '24%'
-    },
+        '@media (max-width: 1220px)': {
+          width: `${100/3}%`,
+          paddingBottom: '33%'
+        },
 
-    '@media (max-width: 1220px)': {
-      width: `${100/3}%`,
-      paddingBottom: '33%'
-    },
+        '@media (max-width: 900px)': {
+          width: '50%',
+          paddingBottom: '45%'
+        },
 
-    '@media (max-width: 900px)': {
-      width: '50%',
-      paddingBottom: '45%'
-    },
+        '@media (max-width: 560px)': {
+          width: '100%',
+          paddingBottom: '92%'
+        }
+      },
 
-    '@media (max-width: 560px)': {
-      width: '100%',
-      paddingBottom: '92%'
-    }
-  },
+      block: {
+        display: 'inline-block',
+        width: '50%',
 
-  block: {
-    display: 'inline-block',
-    width: '50%',
+        ':hover': {
+          boxShadow: '0 3px 0 rgba(0,0,0,0.2)'
+        }
+      },
 
-    ':hover': {
-      boxShadow: '0 3px 0 rgba(0,0,0,0.2)'
-    }
-  },
+      sect: {
+        display:'flex',
+        flexDirection: 'row',
+        // justifyContent: 'center',
+        alignContent: 'space-around',
+        alignItems: 'center',
+        flexWrap: 'wrap',
+        backgroundColor: colors.primeBoldTrans
+      },
 
-  sect: {
-      display:'flex',
-      flexDirection: 'row',
-      // justifyContent: 'center',
-      alignContent: 'space-around',
-      alignItems: 'center',
-      flexWrap: 'wrap',
-      backgroundColor: colors.primeBoldTrans
-  },
-  tile: {
-    position: 'absolute',
-    top: '0',
-    bottom: '0',
-    left: '0',
-    right: '0'
-  },
+      tile: {
+        position: 'absolute',
+        top: '0',
+        bottom: '0',
+        left: '0',
+        right: '0'
+      },
 
-  paper: {
-    position: 'absolute',
-    top: '0',
-    bottom: '0',
-    left: '0',
-    right: '0',
-    textAlign: 'center',
-    margin: '0'
+      paper: {
+        position: 'absolute',
+        top: '0',
+        bottom: '0',
+        left: '0',
+        right: '0',
+        textAlign: 'center',
+        margin: '0'
+      }
+    };
+
+    return <div>
+      <section
+        style={styles.sect}
+      >
+        {this.props.photos.map((photo, i) => <div
+          style={styles.base}
+          key={i}
+        >
+          <ResultTile
+            {...this.props}
+            key={i}
+            i={i}
+            photo={photo}
+          />
+        </div>
+      )}
+      </section>
+      <RaisedButton label="More" style={colors.primeBold} />
+    </div>;
   }
-};
+});
+
+export default Radium(Results);
+
+
+
+
+
+/*
 
 const Results = React.createClass({
   render() {
@@ -325,3 +357,16 @@ const Results = React.createClass({
 });
 
 export default Radium(Results);
+
+
+
+
+
+
+
+///
+///
+
+
+////////////
+*/

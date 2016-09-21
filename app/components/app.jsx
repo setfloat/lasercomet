@@ -1,20 +1,20 @@
-// import RaisedButton from 'material-ui/RaisedButton';
-import NavBar from 'components/NavBar';
-import React from 'react';
-import { StyleRoot } from 'radium';
-import { withRouter } from 'react-router';
+import * as actionCreators from '../actions/actionCreators';
+import Main from './Main';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+// import photos from '../data/photos'
 
-const App = React.createClass({
-  render() {
-    // return <RaisedButton label="Hello world" />;
-    return <StyleRoot>
-      <div>
-        <NavBar />
-        {/* <h2>LaserComet</h2> */}
-        {React.cloneElement(this.props.children, {})}
-      </div>
-    </StyleRoot>;
-  }
-});
+const mapStateToProps = (state) => {
+  return {
+    // insert states as to what we have, next two are examples
+    photos: state.photos
+    };
+};
 
-export default withRouter(App);
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators(actionCreators, dispatch);
+};
+
+const App = connect(mapStateToProps, mapDispatchToProps)(Main);
+
+export default App;

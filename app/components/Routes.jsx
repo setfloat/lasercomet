@@ -1,4 +1,4 @@
-import { IndexRoute, Route, Router, browserHistory } from 'react-router';
+import { IndexRoute, Route, Router } from 'react-router';
 import App from 'components/App';
 import ClusterPage from 'components/ClusterPage';
 import Clusters from 'components/Clusters';
@@ -8,9 +8,12 @@ import React from 'react';
 import ResultsPage from 'components/ResultsPage';
 import NotFound from 'components/NotFound';
 
+// import { Provider } from 'react-redux';
+import { history } from '../store';
+
 const Routes = React.createClass({
   render() {
-    return <Router history={browserHistory}>
+    return <Router history={history}>
       <Route component={App} path="/">
         <IndexRoute component={MainPage} />
         <Route component={MainPage} path="/">
