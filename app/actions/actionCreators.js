@@ -29,17 +29,46 @@ import axios from 'axios';
 // }
 
 // should add searchQuery into the argument of callback below
-export const reqPhotos = () => {
+export const requestPhotos = () => {
   return {
     type: 'REQ_PHOTOS'
   };
 }
 
-export const resPhotos = (photos) => {
+// this uses thunk
+// export const fetchPhotos = (searchQuery) => {
+//   return (dispatch) => {
+//
+//   }
+// }
+
+
+export const receivePhotos = (photos) => {
   return {
-    type: 'RES_PHOTOS',
+    type: 'RECEIVE_PHOTOS',
     photos
   };
+}
+
+export const logIn = ( notsurewhatgoeshereyet) => {
+  return {
+    type: 'LOGIN',
+    notsurewhatwhatgoeshereyet
+  }
+}
+
+export const logOut = ( alsonotsurewhatgoeshereyet ) => {
+  return {
+    type: 'LOGOUT',
+    alsonotsurewhatgoeshereyet
+  }
+}
+
+export const searchText = (searchText) => {
+  return {
+    type: 'SEARCH_TEXT',
+    searchText
+  }
 }
 
 // export function searchResultPhotos(searchResults) {
@@ -48,20 +77,20 @@ export const resPhotos = (photos) => {
 //     searchResults
 //   };
 // }
+// has no reducer, when dispatch resPhotos it triggers reducer
+export function fetchPhotos(searchQuery) {
+  return (dispatch) => {
+    dispatch(requestPhotos());
 
-// export function fetchPhotos(searchQuery) {
-//   return (dispatch) => {
-//     dispatch(reqPhotos());
-//
-//     return axios.get('/api/photos')
-//       .then((res) => {
-//         dispatch();
-//
-//         return res.data;
-//       })
-//       .catch((err) => {
-//         // eslint-disable-next-line
-//         console.log(err);
-//       });
-//   };
-// }
+    return axios.post('/api/photos')
+      .then((res) => {
+        dispatch(receivePhotos(res.data));
+
+        return res.data;
+      })
+      .catch((err) => {
+        // eslint-disable-next-line
+        console.log(err);
+      });
+  };
+}

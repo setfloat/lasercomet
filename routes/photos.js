@@ -13,6 +13,7 @@ const router = express.Router();
 
 
 router.get('/photos', ev(validations.get), (req, res, next) => {
+  console.log('something happened');
   let searchQuery = req.body.searchQuery;
 
   searchQuery = searchQuery.trim().split(' ');
@@ -21,7 +22,7 @@ router.get('/photos', ev(validations.get), (req, res, next) => {
   axios.get(`https://pixabay.com/api/?key=${apiKey}&q=${searchQuery}&image_type=photo`)
     .then((res) => {
 
-      const searchResponse = res.body.hits[0]
+      let searchResponse = res.body.hits[0]
       const newResults = {};
 
 
@@ -54,7 +55,14 @@ router.get('/photos', ev(validations.get), (req, res, next) => {
       delete searchResponse.user_id;
       delete searchResponse.views;
 
-      res.send(searchResponse);
+// will need to make the value of - saved - a variable,
+// that variable will execute a function that checks if the user has saved
+// that specific photo. will return true, false, undefined
+      const deliveredSearchResponse = searchResponse.map(element => {
+        return Object.assign({}, element, { saved: false, expanded: false })
+      });
+
+      res.send(deliveredSearchResponse);
     })
     .catch((err) => next(err));
 });

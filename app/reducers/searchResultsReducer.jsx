@@ -1,10 +1,15 @@
 // 'use strict';
 //
-// const action = {
-//   type: 'ADD_SEARCH_RESULTS',
-//
-// };
-//
-// const searchResultsReducer = (state, action) => {
-//
-// };
+const searchText = (state = [], action) => {
+  // ...state,
+  switch (action.type) {
+    case 'SEARCH_TEXT': {
+      return Object.assign({}, state, { searchText: action.searchText });
+    }
+
+    default:
+      return state;
+  }
+};
+
+export default searchText;

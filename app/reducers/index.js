@@ -3,7 +3,13 @@ import { routerReducer } from 'react-router-redux';
 
 // import all your reducers next
 import photos from './photos';
+import searchText from './searchResultsReducer';
 
-const rootReducer = combineReducers({ photos, routing: routerReducer });
+const rootReducer = combineReducers(
+  {
+    searchText,
+    photos,
+    routing: routerReducer
+  });
 
 export default rootReducer;

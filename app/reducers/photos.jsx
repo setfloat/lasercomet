@@ -3,17 +3,22 @@ const photos = (state = [], action) => {
     case 'REQ_PHOTOS': {
       return state;
     }
-    case 'RES_PHOTOS': {
-      return state;
-
-      // code below i want to comment back in.
-      // [
-      //   ...state, photos
-      // ];
-
+    case 'RECEIVE_PHOTOS': {
+      const i = action.index
+      return [
+        ...state.slice(0,i),
+        ...state[i],
+        ...state.slice(i + 1)
+        // ...state, photos
+      ];
+      // state;
       // Object.assign({}, state, {
       //   photos: action.photos
       // });
+
+      // state;
+
+
     }
     default:
       return state;
@@ -21,3 +26,13 @@ const photos = (state = [], action) => {
 };
 
 export default photos;
+
+
+
+
+// [
+//   ...state.slice(0,i),
+//   { ...state[i], saved: !state[i].saved },
+//   ...state.slice(i + 1)
+//   ...state, photos
+// ];
