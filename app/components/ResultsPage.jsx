@@ -5,8 +5,17 @@ import ResultsHeader from 'components/ResultsHeader';
 const ResultsPage = React.createClass({
   render() {
     return <div>
-      <ResultsHeader />
-      <Results />
+      <ResultsHeader
+        fetchPhotos={this.props.fetchPhotos}
+        searchResultsReducer={this.props.searchResultsReducer}
+        searchText={this.props.searchText}
+      />
+      <Results
+        fetchPhotos={this.props.fetchPhotos}
+        searchResultsReducer={this.props.searchResultsReducer}
+        searchText={this.props.searchText}
+        photos={this.props.photos}
+      />
     </div>;
   }
 });

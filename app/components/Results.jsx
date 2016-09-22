@@ -8,6 +8,7 @@ import colors from 'components/Colors';
 
 const Results = React.createClass({
   render() {
+    const {photos, i } = this.props;
     const styles = {
       base: {
         boxSizing: 'border-box',
@@ -100,7 +101,7 @@ const Results = React.createClass({
         margin: '0'
       }
     };
-
+    console.log(this.props.photos);
     return <div>
       <section
         style={styles.sect}
@@ -118,7 +119,7 @@ const Results = React.createClass({
         </div>
       )}
       </section>
-      <RaisedButton label="More" style={colors.primeBold} />
+      {/* <RaisedButton label="More" style={colors.primeBold} /> */}
     </div>;
   }
 });

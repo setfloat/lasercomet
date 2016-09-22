@@ -24,7 +24,9 @@ const ResultTile = React.createClass({
         ':hover': {
           zDepth: 5
         },
-        background: `url(${photo.webformaturl}) center center / cover no-repeat`
+
+        // background: `url(${photo.webformaturl}) center center / cover no-repeat`
+        background: `url(${photo.previewurl}) center center / cover no-repeat`
 
         // background: 'url("images/oceanfill.jpg") center center / cover
         // no-repeat'
@@ -54,7 +56,9 @@ const ResultTile = React.createClass({
       <Paper
         index={i}
         style={styles.paper}
-        zDepth={styles.depthFind || 5} // this might not work
+        zDepth={
+          // styles.depthFind ||
+          5} // this might not work
       />
     </div>;
   }
