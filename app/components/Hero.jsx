@@ -77,24 +77,35 @@ const Hero = React.createClass({
   getInitialState() {
     return {
       errors: {}
+      // searchinput
     };
   },
 
   handleChange(event) {
-    // const nextSearchField = Object.assign({}, this.state.searchQuery,
-    //   {
-    //     [event.target.name]: event.target.value
-    //   });
-    this.setState({ searchInput: event.target.value });
+    let value = event.target.value;
+    this.props.searchText(value);
+
+    this.props.searchText(event.target.value)
+    const nextSearchField = Object.assign({}, this.state.searchQuery,
+      {
+        [event.target.name]: event.target.value
+      });
+    // this.setState({ searchInput: event.target.value });
 
     // this.state.updateAddress(nextAddress);
   },
 
+  handleInputChange(event) {
+
+    this.setState({ searchInput: event.target.value });
+  },
+
   handleSearchSubmit(event) {
+    console.log(event.target);
     event.preventDefault();
+    this.props.fetchPhotos(this.state.searchInput);
     this.props.router.push('/Results');
 
-    this.props.fetchPhotos(this.state.searchInput);
 
     // axios.post('/api/photos', {
     //   searchQuery: event.target.value
@@ -126,7 +137,7 @@ const Hero = React.createClass({
             >
               <img
                 height={'50em'}
-                onChange={this.handleChange}
+                // onChange={this.handleChange}
                 src={'images/search.svg'}
                 style={styleHero.icon}
                 value={this.state.value}
@@ -134,6 +145,7 @@ const Hero = React.createClass({
                 // style={styleHero.search}
               />
               <input
+                onChange={this.handleChange || this.handleinputChange}
                 onSubmit={this.handleSearchSubmit}
                 placeholder={'Find some photos'}
                 style={styleHero.searchField}

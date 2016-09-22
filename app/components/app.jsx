@@ -7,7 +7,8 @@ import { connect } from 'react-redux';
 const mapStateToProps = (state) => {
   return {
     // insert states as to what we have, next two are examples
-    photos: state.photos
+    photos: state.photos,
+    searchText: state.searchText
     };
 };
 

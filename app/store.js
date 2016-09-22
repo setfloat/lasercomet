@@ -3,12 +3,12 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import { browserHistory } from 'react-router';
 import rootReducer from './reducers/index';
 import photos from './data/photos';
-import thunk from 'redux-thunk';
+import thunkMiddleware from 'redux-thunk';
 
 
 // import whateverthisis from './data/thisisthedatafile';
 
-const enhancers = compose(
+const enhancers = compose(applyMiddleware(thunkMiddleware),
     window.devToolsExtension
       ? window.devToolsExtension()
       : f => f
@@ -22,7 +22,6 @@ const defaultState = {
 let store = createStore(
   rootReducer,
   defaultState,
-  applyMiddleware(thunk),
   enhancers);
 
 export const history = syncHistoryWithStore(browserHistory, store);

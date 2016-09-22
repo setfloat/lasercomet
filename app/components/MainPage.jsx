@@ -6,7 +6,10 @@ import React from 'react';
 const MainPage = React.createClass({
   render() {
     return <div>
-      <Hero />
+      <Hero
+        searchText={this.props.searchText}
+        fetchPhotos={this.props.fetchPhotos}
+      />
       <Features />
       <Clusters />
     Main Page</div>;
