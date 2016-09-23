@@ -13,8 +13,12 @@ const validations = require('../validations/users');
 const router = express.Router();
 
 // Creates JWT for user authentication
-router.post('/token', ev(validations.post), (req, res, next) => {
+router.post('/token',
+// ev(validations.post),
+(req, res, next) => {
   let user;
+
+  console.log(req.body);
 
   knex('users')
     .where('email', req.body.email)

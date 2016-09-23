@@ -44,12 +44,13 @@ const UserAuth = React.createClass({
   },
 
   acceptLogin(nextLogin) {
+    console.log(nextLogin, 'nextloginbro');
     axios.post('/api/token', nextLogin)
       .then((_res) => {
         this.setState({ login: {}, register: {}});
         this.props.updateLogin();
-        this.props.updateNotification('Login successful');
-        this.props.router.push('/order');
+        // this.props.updateNotification('Login successful');
+        this.props.router.push('/');
       })
       .catch((err) => {
         this.props.updateErrorMessage(err);
@@ -57,9 +58,10 @@ const UserAuth = React.createClass({
   },
 
   acceptRegister(nextRegister) {
+    console.log(nextRegister);
     axios.post('/api/users', nextRegister)
       .then((_res) => {
-        this.props.updateNotification('Registration successful');
+        // this.props.updateNotification('Registration successful');
         this.acceptLogin(nextRegister);
       })
       .catch((err) => {

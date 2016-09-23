@@ -51,6 +51,13 @@ export const receivePhotos = (photos) => {
   };
 }
 
+export const updateLogin = () => {
+  return {
+  type: 'UPDATE_LOGIN',
+  loginStatus
+  }
+}
+
 export const logIn = ( notsurewhatgoeshereyet) => {
   return {
     type: 'LOGIN',

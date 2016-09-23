@@ -4,8 +4,11 @@ import { browserHistory } from 'react-router';
 import rootReducer from './reducers/index';
 import photos from './data/photos';
 import thunkMiddleware from 'redux-thunk';
+import cookie from 'react-cookie';
 
-
+let loginStatus = {
+  loggedIn: cookie.load('loggedIn') || false,
+}
 // import whateverthisis from './data/thisisthedatafile';
 
 const enhancers = compose(applyMiddleware(thunkMiddleware),
@@ -16,7 +19,8 @@ const enhancers = compose(applyMiddleware(thunkMiddleware),
 
 // create an object for the default data
 const defaultState = {
-  photos
+  photos,
+  loginStatus
 };
 
 let store = createStore(

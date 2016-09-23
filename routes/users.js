@@ -11,8 +11,15 @@ const validations = require('../validations/users');
 // eslint-disable-next-line new-cap
 const router = express.Router();
 
-router.post('/users', ev(validations.post), (req, res, next) => {
-  const { username, email, password } = req.body;
+router.post('/users',
+  // ev(validations.post),
+  (req, res, next) => {
+  console.log(req.body);
+  const {
+    // username,
+    email,
+    password
+  } = req.body;
 
   knex('users')
     // .select(knex.raw('1=1'))
@@ -31,7 +38,6 @@ router.post('/users', ev(validations.post), (req, res, next) => {
         if (exists) {
           throw boom.create(409, 'Email in use');
         }
-
         return bcrypt.hash(password, 12);
       })
     .then((hashedPassword) => {
