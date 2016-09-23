@@ -15,15 +15,15 @@ router.post('/users', ev(validations.post), (req, res, next) => {
   const { username, email, password } = req.body;
 
   knex('users')
-    .select(knex.raw('1=1'))
-    .where('username', username)
-    .first()
-    .then((exists) => {
-      if (exists) {
-        throw boom.create(409, 'Username in use');
-      }
-    })
-    .then('users')
+    // .select(knex.raw('1=1'))
+    // .where('username', username)
+    // .first()
+    // .then((exists) => {
+    //   if (exists) {
+    //     throw boom.create(409, 'Username in use');
+    //   }
+    // })
+    // .then('users')
       .select(knex.raw('1=1'))
       .where('email', email)
       .first()
@@ -35,7 +35,11 @@ router.post('/users', ev(validations.post), (req, res, next) => {
         return bcrypt.hash(password, 12);
       })
     .then((hashedPassword) => {
-      const newUser = { username, email, hashedPassword };
+      const newUser = {
+        // username,
+        email,
+        hashedPassword
+      };
 
       const row = decamelizeKeys(newUser);
 
