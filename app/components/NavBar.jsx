@@ -136,7 +136,12 @@ const navStyles = {
     width: '40%'
   },
   textDecoration: {
-    textDecoration: 'none'
+    textDecoration: 'none',
+    color: colors.secondBold
+  },
+  midgeTextDecoration: {
+    textDecoration: 'none',
+    color: colors.secondMain
   }
 };
 
@@ -211,7 +216,7 @@ const NavBar = React.createClass({
           <div
             // style={navStyles.clusterText}
           >
-            <h4><Link style={navStyles.textDecoration} to="/">Clusters</Link></h4>
+            <h4><Link style={navStyles.midgeTextDecoration} to="/">Clusters</Link></h4>
           </div>
         </div>
         <div key={2234} style={[navStyles.clusters, navStyles.permClusterHover]}>

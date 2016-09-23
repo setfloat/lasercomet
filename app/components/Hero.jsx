@@ -6,6 +6,9 @@ import React from 'react';
 import colors from 'components/Colors';
 import { withRouter } from 'react-router';
 
+// document.designMode = 'on';
+
+
 const styleHero = {
   heroFlex: {
     display: 'flex',

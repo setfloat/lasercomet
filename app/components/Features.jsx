@@ -19,7 +19,7 @@ const styleFeat = {
     boxSizing: 'border-box',
     position: 'relative',
     backgroundColor: colors.primeBoldTrans,
-    height: '40em',
+    height: '30em',
     borderColor: colors.primeSoft,
     borderStyle: 'solid',
     borderWidth: '1px',
@@ -49,9 +49,9 @@ const styleFeat = {
     },
   },
   content: {
-    paddingTop: '40%',
+    paddingTop: '50%',
     width: '80%',
-    paddingLeft: '10%',
+    paddingLeft: '15%',
     paddingRight: '10%'
     // position: 'absolute',
   },
