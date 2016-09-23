@@ -4,9 +4,10 @@ import ClusterPage from 'components/ClusterPage';
 import Clusters from 'components/Clusters';
 import Hero from 'components/Hero';
 import MainPage from 'components/MainPage';
+import NotFound from 'components/NotFound';
 import React from 'react';
 import ResultsPage from 'components/ResultsPage';
-import NotFound from 'components/NotFound';
+import UserAuth from 'components/UserAuth';
 
 // import { Provider } from 'react-redux';
 import { history } from '../store';
@@ -22,6 +23,7 @@ const Routes = React.createClass({
         </Route>
         <Route component={ResultsPage} path="/Results" />
         <Route component={ClusterPage} path="/Cluster" />
+        <Route component={UserAuth} path="login" />
         <Route component={NotFound} path="*" />
       </Route>
     </Router>;
