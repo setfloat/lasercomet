@@ -97,7 +97,7 @@ const Features = React.createClass({
             src={'images/telescope.svg'}
             height={'100em'}
           />
-          <div>This will be text</div>
+          <div>Find your favorite photos</div>
         </div>
       </div>
       <div
@@ -110,7 +110,7 @@ const Features = React.createClass({
           src={'images/visualization.svg'}
           height={'100em'}
         />
-        <div>This will be text</div>
+        <div>Make a Cluster by saving your photos to a gallery</div>
         </div>
       </div>
       <div
@@ -123,7 +123,7 @@ const Features = React.createClass({
           src={'images/satellite.svg'}
           height={'100em'}
         />
-        <div>This will be text</div>
+        <div>Check out the clusters your friends have made</div>
         </div>
       </div>
     </section>;
