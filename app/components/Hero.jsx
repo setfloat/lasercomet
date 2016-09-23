@@ -101,9 +101,11 @@ const Hero = React.createClass({
   },
 
   handleSearchSubmit(event) {
-    console.log(event.target);
+    // console.log(event.target);
     event.preventDefault();
-    this.props.fetchPhotos(this.state.searchInput);
+    // console.log(this.props.fetchPhotos(this.props.searchResultsReducer.searchText));
+    console.log(this.props.searchResultsReducer.searchText);
+    this.props.fetchPhotos(this.props.searchResultsReducer.searchText);
     this.props.router.push('/Results');
 
 

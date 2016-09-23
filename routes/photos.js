@@ -2,7 +2,7 @@
 
 const apiKey = process.env.API_KEY;
 const axios = require('axios');
-const { camelizeKeys } = require('humps');
+const { camelizeKeys, decamelizeKeys } = require('humps');
 const ev = require('express-validation');
 const express = require('express');
 // const knex = require('../knex');
@@ -10,28 +10,54 @@ const validations = require('../validations/photos');
 
 // eslint-disable-next-line new-cap
 const router = express.Router();
+let searchResponse;
 
-
-router.get('/photos', ev(validations.get), (req, res, next) => {
-  console.log('something happened');
+router.post('/photos',
+  //  ev(validations.get),
+  (req, res, next) => {
+  console.log(req.body);
+  // console.log(req);
   let searchQuery = req.body.searchQuery;
-
   searchQuery = searchQuery.trim().split(' ');
   searchQuery = searchQuery.join('+');
+  console.log('this is the ' + searchQuery)
 
   axios.get(`https://pixabay.com/api/?key=${apiKey}&q=${searchQuery}&image_type=photo`)
-    .then((res) => {
-
-      let searchResponse = res.body.hits[0]
+    .then((result) => {
+      // console.log(res);
+      // console.log(res.data);
+      searchResponse = result.data.hits
       const newResults = {};
 
+      searchResponse = searchResponse.map((obj) => {
+        let rObj = obj;
 
-      for (prop in searchResponse) {
-        newResults.prop = prop.replace(/"/g,"");
-      }
+        rObj.comments = '';
+        rObj.pixid = rObj.id;
 
-      searchResponse.comments = '';
-      searchResponse.pixid = searchResponse.id;
+        delete rObj.id;
+        delete rObj.downloads;
+        delete rObj.favorites;
+        delete rObj.likes;
+        delete rObj.type;
+        delete rObj.user;
+        delete rObj.userImageURL;
+        delete rObj.user_id;
+        delete rObj.views;
+
+
+        return rObj;
+      })
+
+      console.log( '*** *** *** **** *** ', searchResponse);
+
+      // for (prop in searchResponse) {
+      //   console.log('stephenopolougs', prop);
+      //   newResults.prop = prop.replace(/"/g,"");
+      // }
+
+      // searchResponse.comments = '';
+      // searchResponse.pixid = searchResponse.id;
 
       // delete {
       //   id,
@@ -45,15 +71,15 @@ router.get('/photos', ev(validations.get), (req, res, next) => {
       //   views
       // } = searchResponse;
 
-      delete searchResponse.id;
-      delete searchResponse.downloads;
-      delete searchResponse.favorites;
-      delete searchResponse.likes;
-      delete searchResponse.type;
-      delete searchResponse.user;
-      delete searchResponse.userImageURL;
-      delete searchResponse.user_id;
-      delete searchResponse.views;
+      // delete searchResponse.id;
+      // delete searchResponse.downloads;
+      // delete searchResponse.favorites;
+      // delete searchResponse.likes;
+      // delete searchResponse.type;
+      // delete searchResponse.user;
+      // delete searchResponse.userImageURL;
+      // delete searchResponse.user_id;
+      // delete searchResponse.views;
 
 // will need to make the value of - saved - a variable,
 // that variable will execute a function that checks if the user has saved
@@ -61,8 +87,8 @@ router.get('/photos', ev(validations.get), (req, res, next) => {
       const deliveredSearchResponse = searchResponse.map(element => {
         return Object.assign({}, element, { saved: false, expanded: false })
       });
-
-      res.send(deliveredSearchResponse);
+      console.log(`${searchResponse}`);
+      res.send(searchResponse);
     })
     .catch((err) => next(err));
 });

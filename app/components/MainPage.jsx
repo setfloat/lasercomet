@@ -5,12 +5,13 @@ import React from 'react';
 
 const MainPage = React.createClass({
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     return <div>
       <Hero
-        searchText={this.props.searchText}
         fetchPhotos={this.props.fetchPhotos}
+        photos={this.props.photos}
         searchResultsReducer={this.props.searchResultsReducer}
+        searchText={this.props.searchText}
       />
       <Features />
       <Clusters />

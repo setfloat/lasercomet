@@ -29,9 +29,10 @@ import axios from 'axios';
 // }
 
 // should add searchQuery into the argument of callback below
-export const requestPhotos = () => {
+export const requestPhotos = (photos) => {
   return {
-    type: 'REQ_PHOTOS'
+    type: 'REQ_PHOTOS',
+    photos
   };
 }
 
@@ -81,15 +82,20 @@ export const searchText = (searchText) => {
 export function fetchPhotos(searchQuery) {
   return (dispatch) => {
     dispatch(requestPhotos());
-
-    return axios.post('/api/photos')
+    console.log('hello')
+    console.log(searchQuery);
+    return axios.post('/api/photos', { searchQuery })
       .then((res) => {
+        console.log('res made it here');
+        console.log(res);
+        console.log(res.data);
         dispatch(receivePhotos(res.data));
 
         return res.data;
       })
       .catch((err) => {
         // eslint-disable-next-line
+        console.log('we ended up here');
         console.log(err);
       });
   };

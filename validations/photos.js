@@ -1,6 +1,6 @@
 const Joi = require('joi');
 
-module.exports.get = {
+module.exports.post = {
   body: {
     searchQuery: Joi.string()
       .label('Search entry')

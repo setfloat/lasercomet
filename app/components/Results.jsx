@@ -101,7 +101,7 @@ const Results = React.createClass({
         margin: '0'
       }
     };
-    console.log(this.props.photos);
+    // console.log(this.props.photos);
     return <div>
       <section
         style={styles.sect}

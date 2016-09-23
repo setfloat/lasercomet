@@ -26,7 +26,7 @@ const ResultTile = React.createClass({
         },
 
         // background: `url(${photo.webformaturl}) center center / cover no-repeat`
-        background: `url(${photo.previewurl}) center center / cover no-repeat`
+        background: `url(${photo.webformatURL}) center center / cover no-repeat`
 
         // background: 'url("images/oceanfill.jpg") center center / cover
         // no-repeat'
