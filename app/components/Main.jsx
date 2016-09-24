@@ -44,8 +44,6 @@ const Main = React.createClass({
   },
 
   render() {
-    console.log(this.props)
-    // return <RaisedButton label="Hello world" />;
     return <StyleRoot>
       <div>
         <NavBar />

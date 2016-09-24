@@ -60,9 +60,33 @@ const styleResultsHeader = {
 };
 
 const ResultsHeader = React.createClass({
+  handleChange(event) {
+    let value = event.target.value;
+    this.props.searchText(value);
+
+    this.props.searchText(event.target.value)
+    const nextSearchField = Object.assign({}, this.state.searchQuery,
+      {
+        [event.target.name]: event.target.value
+      });
+    // this.setState({ searchInput: event.target.value });
+
+    // this.state.updateAddress(nextAddress);
+  },
+
+  handleInputChange(event) {
+
+    this.setState({ searchInput: event.target.value });
+  },
+
   handleSearchSubmit(event) {
+    // console.log(event.target);
     event.preventDefault();
+    // console.log(this.props.fetchPhotos(this.props.searchResultsReducer.searchText));
+    console.log(this.props.searchResultsReducer.searchText);
+    this.props.fetchPhotos(this.props.searchResultsReducer.searchText);
     this.props.router.push('/Results');
+
 
     // axios.post('/api/photos', {
     //   searchQuery: event.target.value
@@ -76,45 +100,77 @@ const ResultsHeader = React.createClass({
     // })
   },
 
-  render() {
-    return <section
-      style={styleResultsHeader.section}
-    >
-      <Paper
-        style={styleResultsHeader.paper}
-        zDepth={3}
-      >
-        <div
-          style={styleResultsHeader.search}
-        >
-        {/*  */}
-          <form
-            onSubmit={this.handleSearchSubmit}
-          >
-            <img
-              height={'50em'}
-              src={'images/search.svg'}
-              style={styleResultsHeader.icon}
 
-              // style={styleHero.search}
-            />
-            <input
-              onSubmit={this.handleSearchSubmit}
-              placeholder={'Find some photos'}
-              style={styleResultsHeader.searchField}
-              type={'text'}
-            />
-          </form>
-        {/*  */}
-          {/* <h3>Results for:
-            <input
-              style={styleResultsHeader.searchField}
-            />
-          </h3> */}
-        </div>
-      </Paper>
-    </section>;
+////////////////
+  render() {
+
+    return <div style={styleResultsHeader.search}>
+      <form
+        onSubmit={this.handleSearchSubmit}
+      >
+        <img
+          height={'50em'}
+          // onChange={this.handleChange}
+          src={'images/search.svg'}
+          style={styleResultsHeader.icon}
+          value={this.state.value}
+
+          // style={styleHero.search}
+        />
+        <input
+          onChange={this.handleChange || this.handleinputChange}
+          onSubmit={this.handleSearchSubmit}
+          placeholder={'Find some photos'}
+          style={styleResultsHeader.searchField}
+          type={'text'}
+        />
+      </form>
+    </div>
   }
 });
 
 export default withRouter(Radium(ResultsHeader));
+///////////////
+
+//   render() {
+//     return <section
+//       style={styleResultsHeader.section}
+//     >
+//       <Paper
+//         style={styleResultsHeader.paper}
+//         zDepth={3}
+//       >
+//         <div
+//           style={styleResultsHeader.search}
+//         >
+//         {/*  */}
+//           <form
+//             onSubmit={this.handleSearchSubmit}
+//           >
+//             <img
+//               height={'50em'}
+//               src={'images/search.svg'}
+//               style={styleResultsHeader.icon}
+//
+//               // style={styleHero.search}
+//             />
+//             <input
+//               onSubmit={this.handleSearchSubmit}
+//               placeholder={'Find some photos'}
+//               style={styleResultsHeader.searchField}
+//               type={'text'}
+//             />
+//           </form>
+//         {/*  */}
+//           {/* <h3>Results for:
+//             <input
+//               style={styleResultsHeader.searchField}
+//             />
+//           </h3> */}
+//         </div>
+//       </Paper>
+//     </section>;
+//   }
+// });
+//
+// export default withRouter(Radium(ResultsHeader));

@@ -120,17 +120,21 @@ import ResultsHeader from 'components/ResultsHeader';
 const ResultsPage = React.createClass({
   render() {
     return <div>
-      <ResultsHeader
-        fetchPhotos={this.props.fetchPhotos}
-        searchResultsReducer={this.props.searchResultsReducer}
-        searchText={this.props.searchText}
-      />
-      <Results
-        fetchPhotos={this.props.fetchPhotos}
-        searchResultsReducer={this.props.searchResultsReducer}
-        searchText={this.props.searchText}
-        photos={this.props.photos}
-      />
+      <section>
+        <ResultsHeader
+          fetchPhotos={this.props.fetchPhotos}
+          searchResultsReducer={this.props.searchResultsReducer}
+          searchText={this.props.searchText}
+        />
+      </section>
+      <section>
+        <Results
+          fetchPhotos={this.props.fetchPhotos}
+          searchResultsReducer={this.props.searchResultsReducer}
+          searchText={this.props.searchText}
+          photos={this.props.photos}
+        />
+      </section>
     </div>;
   }
 });
