@@ -73,8 +73,8 @@ const navStyles = {
     paddingLeft: '24px',
     paddingRight: '24px',
     top: '0px',
-    backgroundColor: 'white',
-    // backgroundColor: colors.primeSoft,
+    // backgroundColor: 'white',
+    backgroundColor: colors.primeAlt,
     zIndex: '1100'
   },
 

@@ -83,7 +83,8 @@ const Results = React.createClass({
         alignContent: 'space-around',
         alignItems: 'center',
         flexWrap: 'wrap',
-        backgroundColor: colors.primeBoldTrans
+        backgroundColor: colors.primeDarkTrans
+        // backgroundColor: colors.primeBoldTrans
       },
 
       tile: {

@@ -45,7 +45,8 @@ const styleHero = {
   },
   searchField: {
 
-    color: 'white',
+    color: colors.thirdMain,
+    // color: 'white',
     backgroundColor: 'rgba(0,0,0,0.1)',
     borderColor: colors.secondSoft,
     borderWidth: '0 0 2px 0',
@@ -53,6 +54,7 @@ const styleHero = {
     width: '49%',
     ':focus': {
       color: 'white',
+      // color: colors.primeAlt,
 
       // backgroundColor: 'rgba(0,0,0,0.3)',
       borderColor: colors.thirdMain,
