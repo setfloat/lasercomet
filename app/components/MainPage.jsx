@@ -12,6 +12,7 @@ const MainPage = React.createClass({
         photos={this.props.photos}
         searchResultsReducer={this.props.searchResultsReducer}
         searchText={this.props.searchText}
+        clickedPhoto={this.props.clickedPhoto}
       />
       <Features />
       <Clusters />

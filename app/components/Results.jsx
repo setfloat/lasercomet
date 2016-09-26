@@ -1,17 +1,19 @@
 // results of search, subset of results page.  stream of photos.
-import ResultTile from 'components/ResultTile';
+// import Paper from 'material-ui/Paper';
 import Radium from 'radium';
+
+// import RaisedButton from 'material-ui/RaisedButton';
 import React from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
-import Paper from 'material-ui/Paper';
+import ResultTile from 'components/ResultTile';
 import colors from 'components/Colors';
 
 const Results = React.createClass({
   render() {
-    const {photos, i } = this.props;
+    const { clickedPhoto, i, photos } = this.props;
     const styles = {
       base: {
         boxSizing: 'border-box',
+
         // backgroundColor: '#cccff1',
         // borderColor: 'honeydew',
         // padding: '1.5em',
@@ -52,7 +54,7 @@ const Results = React.createClass({
         },
 
         '@media (max-width: 1220px)': {
-          width: `${100/3}%`,
+          width: `${100 / 3}%`,
           paddingBottom: '33%'
         },
 
@@ -77,13 +79,15 @@ const Results = React.createClass({
       },
 
       sect: {
-        display:'flex',
+        display: 'flex',
         flexDirection: 'row',
+
         // justifyContent: 'center',
         alignContent: 'space-around',
         alignItems: 'center',
         flexWrap: 'wrap',
         backgroundColor: colors.primeDarkTrans
+
         // backgroundColor: colors.primeBoldTrans
       },
 
@@ -105,19 +109,21 @@ const Results = React.createClass({
         margin: '0'
       }
     };
+
     // console.log(this.props.photos);
     return <div>
       <section
         style={styles.sect}
       >
         {this.props.photos.map((photo, i) => <div
-          style={styles.base}
           key={i}
+          style={styles.base}
         >
           <ResultTile
             {...this.props}
-            key={i}
+            clickedPhoto={clickedPhoto}
             i={i}
+            key={i}
             photo={photo}
           />
         </div>

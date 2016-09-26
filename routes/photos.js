@@ -34,6 +34,8 @@ router.post('/photos',
 
         rObj.comments = '';
         rObj.pixid = rObj.id;
+        rObj.saved = false;
+        rObj.clicked = false;
 
         delete rObj.id;
         delete rObj.downloads;

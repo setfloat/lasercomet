@@ -4,8 +4,17 @@ import Radium from 'radium';
 import React from 'react';
 
 const ResultTile = React.createClass({
+  handleTouchTap() {
+    console.log(this.props.i);
+    console.log(this.props.photo.pixid);
+    // console.log(this.props.clickedPhoto());
+    // dispatch(this.props.clicked);
+    console.log(this.props.clickedPhoto);
+    this.props.clickedPhoto(this.props.photo.pixid);
+  },
+
   render() {
-    const { photo, i } = this.props;
+    const { photo, i, clickedPhoto } = this.props;
     const styles = {
       // div: {
       //   ':hover': {
@@ -54,6 +63,7 @@ const ResultTile = React.createClass({
       ]}
     >
       <Paper
+        onTouchTap={this.handleTouchTap}
         index={i}
         style={styles.paper}
         zDepth={

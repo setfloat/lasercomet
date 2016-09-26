@@ -34,7 +34,7 @@ export const requestPhotos = (photos) => {
     type: 'REQ_PHOTOS',
     photos
   };
-}
+};
 
 // this uses thunk
 // export const fetchPhotos = (searchQuery) => {
@@ -43,20 +43,28 @@ export const requestPhotos = (photos) => {
 //   }
 // }
 
+export const clickedPhoto = (photos) => {
+  return {
+    type: 'CLICKED_PHOTO',
+    photos,
+    index: event.target.i,
+    photo: event.target
+  };
+};
 
 export const receivePhotos = (photos) => {
   return {
     type: 'RECEIVE_PHOTOS',
     photos
   };
-}
+};
 
 export const updateLogin = () => {
   return {
-  type: 'UPDATE_LOGIN',
-  loginStatus
-  }
-}
+    type: 'UPDATE_LOGIN',
+    loginStatus
+  };
+};
 
 export const logIn = ( notsurewhatgoeshereyet) => {
   return {
@@ -89,13 +97,9 @@ export const searchText = (searchText) => {
 export function fetchPhotos(searchQuery) {
   return (dispatch) => {
     dispatch(requestPhotos());
-    console.log('hello')
-    console.log(searchQuery);
+
     return axios.post('/api/photos', { searchQuery })
       .then((res) => {
-        console.log('res made it here');
-        console.log(res);
-        console.log(res.data);
         dispatch(receivePhotos(res.data));
 
         return res.data;

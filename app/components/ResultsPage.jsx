@@ -129,6 +129,7 @@ const ResultsPage = React.createClass({
       </section>
       <section>
         <Results
+          clickedPhoto={this.props.clickedPhoto}
           fetchPhotos={this.props.fetchPhotos}
           searchResultsReducer={this.props.searchResultsReducer}
           searchText={this.props.searchText}
