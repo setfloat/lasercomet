@@ -12,8 +12,10 @@ const rootReducer = combineReducers(
     loginStatus,
     searchResultsReducer,
     photos,
+
     // clickedPhoto,
     routing: routerReducer
-  });
+  }
+);
 
 export default rootReducer;

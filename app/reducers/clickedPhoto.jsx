@@ -1,17 +1,20 @@
+// this file currently does nothing
+// it is not linked anywhere
+
 const clickedPhoto = (state = [], action) => {
   switch (action.type) {
     case 'CLICKED_PHOTO':
-      return state.map(photo => {
+      return state.map((photo) => {
         if (photo.id !== action.id) {
-          console.log('harry potter, harry potter, harry potter', photo);
           return photo;
         }
 
-      return {
-        photo: {
-          clicked: !clicked
-        }
-      //above option is what i think from below option tried in past.
+        return {
+          photo: {
+            clicked: !photo.clicked
+          }
+
+      // above option is what i think from below option tried in past.
         // return {
         //   photo.clicked = !photo.clicked
         //   // clicked: !photo.clicked
@@ -20,8 +23,7 @@ const clickedPhoto = (state = [], action) => {
     })
 
     default:
-    console.log('hermoine granger, hermoine granger, hermoine granger');
-    return state;
+      return state;
   }
 };
 

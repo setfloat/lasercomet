@@ -18,8 +18,10 @@ const Results = React.createClass({
         // borderColor: 'honeydew',
         // padding: '1.5em',
         width: '20%',
+
         // height: '200px',
         paddingBottom: '20%',
+
         // borderWidth: '1px',
         borderStyle: 'solid',
         display: 'inline-block',

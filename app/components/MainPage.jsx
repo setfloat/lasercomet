@@ -8,11 +8,11 @@ const MainPage = React.createClass({
     // console.log(this.props);
     return <div>
       <Hero
+        clickedPhoto={this.props.clickedPhoto}
         fetchPhotos={this.props.fetchPhotos}
         photos={this.props.photos}
         searchResultsReducer={this.props.searchResultsReducer}
         searchText={this.props.searchText}
-        clickedPhoto={this.props.clickedPhoto}
       />
       <Features />
       <Clusters />

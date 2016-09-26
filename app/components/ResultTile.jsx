@@ -5,11 +5,6 @@ import React from 'react';
 
 const ResultTile = React.createClass({
   handleTouchTap() {
-    console.log(this.props.i);
-    console.log(this.props.photo.pixid);
-    // console.log(this.props.clickedPhoto());
-    // dispatch(this.props.clicked);
-    console.log(this.props.clickedPhoto);
     this.props.clickedPhoto(this.props.photo.pixid);
   },
 
@@ -63,12 +58,10 @@ const ResultTile = React.createClass({
       ]}
     >
       <Paper
-        onTouchTap={this.handleTouchTap}
         index={i}
+        onTouchTap={this.handleTouchTap}
         style={styles.paper}
-        zDepth={
-          // styles.depthFind ||
-          5} // this might not work
+        zDepth={5}
       />
     </div>;
   }

@@ -7,7 +7,7 @@ const searchText = (state = [], action) => {
       return Object.assign({}, state, { searchText: action.searchText });
     }
     case 'UPDATE_SEARCH_TEXT': {
-      return Object.assign({}, state, { searchText: event.target.value })
+      return Object.assign({}, state, { searchText: event.target.value });
     }
 
     default:
