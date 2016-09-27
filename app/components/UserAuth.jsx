@@ -28,6 +28,12 @@ const styles = {
 };
 
 const UserAuth = React.createClass({
+  // componentWillMount() {
+  //   if (this.props.userAuth.loggedIn.loginStatus.loggedIn) {
+  //     this.props.router.push('/')
+  //   }
+  // },
+
   getInitialState() {
     return {
       login: {
@@ -78,7 +84,10 @@ const UserAuth = React.createClass({
               <Login
                 acceptLogin={this.acceptLogin}
                 errors={this.state.errors}
+                loginKeypress={this.props.loginKeypress}
                 userInfo={this.state.login}
+                loginStatus={this.props.loginStatus}
+
               />
             </div>
           </Tab>
@@ -87,7 +96,10 @@ const UserAuth = React.createClass({
               <Register
                 acceptRegister={this.acceptRegister}
                 errors={this.state.errors}
+                registerKeypress={this.props.registerKeypress}
+                registerUser={this.props.registerUser}
                 userInfo={this.state.register}
+                loginStatus={this.props.loginStatus}
               />
             </div>
           </Tab>

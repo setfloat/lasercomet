@@ -1,4 +1,7 @@
 import axios from 'axios';
+import cookie from 'react-cookie';
+import { push } from 'react-router-redux';
+
 
 // increment action
 // add photo
@@ -52,6 +55,24 @@ export const clickedPhoto = (photos) => {
   };
 }
 
+export const loginKeypress = (event) => {
+  console.log(event.target.value)
+  return {
+    type: 'LOGIN_KEYPRESS',
+    name: event.target.name,
+    value: event.target.value
+  };
+};
+
+export const registerKeypress = (event) => {
+  console.log(event.target.value)
+  return {
+    type: 'REGISTER_KEYPRESS',
+    name: event.target.name,
+    value: event.target.value
+  };
+};
+
 export const receivePhotos = (photos) => {
   return {
     type: 'RECEIVE_PHOTOS',
@@ -66,19 +87,47 @@ export const updateLogin = () => {
   };
 }
 
-export const logIn = ( notsurewhatgoeshereyet) => {
-  return {
-    type: 'LOGIN',
-    notsurewhatwhatgoeshereyet
+export const registerUser = (loginForm) => {
+  return (dispatch) => {
+    axios.post('/api/users', loginForm)
+      .then((res) => {
+        console.log(res);
+        dispatch(loginUser(loginForm));
+      })
+      .catch((err) => {
+        // this.updateErrorsMessage(err);
+        console.log(err);
+      })
   }
 }
 
-export const logOut = ( alsonotsurewhatgoeshereyet ) => {
-  return {
-    type: 'LOGOUT',
-    alsonotsurewhatgoeshereyet
-  }
-}
+// "loginForm" may need to be built out or altered
+export const loginUser = (loginForm) => {
+  return (dispatch) => {
+    console.log('hello');
+
+    axios.post('/api/token', loginForm)
+      .then((res) => {
+
+        return dispatch(push('/'));
+      })
+      .catch((err) => {
+        console.log(error);
+      });
+  };
+};
+
+export const logoutUser = () => {
+  return (dispatch) => {
+    axios.delete('/api/token')
+      .then(() => {
+        return dispatch(push('/'));
+      })
+      .catch((err) => {
+        console.log(error);
+      });
+  };
+};
 
 export const searchText = (searchText) => {
   return {

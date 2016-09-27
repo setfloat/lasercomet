@@ -51,17 +51,23 @@ const Login = React.createClass({
     this.setState({ errors: nextErrors });
   },
 
-  handleChange(event) {
-    const nextLogin = Object.assign({}, this.state.login,
-      {
-        [event.target.name]: event.target.value
-      });
+  // handleChange(event) {
+  //   const nextLogin = Object.assign({}, this.state.login,
+  //     {
+  //       [event.target.name]: event.target.value
+  //     });
+  //
+  //   this.setState({ login: nextLogin });
+  // },
 
-    this.setState({ login: nextLogin });
-  },
+  // handleTouchTap() {
+  //   this.props.loginUser()
+  // },
 
   handleTouchTap() {
-    this.props.acceptLogin(this.state.login);
+    console.log('hello')
+    console.log(this.props.loginStatus)
+    this.props.acceptLogin(this.props.loginStatus);
   },
 
   render() {
@@ -83,25 +89,25 @@ const Login = React.createClass({
     return <div style={styles.loginContent}>
       <h2 style={styles.headline}>Login</h2>
       <TextField
-        errorText={errors.email}
+        // errorText={errors.email}
         floatingLabelText="Email"
         fullWidth={true}
         name="email"
         onBlur={this.handleBlur}
-        onChange={this.handleChange}
+        onChange={this.props.loginKeypress}
         style={styleTextField}
-        value={login.email}
+        value={this.state.email}
       />
       <TextField
-        errorText={errors.password}
+        // errorText={errors.password}
         floatingLabelText="Password"
         fullWidth={true}
         name="password"
         onBlur={this.handleBlur}
-        onChange={this.handleChange}
+        onChange={this.props.loginKeypress}
         style={styleTextField}
         type="password"
-        value={login.password}
+        value={this.state.password}
       />
       <input
         // className={lrgBtnClassNames}

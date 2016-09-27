@@ -50,11 +50,13 @@ console.log('made it to the server');
 
 // const clusters = require('./routes/clusters');
 const photos = require('./routes/photos');
-// const users = require('./routes/users');
+const users = require('./routes/users');
+const token = require('./routes/token');
 
 // app.use('/api', clusters);
 app.use('/api', photos);
-// app.use('/api', users);
+app.use('/api', users);
+app.use('/api', token);
 
 app.use((_req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));

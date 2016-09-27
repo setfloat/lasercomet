@@ -12,6 +12,8 @@ exports.up = function(knex) {
     table.string('comments')
       .notNullable()
       .defaultTo('');
+    table.boolean('expanded')
+      .defaultTo(false);
     table.integer('pixid')
       .notNullable();
     table.integer('image_height');
@@ -24,6 +26,8 @@ exports.up = function(knex) {
       .notNullable()
       .defaultTo('');
     table.integer('preview_width');
+    table.boolean('saved')
+      .defaultTo(true);
     table.string('tags')
       .defaultTo('');
     table.integer('webformat_height');

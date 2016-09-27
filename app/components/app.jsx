@@ -8,6 +8,7 @@ const mapStateToProps = (state) => {
   return {
     // insert states as to what we have, next two are examples
     photos: state.photos,
+    loginStatus: state.loginStatus,
     searchResultsReducer: state.searchResultsReducer
     };
 };

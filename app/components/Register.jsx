@@ -6,7 +6,6 @@ import TextField from 'material-ui/TextField';
 const schema = Joi.object({
   email: Joi.string().trim().min(3).max(255),
   password: Joi.string().trim().min(8).max(255),
-  confirm: Joi.string().trim().min(8).max(255)
 });
 
 const styles = {
@@ -29,7 +28,6 @@ const Register = React.createClass({
       register: {
         email: '',
         password: '',
-        confirm: ''
       },
       errors: {}
     };
@@ -53,17 +51,20 @@ const Register = React.createClass({
     this.setState({ errors: nextErrors });
   },
 
-  handleChange(event) {
-    const nextRegister = Object.assign({}, this.state.register,
-      {
-        [event.target.name]: event.target.value
-      });
-
-    this.setState({ register: nextRegister });
-  },
-
+  // handleChange(event) {
+  //   const nextRegister = Object.assign({}, this.state.register,
+  //     {
+  //       [event.target.name]: event.target.value
+  //     });
+  //
+  //   this.setState({ register: nextRegister });
+  // },
+  //
   handleTouchTap() {
-    this.props.acceptRegister(this.state.register);
+    console.log('register button');
+    console.log(this.props.loginStatus);
+    this.props.registerUser(this.props.loginStatus);
+    // this.props.acceptRegister(this.state.register);
   },
 
   render() {
@@ -90,8 +91,9 @@ const Register = React.createClass({
         fullWidth={true}
         name="email"
         onBlur={this.handleBlur}
-        onChange={this.handleChange}
+        onChange={this.props.registerKeypress}
         style={styleTextField}
+        value={this.state.password}
       />
       <TextField
         errorText={errors.password}
@@ -99,19 +101,10 @@ const Register = React.createClass({
         fullWidth={true}
         name="password"
         onBlur={this.handleBlur}
-        onChange={this.handleChange}
+        onChange={this.props.registerKeypress}
         style={styleTextField}
         type="password"
-      />
-      <TextField
-        errorText={errors.confirm}
-        floatingLabelText="Confirm Password"
-        fullWidth={true}
-        name="confirm"
-        onBlur={this.handleBlur}
-        onChange={this.handleChange}
-        style={styleTextField}
-        type="password"
+        value={this.state.password}
       />
       <input
         // className={lrgBtnClassNames}

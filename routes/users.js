@@ -14,6 +14,7 @@ const router = express.Router();
 router.post('/users',
   // ev(validations.post),
   (req, res, next) => {
+    console.log('wahooo');
   console.log(req.body);
   const {
     // username,
