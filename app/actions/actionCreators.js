@@ -34,7 +34,7 @@ export const requestPhotos = (photos) => {
     type: 'REQ_PHOTOS',
     photos
   };
-};
+}
 
 // this uses thunk
 // export const fetchPhotos = (searchQuery) => {
@@ -50,21 +50,21 @@ export const clickedPhoto = (photos) => {
     index: event.target.i,
     photo: event.target
   };
-};
+}
 
 export const receivePhotos = (photos) => {
   return {
     type: 'RECEIVE_PHOTOS',
     photos
   };
-};
+}
 
 export const updateLogin = () => {
   return {
     type: 'UPDATE_LOGIN',
     loginStatus
   };
-};
+}
 
 export const logIn = ( notsurewhatgoeshereyet) => {
   return {

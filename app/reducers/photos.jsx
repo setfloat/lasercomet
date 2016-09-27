@@ -31,7 +31,6 @@ const photos = (state = [], action) => {
       return state.map(photo => {
 
         if (photo.pixid !== action.photos) {
-
           return photo;
         }
         return Object.assign({}, photo, { clicked: !photo.clicked }

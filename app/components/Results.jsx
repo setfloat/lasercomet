@@ -7,7 +7,30 @@ import React from 'react';
 import ResultTile from 'components/ResultTile';
 import colors from 'components/Colors';
 
+let toggledButton;
+
+
 const Results = React.createClass({
+
+  toggledButtonToggler(clicked) {
+    if (clicked === true) {
+      this.toggledButton = <button>Do Not Press</button>;
+    }
+    else {this.toggledButton = undefined; }
+    // console.log(this.props);
+    // if (this. === true) {
+    //   return <button>Save</button>;
+    // }
+    // else {
+    //   console.log('False like a Balse');
+    // }
+    // if (toggledButton !== undefined) {
+    //   newToggledButton = undefined;
+    // }
+    // toggledButton = newToggledButton;
+    // return toggledButton;
+  },
+
   render() {
     const { clickedPhoto, i, photos } = this.props;
     const styles = {
@@ -127,6 +150,8 @@ const Results = React.createClass({
             i={i}
             key={i}
             photo={photo}
+            toggledButton={this.toggledButton}
+            toggledButtonToggler={this.toggledButtonToggler}
           />
         </div>
       )}

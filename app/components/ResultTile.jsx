@@ -3,9 +3,11 @@ import Paper from 'material-ui/Paper';
 import Radium from 'radium';
 import React from 'react';
 
+
 const ResultTile = React.createClass({
   handleTouchTap() {
     this.props.clickedPhoto(this.props.photo.pixid);
+    this.props.toggledButtonToggler(this.props.photo.clicked)
   },
 
   render() {
@@ -62,7 +64,7 @@ const ResultTile = React.createClass({
         onTouchTap={this.handleTouchTap}
         style={styles.paper}
         zDepth={5}
-      />
+      >{this.props.toggledButton}</Paper>
     </div>;
   }
 });
