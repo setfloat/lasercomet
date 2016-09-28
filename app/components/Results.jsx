@@ -7,8 +7,8 @@ import React from 'react';
 import ResultTile from 'components/ResultTile';
 import colors from 'components/Colors';
 
-let toggledButton;
 
+// let toggledButton;
 
 const Results = React.createClass({
 
@@ -51,7 +51,7 @@ const Results = React.createClass({
         margin: '0',
         position: 'relative',
         ':hover': {
-          background: 'yellow'
+          background: 'white'
         },
         ':active': {
           background: colors.secondMain
@@ -152,7 +152,13 @@ const Results = React.createClass({
             photo={photo}
             toggledButton={this.toggledButton}
             toggledButtonToggler={this.toggledButtonToggler}
-          />
+          >
+            {/* <button
+              key={i}
+              toggledButtonToggler
+            >Do Not Press
+            </button> */}
+          </ResultTile>
         </div>
       )}
       </section>

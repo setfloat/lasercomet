@@ -25,3 +25,7 @@ router.post('/clusters', checkAuth, ev(validations.post), (req, res, next) => {
 
 
 module.exports = router;
+
+
+  knex('photos')
+  .orderby()
