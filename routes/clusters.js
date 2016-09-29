@@ -7,6 +7,11 @@ const knex = require('../knex');
 const router = express.Router();
 // const validations = require('../validations/clusters');
 
+
+
+
+
+
 router.post('/clusters', checkAuth, ev(validations.post), (req, res, next) => {
   // determine what I am defining to come in with the request
   // appropriately assign them using destructuring with req.body
@@ -20,12 +25,12 @@ router.post('/clusters', checkAuth, ev(validations.post), (req, res, next) => {
     .orderby('id')
     .then((rows) => {
       console.log(rows);
-    });
+  });
 });
 
 
 module.exports = router;
-
-
-  knex('photos')
-  .orderby()
+  // 
+  //
+  // knex('photos')
+  // .orderby()

@@ -1,16 +1,26 @@
 // results of search, subset of results page.  stream of photos.
 // import Paper from 'material-ui/Paper';
 import Radium from 'radium';
-
 // import RaisedButton from 'material-ui/RaisedButton';
 import React from 'react';
 import ResultTile from 'components/ResultTile';
 import colors from 'components/Colors';
 
-
 // let toggledButton;
 
 const Results = React.createClass({
+
+  // this next function will likely go into the action creators
+  savePhotoToDb(photo) {
+    axios.post('/api/cluster', photo)
+      .then((res) => {
+        console.log(res);
+        // not sure what I want to occur next
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  },
 
   toggledButtonToggler(clicked) {
     if (clicked === true) {

@@ -6,6 +6,23 @@ SELECT photos.id, photos.cluster_id, photos.comments, photos.expanded, photos.pi
 
 
 
+// ensure cluster id is created. if nothing insert new one? and use that id.
+// or have the cluster_id created on register.
+
+
+knex (clusters)
+  .where(
+    'users.id' === cluster.user_id
+  .first()
+  // when expanding for multiple clusters, would have to pass in cluster_id in.
+  // route to get all cluster id's for a given user. future me problem.
+  // another route, where parameters is cluster_id
+  //would return the cluster_id
+
+
+
+
+
 knex('photos')
   .select(
     'photos.id',
