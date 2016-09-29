@@ -159,7 +159,7 @@ const NavBar = React.createClass({
         </div>
         <div key={62} style={[navStyles.clusters, navStyles.clusterHover]}>
           <div key={33} style={navStyles.clusterText}>
-            <h4>LaserComet</h4>
+            <h4><Link style={navStyles.textDecoration} to="/">LaserComet</Link></h4>
           </div>
         </div>
         <div
@@ -175,12 +175,12 @@ const NavBar = React.createClass({
             // style={navStyles.clusterText}
           >
 
-            <h4><Link style={navStyles.textDecoration} to="/">Clusters</Link></h4>
+            <h4><Link style={navStyles.textDecoration} to="/Cluster">Cluster</Link></h4>
           </div>
         </div>
         <div key={2} style={[navStyles.clusters, navStyles.clusterHover]}>
           <div key={3} style={navStyles.clusterText}>
-            <h4>Login</h4>
+            <h4><Link style={navStyles.textDecoration} to="/Login">Login</Link></h4>
           </div>
         </div>
       </div>
@@ -193,7 +193,7 @@ const NavBar = React.createClass({
         </div>
         <div key={23} style={[navStyles.clusters, navStyles.clusterHover]}>
           <div key={53} style={navStyles.permClusterText}>
-            <h4>LaserComet</h4>
+            <h4><Link style={navStyles.midgeTextDecoration} to="/">LaserComet</Link></h4>
           </div>
           </div>
         <div
@@ -216,12 +216,12 @@ const NavBar = React.createClass({
           <div
             // style={navStyles.clusterText}
           >
-            <h4><Link style={navStyles.midgeTextDecoration} to="/">Clusters</Link></h4>
+            <h4><Link style={navStyles.midgeTextDecoration} to="/Cluster">Cluster</Link></h4>
           </div>
         </div>
         <div key={2234} style={[navStyles.clusters, navStyles.permClusterHover]}>
           <div key={3234} style={navStyles.permClusterText}>
-            <h4>Login</h4>
+            <h4><Link style={navStyles.midgeTextDecoration} to="/Login">Login</Link></h4>
           </div>
         </div>
       </div>
