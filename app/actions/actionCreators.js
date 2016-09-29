@@ -55,7 +55,10 @@ export const clickedPhoto = (photos) => {
   };
 }
 export const savePhotoToDb = (photo) => {
+  // need to add user info to the photo info => send combinedInfo
+
   return (dispatch) => {
+    console.log(photo);
     axios.post('/api/cluster', photo)
       .then((res) => {
         console.log(res);

@@ -6,51 +6,9 @@ import React from 'react';
 import ResultTile from 'components/ResultTile';
 import colors from 'components/Colors';
 
-// let toggledButton;
 
 const Results = React.createClass({
-
-  // this next function will likely go into the action creators
-  savePhotoToDb(photo) {
-    axios.post('/api/cluster', photo)
-      .then((res) => {
-        console.log(res);
-        // not sure what I want to occur next
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-  },
-
-  // toggledButtonToggler(clicked, picture, i) {
-  //   console.log(picture);
-  //   console.log(i);
-  //   console.log(this.toggledButton);
-  //   // console.log(toggledButton);
-  //   // console.log(store.photos);
-  //   if (i) {
-  //     console.log('hello')
-  //     // dispatch an action
-  //     this.toggledButton = <button key={picture.pixid}>Save to Cluster</button>;
-  //     event.target = this.toggledButton;
-  //   }
-  //   else {this.toggledButton = undefined; }
-  //   // console.log(this.props);
-  //   // if (this. === true) {
-  //   //   return <button>Save</button>;
-  //   // }
-  //   // else {
-  //   //   console.log('False like a Balse');
-  //   // }
-  //   // if (toggledButton !== undefined) {
-  //   //   newToggledButton = undefined;
-  //   // }
-  //   // toggledButton = newToggledButton;
-  //   // return toggledButton;
-  // },
-
   render() {
-    let toggledButton;
     const { clickedPhoto, i, photos, savePhotoToDb } = this.props;
     const styles = {
       base: {
@@ -170,8 +128,6 @@ const Results = React.createClass({
             i={i}
             key={i}
             photo={photo}
-            toggledButton={this.toggledButton}
-            toggledButtonToggler={this.toggledButtonToggler}
           >
             {(() => {
               switch (photo.clicked) {

@@ -11,9 +11,12 @@ const router = express.Router();
 // what to send to the cluster:
 // email.
 router.post('/cluster', (req, res, next) => {
-  const { email, pixid } = req.body;
+  // console.log(res);
+  let { email, pixid } = req.body;
   const newPhotoInsert = { pixid }; // unknown what is in this.
 
+  // next line temporary hardcode until email sent from client
+  const gmail = '1234@gmail.com'
   // knex('users')
   // .select('id')
   // .where('email', email)
@@ -24,9 +27,11 @@ router.post('/cluster', (req, res, next) => {
 
   knex('users')
     .select('id')
-    .where('email', email)
+    .where('email', gmail)
     .first()
     .then((accountid) => {
+      console.log(accountid);
+      console.log('you made it here buddy! !!!!!!!!!!!!!!!!!!!!!!!!');
       return knex('clusters')
         .first()
         .where('user_id', accountid);

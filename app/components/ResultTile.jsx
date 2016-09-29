@@ -2,28 +2,21 @@
 import Paper from 'material-ui/Paper';
 import Radium from 'radium';
 import React from 'react';
-
+import colors from 'components/Colors';
 
 const ResultTile = React.createClass({
   handleTouchTap() {
     this.props.clickedPhoto(this.props.photo.pixid);
-    // this.props.toggledButtonToggler(this.props.photo.clicked, this.props.photo, this.props.i)
   },
 
   buttonTouchTap() {
     console.log('hello');
-    this.props.savePhotoToDb(this.props.photo.pixid);
+    this.props.savePhotoToDb(this.props.photo);
   },
 
   render() {
     const { photo, i, clickedPhoto } = this.props;
     const styles = {
-      // div: {
-      //   ':hover': {
-      //     backgroundColor: 'yellow'
-      //   }
-      // },
-
       paper: {
         position: 'absolute',
         top: '3.5px',
@@ -43,9 +36,16 @@ const ResultTile = React.createClass({
         // no-repeat'
       },
 
-      depthFind: {
-        ':onHover': 1
+      saveButton: {
+        ':active': {
+          backgroundColor: colors.thirdMain
+        }
       }
+      // depthFind should work now, just need to appropriate choose
+      // on the zDepth below where used. ternary?
+      // depthFind: {
+      //   ':hover': 1
+      // },
     };
 
     // return <div
@@ -68,10 +68,10 @@ const ResultTile = React.createClass({
         index={i}
         onTouchTap={this.handleTouchTap}
         style={styles.paper}
-        zDepth={5}
+        zDepth={4}
       >{(() => {
         switch (this.props.photo.clicked) {
-          case true: return <button onTouchTap={this.buttonTouchTap} key={i}>Save to Cluster</button>;
+          case true: return <button style={styles.saveButton} onTouchTap={this.buttonTouchTap} key={i}>Save to Cluster</button>;
           case false: return null;
           default: false;
         }
