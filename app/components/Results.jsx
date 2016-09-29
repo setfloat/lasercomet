@@ -22,27 +22,36 @@ const Results = React.createClass({
       })
   },
 
-  toggledButtonToggler(clicked) {
-    if (clicked === true) {
-      this.toggledButton = <button>Do Not Press</button>;
-    }
-    else {this.toggledButton = undefined; }
-    // console.log(this.props);
-    // if (this. === true) {
-    //   return <button>Save</button>;
-    // }
-    // else {
-    //   console.log('False like a Balse');
-    // }
-    // if (toggledButton !== undefined) {
-    //   newToggledButton = undefined;
-    // }
-    // toggledButton = newToggledButton;
-    // return toggledButton;
-  },
+  // toggledButtonToggler(clicked, picture, i) {
+  //   console.log(picture);
+  //   console.log(i);
+  //   console.log(this.toggledButton);
+  //   // console.log(toggledButton);
+  //   // console.log(store.photos);
+  //   if (i) {
+  //     console.log('hello')
+  //     // dispatch an action
+  //     this.toggledButton = <button key={picture.pixid}>Save to Cluster</button>;
+  //     event.target = this.toggledButton;
+  //   }
+  //   else {this.toggledButton = undefined; }
+  //   // console.log(this.props);
+  //   // if (this. === true) {
+  //   //   return <button>Save</button>;
+  //   // }
+  //   // else {
+  //   //   console.log('False like a Balse');
+  //   // }
+  //   // if (toggledButton !== undefined) {
+  //   //   newToggledButton = undefined;
+  //   // }
+  //   // toggledButton = newToggledButton;
+  //   // return toggledButton;
+  // },
 
   render() {
-    const { clickedPhoto, i, photos } = this.props;
+    let toggledButton;
+    const { clickedPhoto, i, photos, savePhotoToDb } = this.props;
     const styles = {
       base: {
         boxSizing: 'border-box',
@@ -157,17 +166,21 @@ const Results = React.createClass({
           <ResultTile
             {...this.props}
             clickedPhoto={clickedPhoto}
+            savePhotoToDb={savePhotoToDb}
             i={i}
             key={i}
             photo={photo}
             toggledButton={this.toggledButton}
             toggledButtonToggler={this.toggledButtonToggler}
           >
-            {/* <button
-              key={i}
-              toggledButtonToggler
-            >Do Not Press
-            </button> */}
+            {(() => {
+              switch (photo.clicked) {
+                case true: return <button key={i}>Save to Cluster</button>;
+                case false: return null;
+                default: false;
+              }
+            })()
+            }
           </ResultTile>
         </div>
       )}

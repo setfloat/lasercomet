@@ -7,7 +7,12 @@ import React from 'react';
 const ResultTile = React.createClass({
   handleTouchTap() {
     this.props.clickedPhoto(this.props.photo.pixid);
-    this.props.toggledButtonToggler(this.props.photo.clicked)
+    // this.props.toggledButtonToggler(this.props.photo.clicked, this.props.photo, this.props.i)
+  },
+
+  buttonTouchTap() {
+    console.log('hello');
+    this.props.savePhotoToDb(this.props.photo.pixid);
   },
 
   render() {
@@ -64,7 +69,14 @@ const ResultTile = React.createClass({
         onTouchTap={this.handleTouchTap}
         style={styles.paper}
         zDepth={5}
-      >{this.props.toggledButton}</Paper>
+      >{(() => {
+        switch (this.props.photo.clicked) {
+          case true: return <button onTouchTap={this.buttonTouchTap} key={i}>Save to Cluster</button>;
+          case false: return null;
+          default: false;
+        }
+      })()
+      }</Paper>
     </div>;
   }
 });

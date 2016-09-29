@@ -54,6 +54,18 @@ export const clickedPhoto = (photos) => {
     photo: event.target
   };
 }
+export const savePhotoToDb = (photo) => {
+  return (dispatch) => {
+    axios.post('/api/cluster', photo)
+      .then((res) => {
+        console.log(res);
+        // not sure what I want to occur next
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  }
+}
 
 export const loginKeypress = (event) => {
   console.log(event.target.value)

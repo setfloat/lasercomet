@@ -131,6 +131,7 @@ const ResultsPage = React.createClass({
         <Results
           clickedPhoto={this.props.clickedPhoto}
           fetchPhotos={this.props.fetchPhotos}
+          savePhotoToDb={this.props.savePhotoToDb}
           searchResultsReducer={this.props.searchResultsReducer}
           searchText={this.props.searchText}
           photos={this.props.photos}
