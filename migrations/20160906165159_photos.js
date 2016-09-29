@@ -31,7 +31,6 @@ exports.up = function(knex) {
     table.string('tags')
       .defaultTo('');
     table.integer('webformat_height')
-      .defaultTo('');
     table.string('webformaturl')
       .notNullable()
       .defaultTo('');

@@ -591,7 +591,7 @@ exports.seed = function(knex) {
   )
   .then(() => {
     return knex.raw(
-      "SELECT setval('clusters_id_seq', (SELECT MAX(id) FROM users));"
+      "SELECT setval('photos_id_seq', (SELECT MAX(id) FROM photos));"
     );
   });
 };
