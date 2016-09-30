@@ -35,38 +35,38 @@ export const savePhotoToDb = (photo) => {
   }
 }
 
-export const getUserCluster = () => {
-
-  return (dispatch) => {
-    axios.get('/api/cluster')
-      .then((res) => {
-        // when photo urls and pixids are received they should be an array
-        // of objects. -achieved
-        // Send to state as ...userCluster... to then be accessed
-        // by a .map function.
-        dispatch(receiveUserCluster(res.data));
-        console.log(res.data);
-        return res.data;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-
-  }
-}
-
-export const receiveUserCluster = (clusterPhotos) => {
-  dispatch(callUserCluster(clusterPhotos));
-
-  return dispatch(push('/Cluster'));
-}
-
 export const callUserCluster = (clusterPhotos) => {
   return {
     type: 'RECEIVE_USER_CLUSTER',
     clusterPhotos
   }
 }
+
+export const receiveUserCluster = (clusterPhotos, dispatch) => {
+  return dispatch(callUserCluster(clusterPhotos));
+}
+
+export const getUserCluster = () => {
+  return (dispatch) => {
+    return axios.get('/api/cluster')
+      .then((res) => {
+        // when photo urls and pixids are received they should be an array
+        // of objects. -achieved
+        // Send to state as ...userCluster... to then be accessed
+        // by a .map function.
+        return dispatch(receiveUserCluster(res.data, dispatch));
+        // return res.data;
+      })
+      .then(() => {
+        console.log(dispatch(push('/Cluster')));
+        dispatch(push('/Cluster'));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+}
+
 
 export const loginKeypress = (event) => {
   console.log(event.target.value)

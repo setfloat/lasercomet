@@ -1,6 +1,6 @@
 import { applyMiddleware, compose, createStore } from 'redux';
 import { browserHistory } from 'react-router';
-import { syncHistoryWithStore } from 'react-router-redux';
+import { routerMiddleware, syncHistoryWithStore } from 'react-router-redux';
 import photos from './data/photos';
 import rootReducer from './reducers/index';
 import thunkMiddleware from 'redux-thunk';
@@ -20,7 +20,7 @@ let clusterPhotos = [];
 
 // import whateverthisis from './data/thisisthedatafile';
 
-const enhancers = compose(applyMiddleware(thunkMiddleware),
+const enhancers = compose(applyMiddleware(thunkMiddleware, routerMiddleware(browserHistory)),
     window.devToolsExtension
       ? window.devToolsExtension() : f => f
 );

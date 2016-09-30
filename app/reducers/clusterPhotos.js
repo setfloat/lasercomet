@@ -1,5 +1,4 @@
 import { push } from 'react-router-redux';
-import { dispatch } from 'redux';
 
 const clusterPhotos = (state = [], action) => {
   let turnip = action.clusterPhotos
