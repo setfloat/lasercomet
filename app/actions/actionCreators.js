@@ -3,34 +3,6 @@ import cookie from 'react-cookie';
 import { push } from 'react-router-redux';
 
 
-// increment action
-// add photo
-// remove photo
-
-// export function increment(index) {
-//   return {
-//     type: 'INCREMENT_LIKES',
-//     index
-//   }
-// }
-
-// export function addComment(postId, author, comment) {
-//   return {
-//     type: 'ADD_COMMENT',
-//     postId,
-//     author,
-//     comment
-//   }
-// }
-
-// export function removeComment(postId, index) {
-//   return {
-//     type: 'REMOVE_COMMENT',
-//     index,
-//     postId
-//   }
-// }
-
 // should add searchQuery into the argument of callback below
 export const requestPhotos = (photos) => {
   return {
@@ -38,13 +10,6 @@ export const requestPhotos = (photos) => {
     photos
   };
 }
-
-// this uses thunk
-// export const fetchPhotos = (searchQuery) => {
-//   return (dispatch) => {
-//
-//   }
-// }
 
 export const clickedPhoto = (photos) => {
   return {
@@ -54,8 +19,8 @@ export const clickedPhoto = (photos) => {
     photo: event.target
   };
 }
+
 export const savePhotoToDb = (photo) => {
-  // need to add user info to the photo info => send combinedInfo
 
   return (dispatch) => {
     console.log(photo);
@@ -67,6 +32,39 @@ export const savePhotoToDb = (photo) => {
       .catch((err) => {
         console.log(err);
       })
+  }
+}
+
+export const getUserCluster = () => {
+
+  return (dispatch) => {
+    axios.get('/api/cluster')
+      .then((res) => {
+        // when photo urls and pixids are received they should be an array
+        // of objects. -achieved
+        // Send to state as ...userCluster... to then be accessed
+        // by a .map function.
+        dispatch(receiveUserCluster(res.data));
+        console.log(res.data);
+        return res.data;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+  }
+}
+
+export const receiveUserCluster = (clusterPhotos) => {
+  dispatch(callUserCluster(clusterPhotos));
+
+  return dispatch(push('/Cluster'));
+}
+
+export const callUserCluster = (clusterPhotos) => {
+  return {
+    type: 'RECEIVE_USER_CLUSTER',
+    clusterPhotos
   }
 }
 

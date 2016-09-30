@@ -83,14 +83,10 @@ const Results = React.createClass({
       sect: {
         display: 'flex',
         flexDirection: 'row',
-
-        // justifyContent: 'center',
         alignContent: 'space-around',
         alignItems: 'center',
         flexWrap: 'wrap',
         backgroundColor: colors.primeDarkTrans
-
-        // backgroundColor: colors.primeBoldTrans
       },
 
       tile: {
@@ -117,7 +113,7 @@ const Results = React.createClass({
       <section
         style={styles.sect}
       >
-        {this.props.photos.map((photo, i) => <div
+        {photos.map((photo, i) => <div
           key={i}
           style={styles.base}
         >

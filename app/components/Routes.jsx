@@ -8,8 +8,6 @@ import NotFound from 'components/NotFound';
 import React from 'react';
 import ResultsPage from 'components/ResultsPage';
 import UserAuth from 'components/UserAuth';
-
-// import { Provider } from 'react-redux';
 import { history } from '../store';
 
 const Routes = React.createClass({

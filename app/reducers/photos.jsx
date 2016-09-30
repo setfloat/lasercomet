@@ -4,9 +4,9 @@ const photos = (state = [], action) => {
       return state;
     }
     case 'RECEIVE_PHOTOS': {
+      console.log(action.photos);
 
       // console.log(state);
-      console.log(action.photos);
       // const i = action.index
       // console.log(state, 'hello123l12j');
       // console.log(i, 'rheolaleey this is the i 823049823094823');
@@ -28,14 +28,14 @@ const photos = (state = [], action) => {
     }
 
     case 'CLICKED_PHOTO':
-      return state.map(photo => {
-
+      return state.map((photo) => {
         if (photo.pixid !== action.photos) {
           return photo;
         }
+
         return Object.assign({}, photo, { clicked: !photo.clicked }
         );
-      })
+      });
 
     default:
       return state;
@@ -43,13 +43,3 @@ const photos = (state = [], action) => {
 };
 
 export default photos;
-
-
-
-
-// [
-//   ...state.slice(0,i),
-//   { ...state[i], saved: !state[i].saved },
-//   ...state.slice(i + 1)
-//   ...state, photos
-// ];

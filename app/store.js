@@ -16,6 +16,8 @@ let loginStatus = {
   // }
 };
 
+let clusterPhotos = [];
+
 // import whateverthisis from './data/thisisthedatafile';
 
 const enhancers = compose(applyMiddleware(thunkMiddleware),
@@ -26,7 +28,8 @@ const enhancers = compose(applyMiddleware(thunkMiddleware),
 // create an object for the default data
 const defaultState = {
   photos,
-  loginStatus
+  loginStatus,
+  clusterPhotos
 };
 
 let store = createStore(

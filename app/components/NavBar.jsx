@@ -146,6 +146,11 @@ const navStyles = {
 };
 
 const NavBar = React.createClass({
+  handleClusterTouchTap() {
+    // change hardcode
+    this.props.getUserCluster();
+  },
+
   render() {
     return <div>
       <div
@@ -175,7 +180,15 @@ const NavBar = React.createClass({
             // style={navStyles.clusterText}
           >
 
-            <h4><Link style={navStyles.textDecoration} to="/Cluster">Cluster</Link></h4>
+            <h4
+            onTouchTap={this.handleClusterTouchTap}
+            >
+            {/* <Link
+              style={navStyles.textDecoration}
+              to="/Cluster"
+            >Cluster</Link> */}
+              Cluster
+            </h4>
           </div>
         </div>
         <div key={2} style={[navStyles.clusters, navStyles.clusterHover]}>
@@ -226,24 +239,6 @@ const NavBar = React.createClass({
         </div>
       </div>
       <div style={navStyles.permMidge}></div>
-
-      {/* <AppBar
-        iconElementLeft={<IconButton><NavigationClose /></IconButton>}
-        iconElementRight={
-          <IconMenu
-            anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
-            iconButtonElement={
-              <IconButton><MoreVertIcon /></IconButton>
-            }
-            targetOrigin={{ horizontal: 'right', vertical: 'top' }}
-          >
-            <MenuItem primaryText="Refresh" />
-            <MenuItem primaryText="Help" />
-            <MenuItem primaryText="Sign out" />
-          </IconMenu>
-        }
-        title="Title"
-      /> */}
     </div>;
   }
 });

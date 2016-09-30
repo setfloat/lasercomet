@@ -29,11 +29,7 @@ const ResultTile = React.createClass({
           zDepth: 5
         },
 
-        // background: `url(${photo.webformaturl}) center center / cover no-repeat`
         background: `url(${photo.webformatURL}) center center / cover no-repeat`
-
-        // background: 'url("images/oceanfill.jpg") center center / cover
-        // no-repeat'
       },
 
       saveButton: {
@@ -41,23 +37,8 @@ const ResultTile = React.createClass({
           backgroundColor: colors.thirdMain
         }
       }
-      // depthFind should work now, just need to appropriate choose
-      // on the zDepth below where used. ternary?
-      // depthFind: {
-      //   ':hover': 1
-      // },
     };
 
-    // return <div
-    //   style={styles.div}
-    // >
-    //   <Paper
-    //     zDepth={5}
-    //     style={styles.paper}
-    //   >
-    //
-    //   </Paper>
-    // </div>;
     return <div
       style={[
         // styles.div,
@@ -82,18 +63,3 @@ const ResultTile = React.createClass({
 });
 
 export default Radium(ResultTile);
-
-/*
-<div
- style={[styles.div, styles.paper]}
->
- <Paper
-   style={styles.paper}
-   zDepth={5}
- />
-</div>;
-}
-});
-
-export default Radium(ResultTile);
-*/

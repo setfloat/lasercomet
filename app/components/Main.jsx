@@ -5,7 +5,6 @@ import { StyleRoot } from 'radium';
 import cookie from 'react-cookie';
 // import { withRouter } from 'react-router';
 
-
 const Main = React.createClass({
   getInitialState() {
     return {
@@ -44,9 +43,12 @@ const Main = React.createClass({
   },
 
   render() {
+    const { getUserCluster } = this.props;
     return <StyleRoot>
       <div>
-        <NavBar />
+        <NavBar
+        getUserCluster={getUserCluster}
+        />
         {/* <h2>LaserComet</h2> */}
         {React.cloneElement(this.props.children,
           this.props

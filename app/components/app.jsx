@@ -6,9 +6,10 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
   return {
-    // insert states as to what we have, next two are examples
+    // insert states as to what we have
     photos: state.photos,
     loginStatus: state.loginStatus,
+    clusterPhotos: state.clusterPhotos,
     searchResultsReducer: state.searchResultsReducer
     };
 };
