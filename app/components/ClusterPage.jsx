@@ -70,7 +70,8 @@ const ClusterPage = React.createClass({
         alignContent: 'space-around',
         alignItems: 'center',
         flexWrap: 'wrap',
-        backgroundColor: colors.primeBoldTrans
+        // backgroundColor: colors.primeDarkTrans
+        backgroundColor: colors.primeDarkTransLt
       }
     };
 
@@ -80,7 +81,7 @@ const ClusterPage = React.createClass({
       />
       <section
         style={styles.sect}
-      >{console.log(turtle)}
+      >
         {clusterPhotos.userCluster.map((photo, i) => <div
           key={i}
           style={styles.base}
