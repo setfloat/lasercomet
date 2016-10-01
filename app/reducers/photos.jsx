@@ -29,6 +29,7 @@ const photos = (state = [], action) => {
 
     case 'CLICKED_PHOTO':
       return state.map((photo) => {
+        console.log(photo);
         if (photo.pixid !== action.photos) {
           return photo;
         }

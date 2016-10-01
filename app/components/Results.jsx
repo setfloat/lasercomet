@@ -13,9 +13,8 @@ const Results = React.createClass({
     const styles = {
       base: {
         boxSizing: 'border-box',
-
         // backgroundColor: '#cccff1',
-        // borderColor: 'honeydew',
+        // border: '2px honeydew',
         // padding: '1.5em',
         width: '20%',
 
@@ -81,6 +80,7 @@ const Results = React.createClass({
       },
 
       sect: {
+        padding: '8px',
         display: 'flex',
         flexDirection: 'row',
         alignContent: 'space-around',

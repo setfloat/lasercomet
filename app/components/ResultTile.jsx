@@ -6,6 +6,7 @@ import colors from 'components/Colors';
 
 const ResultTile = React.createClass({
   handleTouchTap() {
+    console.log(this.props.photo);
     this.props.clickedPhoto(this.props.photo.pixid);
   },
 
@@ -19,10 +20,10 @@ const ResultTile = React.createClass({
     const styles = {
       paper: {
         position: 'absolute',
-        top: '3.5px',
-        bottom: '3.5px',
-        left: '3.5px',
-        right: '3.5px',
+        top: '4px',
+        bottom: '4px',
+        left: '4px',
+        right: '4px',
         textAlign: 'center',
         margin: '0',
         ':hover': {
@@ -50,14 +51,17 @@ const ResultTile = React.createClass({
         onTouchTap={this.handleTouchTap}
         style={styles.paper}
         zDepth={4}
-      >{(() => {
-        switch (this.props.photo.clicked) {
-          case true: return <button style={styles.saveButton} onTouchTap={this.buttonTouchTap} key={i}>Save to Cluster</button>;
-          case false: return null;
-          default: false;
+      >
+        {(() => {
+          switch (this.props.photo.clicked) {
+            case true: return <button style={styles.saveButton}
+            onTouchTap={this.buttonTouchTap} key={i}>Save to Cluster</button>;
+            case false: return null;
+            default: false;
+          }
+        })()
         }
-      })()
-      }</Paper>
+      </Paper>
     </div>;
   }
 });

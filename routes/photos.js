@@ -48,7 +48,6 @@ router.post('/photos',
         delete rObj.user_id;
         delete rObj.views;
 
-
         return rObj;
       })
 
@@ -87,10 +86,12 @@ router.post('/photos',
 // will need to make the value of - saved - a variable,
 // that variable will execute a function that checks if the user has saved
 // that specific photo. will return true, false, undefined
-      const deliveredSearchResponse = searchResponse.map(element => {
-        return Object.assign({}, element, { saved: false, expanded: false })
-      });
-      console.log(`${searchResponse}`);
+
+
+      // const deliveredSearchResponse = searchResponse.map(element => {
+      //   return Object.assign({}, element, { saved: false, expanded: false })
+      // });
+      // console.log(`${searchResponse}`);
       res.send(searchResponse);
     })
     .catch((err) => next(err));

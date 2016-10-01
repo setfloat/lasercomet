@@ -11,8 +11,8 @@ import colors from 'components/Colors';
 
 const ClusterPage = React.createClass({
   render() {
-    const { clickedPhoto, i, clusterPhotos } = this.props;
-    const turtle = clusterPhotos;
+    const { clickedPhoto, clickToDelete, i, clusterPhotos, deletePhoto } = this.props;
+    const { userCluster } = this.props.clusterPhotos;
     const styles = {
       sClusterTitle: {
         width: 500,
@@ -65,6 +65,7 @@ const ClusterPage = React.createClass({
       },
 
       sect: {
+        padding: '7px',
         display: 'flex',
         flexDirection: 'row',
         alignContent: 'space-around',
@@ -82,13 +83,15 @@ const ClusterPage = React.createClass({
       <section
         style={styles.sect}
       >
-        {clusterPhotos.userCluster.map((photo, i) => <div
+        {userCluster.map((photo, i) => <div
           key={i}
           style={styles.base}
         >
           <ClusterPhotoTile
             {...this.props}
             clickedPhoto={clickedPhoto}
+            clickToDelete={clickToDelete}
+            deletePhoto={deletePhoto}
             i={i}
             key={i}
             photo={photo}
@@ -105,7 +108,6 @@ const ClusterPage = React.createClass({
         </div>
       )}
       </section>
-      {/* <RaisedButton label="More" style={colors.primeBold} /> */}
     </div>;
   }
 });

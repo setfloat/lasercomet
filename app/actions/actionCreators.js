@@ -20,6 +20,36 @@ export const clickedPhoto = (photos) => {
   };
 }
 
+export const clickToDelete = (clusterPhotos) => {
+  return {
+    type: 'CLICK_TO_DELETE',
+    clusterPhotos,
+    index: event.target.i,
+    photo: event.target
+  };
+}
+
+export const deletePhoto = (photo) => {
+  console.log('made it here');
+
+  return (dispatch) => {
+    console.log(photo);
+    axios({
+      method: 'post',
+      url: '/api/cluster',
+      data: {
+        photo: photo
+      }
+    })
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+  }
+}
+
 export const savePhotoToDb = (photo) => {
 
   return (dispatch) => {
@@ -50,6 +80,7 @@ export const getUserCluster = () => {
   return (dispatch) => {
     return axios.get('/api/cluster')
       .then((res) => {
+        console.log(res.data);
         // when photo urls and pixids are received they should be an array
         // of objects. -achieved
         // Send to state as ...userCluster... to then be accessed
