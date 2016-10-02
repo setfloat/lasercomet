@@ -15,7 +15,10 @@ const MainPage = React.createClass({
         searchText={this.props.searchText}
       />
       <Features />
-      <Clusters />
+      <Clusters
+        retrieveAllClusters={this.props.retrieveAllClusters}
+        photos={this.props.photos}
+      />
     Main Page</div>;
   }
 });

@@ -2,55 +2,66 @@
 import Paper from 'material-ui/Paper';
 import Radium from 'radium';
 import React from 'react';
+import colors from 'components/Colors';
 
-const styles = {
-  div: {
-    ':hover': {
 
-      // backgroundColor: 'green'
-    }
-  },
-
-  paper: {
-    position: 'absolute',
-    top: '3.5px',
-    bottom: '3.5px',
-    left: '3.5px',
-    right: '3.5px',
-    textAlign: 'center',
-    margin: '0',
-    ':hover': {
-      zDepth: 5
-    },
-    background: 'url("images/oceanfill.jpg") center center / cover no-repeat'
-  }
-
-  // depthFind: {
-  //
-  //   ':onHover': 5
-  // }
-};
 
 const ClusterTile = React.createClass({
+  handleTouchTap() {
+    console.log(this.props);
+  },
 
   render() {
-    // return <div
-    //   style={styles.div}
-    // >
-    //   <Paper
-    //     zDepth={5}
-    //     style={styles.paper}
-    //   >
-    //
-    //   </Paper>
-    // </div>;
+    const { photo, i } = this.props;
+    const styles = {
+      div: {
+        ':hover': {
+
+          // backgroundColor: 'green'
+        }
+      },
+
+      paper: {
+        position: 'absolute',
+        top: '3.5px',
+        bottom: '3.5px',
+        left: '3.5px',
+        right: '3.5px',
+        textAlign: 'center',
+        margin: '0',
+        ':hover': {
+          zDepth: 5
+        },
+        background: 'url("images/oceanfill.jpg") center center / cover no-repeat',
+        // background: `url(${photo.previewurl}) center center / cover no-repeat`
+      }
+
+      // depthFind: {
+      //
+      //   ':onHover': 5
+      // }
+    };
+
     return <div
-      style={[styles.div, styles.paper]}
+      style={[
+        // styles.div,
+        styles.paper]}
     ><Paper
+      // index={i}
+      onTouchTap={this.handleTouchTap}
       style={styles.paper}
-      zDepth={5}
+      zDepth={4}
     >
-      </Paper>
+      {/* {(() => {
+        switch (this.props.photo.clicked) {
+          case true: return <button style={styles.saveButton}
+          onTouchTap={this.buttonTouchTap} key={i}>Save to Cluster</button>;
+          case false: return null;
+          default: false;
+        }
+      })()
+      } */}
+    </Paper>
     </div>;
   }
 });

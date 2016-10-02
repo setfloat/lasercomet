@@ -11,6 +11,18 @@ export const requestPhotos = (photos) => {
   };
 }
 
+export const retrieveAllClusters = (dispatch) => {
+  return (dispatch) => {
+    axios.get('/api/clusters')
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        next(err);
+      })
+  }
+}
+
 export const clickedPhoto = (photos) => {
   return {
     type: 'CLICKED_PHOTO',
