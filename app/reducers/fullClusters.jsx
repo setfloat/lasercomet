@@ -1,3 +1,17 @@
+const fullClusters = (state = [], action) => {
+  switch(action.type) {
+    case 'RECEIVE_FULL_CLUSTERS': {
+      console.log(action.fullClusters);
+      return Object.assign({}, state, { clusteredCache: action.fullClusters});
+    }
+    default:
+      return state;
+  }
+}
+
+
+export default fullClusters;
+
 // probably some major errors here, unsure of how to address
 // issue with multiple clusters
 

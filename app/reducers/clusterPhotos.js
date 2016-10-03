@@ -22,7 +22,6 @@ const clusterPhotos = (state = [], action) => {
       return state;
 
     default:
-      console.log(state);
       return state;
   }
 };

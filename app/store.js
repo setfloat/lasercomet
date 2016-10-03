@@ -17,6 +17,7 @@ let loginStatus = {
 };
 
 let clusterPhotos = [];
+let fullClusters = [];
 
 // import whateverthisis from './data/thisisthedatafile';
 
@@ -29,7 +30,8 @@ const enhancers = compose(applyMiddleware(thunkMiddleware, routerMiddleware(brow
 const defaultState = {
   photos,
   loginStatus,
-  clusterPhotos
+  clusterPhotos,
+  fullClusters
 };
 
 let store = createStore(

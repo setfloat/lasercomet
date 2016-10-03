@@ -15,11 +15,20 @@ export const retrieveAllClusters = (dispatch) => {
   return (dispatch) => {
     axios.get('/api/clusters')
       .then((res) => {
-        console.log(res);
+        console.log(res.data);
+        return dispatch(receiveFullClusters(res.data))
+        // return res.data;
       })
       .catch((err) => {
-        next(err);
+        console.log(err);
       })
+  }
+}
+
+export const receiveFullClusters = (fullClusters) => {
+  return {
+    type: 'RECEIVE_FULL_CLUSTERS',
+    fullClusters
   }
 }
 
