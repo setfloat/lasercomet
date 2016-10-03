@@ -6,6 +6,7 @@ import Hero from 'components/Hero';
 import MainPage from 'components/MainPage';
 import NotFound from 'components/NotFound';
 import React from 'react';
+import BrowseClusterPage from 'components/BrowseClusterPage';
 import ResultsPage from 'components/ResultsPage';
 import UserAuth from 'components/UserAuth';
 import { history } from '../store';
@@ -22,6 +23,7 @@ const Routes = React.createClass({
         <Route component={ResultsPage} path="/Results" />
         <Route component={ClusterPage} path="/Cluster" />
         <Route component={UserAuth} path="login" />
+        <Route component={BrowseClusterPage} path="/Browse" />
         <Route component={NotFound} path="*" />
       </Route>
     </Router>;

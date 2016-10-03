@@ -10,7 +10,9 @@ const mapStateToProps = (state) => {
     photos: state.photos,
     loginStatus: state.loginStatus,
     clusterPhotos: state.clusterPhotos,
-    searchResultsReducer: state.searchResultsReducer
+    searchResultsReducer: state.searchResultsReducer,
+    fullClusters: state.fullClusters,
+    browseCluster: state.browseCluster
     };
 };
 

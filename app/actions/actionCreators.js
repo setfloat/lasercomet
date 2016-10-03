@@ -93,15 +93,43 @@ export const callUserCluster = (clusterPhotos) => {
   }
 }
 
+export const callBrowseCluster = (browseCluster) => {
+  return {
+    type: 'RECEIVE_BROWSE_CLUSTER',
+    browseCluster
+  }
+}
+
+export const receiveBrowseCluster = (browseCluster, dispatch) => {
+  return dispatch(callBrowseCluster(browseCluster));
+}
+
+
 export const receiveUserCluster = (clusterPhotos, dispatch) => {
   return dispatch(callUserCluster(clusterPhotos));
+}
+
+export const getBrowseCluster = () => {
+  console.log('hello');
+  return (dispatch) => {
+    return axios.post('/api/browseCluster')
+      .then((res) => {
+        return dispatch(receiveBrowseCluster(res.data, dispatch));
+      })
+      .then(() => {
+        dispatch(push('/Browse'));
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  }
 }
 
 export const getUserCluster = () => {
   return (dispatch) => {
     return axios.get('/api/cluster')
       .then((res) => {
-        console.log(res.data);
+        console.log(res.data, '*************************');
         // when photo urls and pixids are received they should be an array
         // of objects. -achieved
         // Send to state as ...userCluster... to then be accessed

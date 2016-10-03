@@ -88,12 +88,17 @@ router.get('/clusters', (req, res, next) => {
             delete rObj.user_id;
             delete rObj.views;
 
+
+            // temporary hard code
             rObj.cluster_id = spinArr.reduce((elem) => {
               if (elem !== undefined && elem.pixid === rObj.pixid) {
                   return spinArr.cluster_id;
                 }
+                else {
+                  return '';
+                }
             });
-    // console.log(rObj);
+    console.log(rObj);
             return rObj;
           })
           // console.log(spinArr);

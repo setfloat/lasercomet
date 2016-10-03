@@ -3,6 +3,7 @@ import { routerReducer } from 'react-router-redux';
 
 // import all your reducers next
 import clickedPhoto from './photos';
+import browseCluster from './browseCluster';
 import clusterPhotos from './clusterPhotos';
 import fullClusters from './fullClusters'
 import loginStatus from './loginStatus';
@@ -16,6 +17,7 @@ const rootReducer = combineReducers(
     searchResultsReducer,
     photos,
     fullClusters,
+    browseCluster,
 
     // clickedPhoto,
     routing: routerReducer

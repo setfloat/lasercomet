@@ -12,7 +12,8 @@ const Clusters = React.createClass({
   // },
 
   render() {
-    const { photos, i } = this.props;
+    console.log(this.props);
+    const { photos, i, fullClusters, getBrowseCluster } = this.props;
     const styles = {
       base: {
         boxSizing: 'border-box',
@@ -110,19 +111,20 @@ const Clusters = React.createClass({
       <section
         style={styles.sect}
       >
-        {photos.map((photo, i) => <div
+        {fullClusters.clusteredCache.map((photo, i) => <div
           key={i}
           style={styles.base}
         >
           <ClusterTile
             {...this.props}
+            getBrowseCluster={this.props.getBrowseCluster}
             i={i}
             key={i}
             photo={photo}
           ></ClusterTile>
         </div>
         )}
-        <div
+        {/* <div
           style={styles.base}
           key={432}
         >
@@ -137,7 +139,7 @@ const Clusters = React.createClass({
           <ClusterTile
             key={7352}
           />
-        </div>
+        </div> */}
       </section>
     </div>;
   }

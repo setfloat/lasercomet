@@ -5,21 +5,15 @@ import photos from './data/photos';
 import rootReducer from './reducers/index';
 import thunkMiddleware from 'redux-thunk';
 import cookie from 'react-cookie';
+import { retrieveAllClusters } from './actions/actionCreators'
 
 let loginStatus = {
   email: '',
   password: ''
-  // loggedIn: cookie.load('loggedIn') || false,
-  // user: {
-  //   userId: cookie.load('userId') || null,
-  //   email: cookie.load('email') || null
-  // }
 };
-
+let fullClusters = { clusteredCache: photos }
 let clusterPhotos = [];
-let fullClusters = [];
-
-// import whateverthisis from './data/thisisthedatafile';
+let browseCluster = { browsed: photos }
 
 const enhancers = compose(applyMiddleware(thunkMiddleware, routerMiddleware(browserHistory)),
     window.devToolsExtension
@@ -31,7 +25,8 @@ const defaultState = {
   photos,
   loginStatus,
   clusterPhotos,
-  fullClusters
+  fullClusters,
+  browseCluster
 };
 
 let store = createStore(

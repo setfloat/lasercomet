@@ -11,8 +11,8 @@ const MainPage = React.createClass({
   },
 
   handleTouchTap() {
-    waitGate = (<Clusters
-      retrieveAllClusters={this.props.retrieveAllClusters} photos={this.props.photos} />);
+    waitGate = <Clusters
+    retrieveAllClusters={this.props.retrieveAllClusters} photos={this.props.photos} />;
   },
 
   render() {
@@ -27,10 +27,12 @@ const MainPage = React.createClass({
         searchText={this.props.searchText}
       />
       <Features />
-      {/* <Clusters
+      <Clusters
+        getBrowseCluster={this.props.getBrowseCluster}
+        fullClusters={this.props.fullClusters}
         retrieveAllClusters={this.props.retrieveAllClusters}
         photos={this.props.photos}
-      /> */}
+      />
       {waitGate}
       <button
         onTouchTap={this.handleTouchTap}

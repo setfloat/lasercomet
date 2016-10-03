@@ -9,10 +9,12 @@ import colors from 'components/Colors';
 const ClusterTile = React.createClass({
   handleTouchTap() {
     console.log(this.props);
+    this.props.getBrowseCluster();
   },
 
   render() {
-    const { photo, i } = this.props;
+    const { photo, i, getBrowseCluster } = this.props;
+    // console.log(photo);
     const styles = {
       div: {
         ':hover': {
@@ -29,11 +31,11 @@ const ClusterTile = React.createClass({
         right: '3.5px',
         textAlign: 'center',
         margin: '0',
+        background: `url(${photo.webformatURL}) center center / cover no-repeat`,
         ':hover': {
           zDepth: 5
         },
-        background: 'url("images/oceanfill.jpg") center center / cover no-repeat',
-        // background: `url(${photo.previewurl}) center center / cover no-repeat`
+        // background: 'url("images/oceanfill.jpg") center center / cover no-repeat',
       }
 
       // depthFind: {

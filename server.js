@@ -1,7 +1,5 @@
 'use strict';
 
-console.log('maybe this will be in view');
-
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config({ silent: true });
 }
@@ -25,8 +23,6 @@ switch (app.get('env')) {
   default:
 }
 
-console.log('reachedserver');
-
 const path = require('path');
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -48,12 +44,14 @@ app.use(cookieParser());
 
 console.log('made it to the server');
 
+const browseCluster = require('./routes/browseCluster');
 const clusters = require('./routes/clusters');
 const photos = require('./routes/photos');
 const users = require('./routes/users');
 const token = require('./routes/token');
 const cluster = require('./routes/cluster');
 
+app.use('/api', browseCluster);
 app.use('/api', clusters);
 app.use('/api', photos);
 app.use('/api', users);
