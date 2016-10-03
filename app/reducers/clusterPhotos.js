@@ -7,18 +7,14 @@ const clusterPhotos = (state = [], action) => {
       console.log(action);
       let simplify = state.userCluster;
       simplify = simplify.map((photo) => {
-        console.log(photo);
         if (photo.pixid !== action.clusterPhotos) {
-          console.log(photo);
           return photo;
         }
         console.log(photo);
         return Object.assign({}, photo, { clicked: !photo.clicked }
         );
       });
-      console.log(simplify);
       state.userCluster = simplify
-      console.log(state);
       return state;
 
     default:

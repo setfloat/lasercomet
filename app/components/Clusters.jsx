@@ -7,9 +7,9 @@ import colors from 'components/Colors';
 
 
 const Clusters = React.createClass({
-  componentWillMount() {
-      this.props.retrieveAllClusters();
-  },
+  // componentWillMount() {
+  //     this.props.retrieveAllClusters();
+  // },
 
   render() {
     const { photos, i } = this.props;
