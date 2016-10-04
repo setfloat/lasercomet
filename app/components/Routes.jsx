@@ -1,14 +1,14 @@
 import { IndexRoute, Route, Router } from 'react-router';
-import App from 'components/App';
-import ClusterPage from 'components/ClusterPage';
-import Clusters from 'components/Clusters';
-import Hero from 'components/Hero';
-import MainPage from 'components/MainPage';
-import NotFound from 'components/NotFound';
+import App from './App';
+import ClusterPage from './ClusterPage';
+import Clusters from './Clusters';
+import Hero from './Hero';
+import MainPage from './MainPage';
+import NotFound from './NotFound';
 import React from 'react';
-import BrowseClusterPage from 'components/BrowseClusterPage';
-import ResultsPage from 'components/ResultsPage';
-import UserAuth from 'components/UserAuth';
+import BrowseClusterPage from './BrowseClusterPage';
+import ResultsPage from './ResultsPage';
+import UserAuth from './UserAuth';
 import { history } from '../store';
 
 const Routes = React.createClass({
