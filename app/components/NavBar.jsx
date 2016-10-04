@@ -92,7 +92,8 @@ const navStyles = {
     width: '10%',
     paddingRight: '24px',
     zIndex: '1103',
-    ':hover': { backgroundColor: colors.primeDarkTrans }
+    ':hover': { backgroundColor: colors.primeDarkTrans,
+    cursor: 'pointer' }
   },
 
   permIcon: {
@@ -112,7 +113,8 @@ const navStyles = {
   },
   clusterHover: {
     top: '0',
-    ':hover': { backgroundColor: colors.primeDarkTrans }
+    ':hover': { backgroundColor: colors.primeDarkTrans,
+      cursor: 'pointer'}
   },
   clusterText: {
     paddingTop: '30px',

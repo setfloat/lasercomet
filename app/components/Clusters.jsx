@@ -29,7 +29,7 @@ const Clusters = React.createClass({
         margin: '0',
         position: 'relative',
         ':hover': {
-          background: 'yellow'
+          background: colors.thirdSoft
         },
 
 
@@ -55,7 +55,7 @@ const Clusters = React.createClass({
         },
 
         '@media (max-width: 1220px)': {
-          width: `${100/3}%`,
+          width: `${100/3.01}%`,
           paddingBottom: '33%'
         },
 
@@ -80,13 +80,14 @@ const Clusters = React.createClass({
       },
 
       sect: {
+          padding: '8px',
           display:'flex',
           flexDirection: 'row',
           // justifyContent: 'center',
           alignContent: 'space-around',
           alignItems: 'center',
           flexWrap: 'wrap',
-          backgroundColor: colors.primeBoldTrans
+          backgroundColor: colors.primeAlt
       },
       tile: {
         position: 'absolute',
@@ -104,6 +105,22 @@ const Clusters = React.createClass({
         right: '0',
         textAlign: 'center',
         margin: '0'
+      },
+      foot: {
+        height: '4rem',
+        backgroundColor: colors.secondMain
+      },
+      footBuff: {
+        height: '20px',
+        backgroundColor: colors.primeDarkTrans
+      },
+      spacer: {
+        height: '20px'
+      },
+      footText: {
+        textDecoration: 'none',
+        color: colors.secondBold,
+        fontSize: '2em'
       }
     };
 
@@ -141,6 +158,24 @@ const Clusters = React.createClass({
           />
         </div> */}
       </section>
+      <section style={styles.spacer} />
+      <section style={styles.foot}>
+        <span>
+          <a
+            href={'github.com/setfloat'}
+            style={styles.footText}>github.com/setFloat
+          </a>
+        </span>
+        <span>
+          <a
+            href={'twitter.com/setfloat'}
+            style={styles.footText}
+          >@setFloat
+          </a>
+        </span>
+      </section>
+      <section style={styles.footBuff }/>
+      {/* <section style={styles.spacer} /> */}
     </div>;
   }
 });

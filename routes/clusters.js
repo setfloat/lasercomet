@@ -90,17 +90,20 @@ router.get('/clusters', (req, res, next) => {
 
 
             // temporary hard code
-            rObj.cluster_id = spinArr.reduce((elem) => {
-              if (elem !== undefined && elem.pixid === rObj.pixid) {
-                  return spinArr.cluster_id;
-                }
-                else {
-                  return '';
-                }
+            // rObj.cluster_id =
+            let res = spinArr.filter((elem) => {
+              return (elem !== undefined && elem.pixid === rObj.pixid)
+              // if (elem !== undefined && elem.pixid === rObj.pixid) {
+              //     return elem.cluster_id;
+              //   }
+              //   else {
+              //     return '';
+              //   }
             });
-    console.log(rObj);
+            // console.log('!!', res[0]);
+            rObj.cluster_id = res[0].cluster_id
             return rObj;
-          })
+        })
           // console.log(spinArr);
           // console.log(searchResponse);
           // console.log(searchResponse);

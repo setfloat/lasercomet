@@ -16,7 +16,7 @@ const styleHero = {
     flexWrap: 'wrap'
   },
   heroImg: {
-    background: 'url("images/flyover.gif") center center / cover no-repeat',
+    background: 'url("images/SaltaArgentina.jpeg") center center / cover no-repeat',
     width: '100%',
 
     // backgroundPosition: 'center',
@@ -46,7 +46,6 @@ const styleHero = {
   searchField: {
 
     color: colors.thirdMain,
-    // color: 'white',
     backgroundColor: 'rgba(0,0,0,0.1)',
     borderColor: colors.secondSoft,
     borderWidth: '0 0 2px 0',
@@ -54,8 +53,6 @@ const styleHero = {
     width: '49%',
     ':focus': {
       color: 'white',
-      // color: colors.primeAlt,
-
       // backgroundColor: 'rgba(0,0,0,0.3)',
       borderColor: colors.thirdMain,
       borderWidth: '0 0 2px 0',
@@ -95,35 +92,17 @@ const Hero = React.createClass({
       {
         [event.target.name]: event.target.value
       });
-    // this.setState({ searchInput: event.target.value });
-
-    // this.state.updateAddress(nextAddress);
   },
 
   handleInputChange(event) {
-
     this.setState({ searchInput: event.target.value });
   },
 
   handleSearchSubmit(event) {
-    // console.log(event.target);
     event.preventDefault();
-    // console.log(this.props.fetchPhotos(this.props.searchResultsReducer.searchText));
-    console.log(this.props.searchResultsReducer.searchText);
     this.props.fetchPhotos(this.props.searchResultsReducer.searchText);
     this.props.router.push('/Results');
 
-
-    // axios.post('/api/photos', {
-    //   searchQuery: event.target.value
-    // })
-    // .then((res) => {
-    //   //add to store
-    //   //dynamically create tiles to display them.
-    // })
-    // .catch((err) => {
-    //   // error handling
-    // })
   },
 
   render() {

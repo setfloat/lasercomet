@@ -10,11 +10,6 @@ const MainPage = React.createClass({
     this.props.retrieveAllClusters();
   },
 
-  handleTouchTap() {
-    waitGate = <Clusters
-    retrieveAllClusters={this.props.retrieveAllClusters} photos={this.props.photos} />;
-  },
-
   render() {
     console.log(this.props);
     // console.log(this.props);
@@ -33,11 +28,7 @@ const MainPage = React.createClass({
         retrieveAllClusters={this.props.retrieveAllClusters}
         photos={this.props.photos}
       />
-      {waitGate}
-      <button
-        onTouchTap={this.handleTouchTap}
-      >Check out some clusters</button>
-    Main Page</div>;
+    </div>;
   }
 });
 

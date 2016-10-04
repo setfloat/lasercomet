@@ -1,7 +1,8 @@
 const colors = {
   primeMain: 'rgba(255,100, 88, 1)',
+  primeMainTrans: 'rgba(255,100, 88, 0.4)',
   primeAlt: 'rgba(255, 63, 47, 1)',
-  primeAltTrans: 'rgba(255, 63, 47, 0.3)',
+  primeAltTrans: 'rgba(255, 63, 47, 0.4)',
   primeSoft: 'rgba(255,244,243, 0.3)',
   primeBold: 'rgba(222, 16,  0, 1)',
   primeBoldTrans: 'rgba(222, 16,  0, 0.4)',
@@ -10,6 +11,7 @@ const colors = {
   primeDarkTransLt: 'rgba( 40,  3,  0, 0.4)',
   secondMain: 'rgba(103,167,255,1)',
   secondMainTrans: 'rgba(103,167,255,0.5)',
+  secondMainTransFeat: 'rgba(103,167,255,0.6)',
   secondAlt: 'rgba( 50,112,196,1)',
   secondSoft: 'rgba(203,207,212,1)',
   secondSoftTrans: 'rgba(203,207,212,0.4)',
@@ -28,6 +30,7 @@ const colors = {
 
 export default {
   primeMain: colors.primeMain,
+  primeMainTrans: colors.primeMainTrans,
   primeAlt: colors.primeAlt,
   primeAltTrans: colors.primeAltTrans,
   primeSoft: colors.primeSoft,
@@ -41,6 +44,7 @@ export default {
   secondAlt: colors.secondAlt,
   secondSoft: colors.secondSoft,
   secondSoftTrans: colors.secondSoftTrans,
+  secondMainTransFeat: colors.secondMainTransFeat,
   secondBold: colors.secondBold,
   secondDark: colors.secondDark,
   secondDarkTrans: colors.secondDarkTrans,

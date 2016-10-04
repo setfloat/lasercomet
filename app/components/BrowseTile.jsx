@@ -37,7 +37,7 @@ const BrowseTile = React.createClass({
         style={styles.paper}
         zDepth={4}
       />
-      </div>
+    </div>;
   }
 });
 

@@ -25,10 +25,10 @@ const ClusterTile = React.createClass({
 
       paper: {
         position: 'absolute',
-        top: '3.5px',
-        bottom: '3.5px',
-        left: '3.5px',
-        right: '3.5px',
+        top: '4px',
+        bottom: '4px',
+        left: '4px',
+        right: '4px',
         textAlign: 'center',
         margin: '0',
         background: `url(${photo.webformatURL}) center center / cover no-repeat`,

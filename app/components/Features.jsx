@@ -8,19 +8,23 @@ const styleFeat = {
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justiftContent: 'space-around',
+    justifyContent: 'space-around',
+    background: 'url("images/GlacierExpress.jpeg") center center / cover no-repeat',
     // height: '40em'
   },
 
   box: {
-    display: 'inline-block',
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
     height: '100%',
     width: `${100/3}%`,
     boxSizing: 'border-box',
     position: 'relative',
-    backgroundColor: colors.thirdAltTrans,
+    // backgroundColor: colors.secondMainTransFeat,
+    // backgroundColor: colors.thirdAltTrans,
     // backgroundColor: colors.primeBoldTrans,
-    height: '30em',
+    height: '25em',
     borderColor: colors.primeSoft,
     borderStyle: 'solid',
     borderWidth: '1px',
@@ -50,42 +54,37 @@ const styleFeat = {
     },
   },
   content: {
-    paddingTop: '50%',
-    width: '80%',
-    paddingLeft: '15%',
-    paddingRight: '10%'
+    position: 'absolute',
+    top: '50%',
+    transform: 'translateY(-50%)',
+    margin: 'auto 40% auto 40%',
+    // width: '40%',
+    // marginLeft: '40%',
+    // marginRight: '40%',
+    color: 'white',
+    fontWeight: '600',
+    fontSize: '2rem'
+    //
+    // paddingTop: '50%',
+    // width: '100%',
+    // paddingLeft: '40%',
+    // paddingRight: '40%'
     // position: 'absolute',
   },
-
-  // gridCols: getColumns(),
-  // '@media (max-width: 7000px)': { gridCols: '3' },
-  // '@media (max-width: 1440px)': { gridCols: '3' },
-  // '@media (max-width: 1220px)': { gridCols: '3' },
-  // '@media (max-width: 900px)': { gridCols: '1' },
-  // '@media (max-width: 560px)': { gridCols: '1' }
-
-
-  // '@media (max-width: 7000px)': { gridCols: 'cols={3}' },
-  // '@media (max-width: 1440px)': { gridCols: 'cols={3}' },
-  // '@media (max-width: 1220px)': { gridCols: 'cols={3}' },
-  // '@media (max-width: 900px)': { gridCols: 'cols={3}' },
-  // '@media (max-width: 560px)': { gridCols: 'cols={3}' }
-
-
-  // gridCols: {
-  //   '@media (max-width: 7000px)': 3,
-  //   '@media (max-width: 1440px)': 3,
-  //   '@media (max-width: 1220px)': 3,
-  //   '@media (max-width: 900px)': 1,
-  //   '@media (max-width: 560px)': 1
-  // }
+  spacer: {
+    height: '20px'
+  }
 }
 
 
 const Features = React.createClass({
   render() {
 
-    return  <section
+    return  <div>
+    <section style={styleFeat.spacer}>
+
+    </section>
+    <section
       style={styleFeat.flexContainer}
     >
       <div
@@ -96,9 +95,9 @@ const Features = React.createClass({
         >
           <img
             src={'images/telescope.svg'}
-            height={'100em'}
+            height={'140em'}
           />
-          <div>Find your favorite photos</div>
+          <div>Find: Photos</div>
         </div>
       </div>
       <div
@@ -111,7 +110,7 @@ const Features = React.createClass({
           src={'images/visualization.svg'}
           height={'100em'}
         />
-        <div>Make a Cluster by saving your photos to a gallery</div>
+        <div>Cluster: Make a Gallery</div>
         </div>
       </div>
       <div
@@ -124,10 +123,13 @@ const Features = React.createClass({
           src={'images/satellite.svg'}
           height={'100em'}
         />
-        <div>Check out the clusters your friends have made</div>
+        <div>Explore: Clusters</div>
         </div>
       </div>
-    </section>;
+    </section>
+    <section style={styleFeat.spacer}>
+    </section>
+    </div>;
   }
 });
 

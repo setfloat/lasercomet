@@ -33,22 +33,6 @@ const Results = React.createClass({
           background: colors.secondMain
         },
 
-        // ':hover': {
-        //   backgroundColor: 'red'
-        // },
-        //
-        // ':focus': {
-        //   backgroundColor: 'green'
-        // },
-        //
-        // ':blur': {
-        //   backgroundColor: 'orange'
-        // },
-        //
-        // ':active': {
-        //   backgroundColor: 'yellow'
-        // },
-
         '@media (max-width: 1440px)': {
           width: '25%',
           paddingBottom: '24%'
@@ -127,7 +111,7 @@ const Results = React.createClass({
           >
             {(() => {
               switch (photo.clicked) {
-                case true: return <button key={i}>Save to Cluster</button>;
+                case true: return <button style={styles.saveButton} key={i}>Save to Cluster</button>;
                 case false: return null;
                 default: false;
               }

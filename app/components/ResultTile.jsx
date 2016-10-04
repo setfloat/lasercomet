@@ -34,8 +34,17 @@ const ResultTile = React.createClass({
       },
 
       saveButton: {
+        background: 'none repeat  0 0 transparent',
+        backgroundColor: colors.secondSoftTrans,
+        border: `1px solid ${colors.secondSoftTrans}`,
+        borderSpacing: '0',
+        color: colors.thirdAlt,
+        fontSize: '1rem',
+        lineHeight: '1.42rem',
+        textDecoration: 'none',
         ':active': {
-          backgroundColor: colors.thirdMain
+          backgroundColor: colors.primeMainTrans
+
         }
       }
     };

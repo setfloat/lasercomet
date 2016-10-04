@@ -32,7 +32,7 @@ router.post('/browseCluster', (req, res, next) => {
         let rObj = obj;
 
         rObj.pixid = rObj.id;
-        rObj.cluster = browsedClusterId;
+        rObj.cluster = obj.cluster_id;
 
         delete rObj.comments;
         delete rObj.id;
