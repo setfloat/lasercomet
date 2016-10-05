@@ -18,7 +18,9 @@ const styleHero = {
   heroImg: {
     background: 'url("images/SaltaArgentina.jpeg") center center / cover no-repeat',
     width: '100%',
-
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
     // backgroundPosition: 'center',
     height: '60vh'
   },
@@ -39,15 +41,38 @@ const styleHero = {
     top: '50%',
     transform: 'translateY(-50%)',
     margin: 'auto',
-    width: '50%'
+    width: '100%',
+    paddingLeft: '25%',
+    paddingRight: '20%',
+    '@media (max-width: 850px)': {
+      paddingLeft: '22%',
+      paddingRight: '16%'
+    },
+    '@media (max-width: 740px)': {
+      paddingLeft: '16%',
+      paddingRight: '12%'
+    }
 
     // padding: '20%'
+  },
+  searchBar: {
+    position: 'relative',
+    top: '0%',
+    transform: 'translateY(-50%)',
+    margin: 'auto',
+    width: '50%',
+    '@media (max-width: 740px)': {
+      width: '80%',
+      borderWidth: '0 0 4px 0',
+
+    }
+
   },
   searchField: {
 
     color: colors.thirdMain,
     backgroundColor: 'rgba(0,0,0,0.1)',
-    borderColor: colors.secondSoft,
+    borderColor: 'white',
     borderWidth: '0 0 2px 0',
     fontSize: '160%',
     width: '49%',
@@ -60,8 +85,12 @@ const styleHero = {
     },
     ':active': {
       backgroundColor: 'rgba(0,0,0,0.6)'
-    }
+    },
+    '@media (max-width: 740px)': {
+      width: '80%',
+      borderWidth: '0 0 4px 0',
 
+    }
     // borderRadius: '4px'
   },
   icon: {
@@ -116,7 +145,7 @@ const Hero = React.createClass({
             <span style={styleHero.title}>Comet</span>
           </div>
           <div
-            style={styleHero.search}
+            style={styleHero.searchBar}
           >
             <form
               onSubmit={this.handleSearchSubmit}
