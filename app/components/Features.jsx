@@ -110,7 +110,7 @@ const Features = React.createClass({
           src={'images/visualization.svg'}
           height={'100em'}
         />
-        <div>Cluster: Make a Gallery</div>
+        <div>Gather: Photos to a Cluster</div>
         </div>
       </div>
       <div
@@ -123,7 +123,7 @@ const Features = React.createClass({
           src={'images/satellite.svg'}
           height={'100em'}
         />
-        <div>Explore: Clusters</div>
+        <div>Share: Explore our Clusters</div>
         </div>
       </div>
     </section>
