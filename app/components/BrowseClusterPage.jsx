@@ -67,7 +67,7 @@ const BrowseClusterPage = React.createClass({
         alignItems: 'center',
         flexWrap: 'wrap',
         // backgroundColor: colors.primeDarkTrans
-        backgroundColor: colors.primeDarkTransLt
+        backgroundColor: colors.primeDarkTrans
       }
     };
 

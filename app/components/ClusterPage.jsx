@@ -72,14 +72,31 @@ const ClusterPage = React.createClass({
         alignItems: 'center',
         flexWrap: 'wrap',
         // backgroundColor: colors.primeDarkTrans
-        backgroundColor: colors.primeDarkTransLt
+        // backgroundColor: colors.primeDarkTrans
+        backgroundColor: colors.secondMain
+      },
+      spacer: {
+        height: '20px'
+      },
+      spacerRed: {
+        height: '20px',
+        backgroundColor: colors.primeAlt
+      },
+      spacerBlue: {
+        height: '4rem',
+        backgroundColor: colors.secondMain
       }
+
     };
 
     return <div>
-      <ClusterTitleCard
+      {/* <ClusterTitleCard
         style={styles.sClusterTitle}
-      />
+      /> */}
+      <section style={styles.spacer} />
+      <section style={styles.spacerRed} />
+      {/* <section style={styles.spacerBlue} /> */}
+
       <section
         style={styles.sect}
       >
@@ -108,6 +125,8 @@ const ClusterPage = React.createClass({
         </div>
       )}
       </section>
+      <section style={styles.spacer} />
+      <section style={styles.spacerRed} />
     </div>;
   }
 });
