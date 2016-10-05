@@ -8,8 +8,7 @@ import colors from 'components/Colors';
 
 const ClusterTile = React.createClass({
   handleTouchTap() {
-    console.log(this.props);
-    this.props.getBrowseCluster();
+    this.props.getBrowseCluster(this.props.photo);
   },
 
   render() {

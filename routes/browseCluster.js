@@ -11,7 +11,8 @@ const router = express.Router();
 
 router.post('/browseCluster', (req, res, next) => {
   console.log(req.body);
-  let browsedClusterId = 4;
+  console.log(req.body.rec.cluster_id);
+  let browsedClusterId = req.body.rec.cluster_id;
   let transformArray = [];
 
   knex('photos')
@@ -32,7 +33,7 @@ router.post('/browseCluster', (req, res, next) => {
         let rObj = obj;
 
         rObj.pixid = rObj.id;
-        rObj.cluster = obj.cluster_id;
+        rObj.cluster_id = obj.cluster_id;
 
         delete rObj.comments;
         delete rObj.id;
@@ -47,7 +48,7 @@ router.post('/browseCluster', (req, res, next) => {
 
         return rObj;
       })
-      // console.log(searchResponse);
+      console.log(searchResponse);
       res.send(searchResponse)
     })
     .catch((err) => {

@@ -24,6 +24,9 @@ const styles = {
     maxWidth: '700',
     width: 'viewPort',
     alignContent: 'centerAlign'
+  },
+  inkColor: {
+    backgroundColor: 'rgba(255, 63, 47, 1)'
   }
 };
 
@@ -78,7 +81,7 @@ const UserAuth = React.createClass({
   render() {
     return <div>
       <Paper style={styles.tabponent} zDepth={5}>
-        <Tabs>
+        <Tabs inkBarStyle={styles.inkColor}>
           <Tab data-route="/Login" label="Login">
             <div style={styles.loginForm}>
               <Login

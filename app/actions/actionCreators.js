@@ -15,7 +15,6 @@ export const retrieveAllClusters = (dispatch) => {
   return (dispatch) => {
     axios.get('/api/clusters')
       .then((res) => {
-        console.log(res.data);
         return dispatch(receiveFullClusters(res.data))
         // return res.data;
       })
@@ -74,10 +73,8 @@ export const deletePhoto = (photo) => {
 export const savePhotoToDb = (photo) => {
 
   return (dispatch) => {
-    console.log(photo);
     axios.post('/api/cluster', photo)
       .then((res) => {
-        console.log(res);
         // not sure what I want to occur next
       })
       .catch((err) => {
@@ -109,10 +106,10 @@ export const receiveUserCluster = (clusterPhotos, dispatch) => {
   return dispatch(callUserCluster(clusterPhotos));
 }
 
-export const getBrowseCluster = () => {
-  console.log('hello');
+export const getBrowseCluster = (rec) => {
+
   return (dispatch) => {
-    return axios.post('/api/browseCluster')
+    return axios.post('/api/browseCluster', {rec})
       .then((res) => {
         return dispatch(receiveBrowseCluster(res.data, dispatch));
       })
@@ -129,16 +126,11 @@ export const getUserCluster = () => {
   return (dispatch) => {
     return axios.get('/api/cluster')
       .then((res) => {
-        console.log(res.data, '*************************');
-        // when photo urls and pixids are received they should be an array
-        // of objects. -achieved
-        // Send to state as ...userCluster... to then be accessed
-        // by a .map function.
+
         return dispatch(receiveUserCluster(res.data, dispatch));
         // return res.data;
       })
       .then(() => {
-        console.log(dispatch(push('/Cluster')));
         dispatch(push('/Cluster'));
       })
       .catch((err) => {

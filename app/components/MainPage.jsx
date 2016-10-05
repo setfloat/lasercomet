@@ -11,8 +11,6 @@ const MainPage = React.createClass({
   },
 
   render() {
-    console.log(this.props);
-    // console.log(this.props);
     return <div>
       <Hero
         clickedPhoto={this.props.clickedPhoto}

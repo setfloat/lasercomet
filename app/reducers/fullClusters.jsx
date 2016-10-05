@@ -1,7 +1,6 @@
 const fullClusters = (state = [], action) => {
   switch(action.type) {
     case 'RECEIVE_FULL_CLUSTERS': {
-      console.log(action.fullClusters);
       return Object.assign({}, state, { clusteredCache: action.fullClusters});
     }
     default:

@@ -12,7 +12,6 @@ const Clusters = React.createClass({
   // },
 
   render() {
-    console.log(this.props);
     const { photos, i, fullClusters, getBrowseCluster } = this.props;
     const styles = {
       base: {
@@ -31,23 +30,6 @@ const Clusters = React.createClass({
         ':hover': {
           background: colors.thirdSoft
         },
-
-
-        // ':hover': {
-        //   backgroundColor: 'red'
-        // },
-        //
-        // ':focus': {
-        //   backgroundColor: 'green'
-        // },
-        //
-        // ':blur': {
-        //   backgroundColor: 'orange'
-        // },
-        //
-        // ':active': {
-        //   backgroundColor: 'yellow'
-        // },
 
         '@media (max-width: 1440px)': {
           width: '25%',
@@ -141,38 +123,9 @@ const Clusters = React.createClass({
           ></ClusterTile>
         </div>
         )}
-        {/* <div
-          style={styles.base}
-          key={432}
-        >
-          <ClusterTile
-            key={524}
-          />
-        </div>
-        <div
-          style={styles.base}
-          key={256}
-        >
-          <ClusterTile
-            key={7352}
-          />
-        </div> */}
       </section>
       <section style={styles.spacer} />
       <section style={styles.foot}>
-        <span>
-          <a
-            href={'github.com/setfloat'}
-            style={styles.footText}>github.com/setFloat
-          </a>
-        </span>
-        <span>
-          <a
-            href={'twitter.com/setfloat'}
-            style={styles.footText}
-          >@setFloat
-          </a>
-        </span>
       </section>
       <section style={styles.footBuff }/>
       {/* <section style={styles.spacer} /> */}

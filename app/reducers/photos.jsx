@@ -4,7 +4,6 @@ const photos = (state = [], action) => {
       return state;
     }
     case 'RECEIVE_PHOTOS': {
-      console.log(action.photos);
 
       // console.log(state);
       // const i = action.index

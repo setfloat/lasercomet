@@ -7,8 +7,6 @@ const BrowseClusterPage = React.createClass({
   render() {
     const { i, browseCluster } = this.props;
     const { browsed } = this.props.browseCluster;
-    console.log(browseCluster);
-    console.log(this.props);
 
     const styles = {
       sClusterTitle: {

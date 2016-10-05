@@ -6,7 +6,6 @@ import colors from 'components/Colors';
 
 const ResultTile = React.createClass({
   handleTouchTap() {
-    console.log(this.props.photo);
     this.props.clickedPhoto(this.props.photo.pixid);
   },
 
@@ -34,11 +33,11 @@ const ResultTile = React.createClass({
       },
 
       saveButton: {
-        background: 'none repeat  0 0 transparent',
-        backgroundColor: colors.secondSoftTrans,
+        background: `none repeat  0 0 ${colors.secondSoftTrans}`,
         border: `1px solid ${colors.secondSoftTrans}`,
         borderSpacing: '0',
-        color: colors.thirdAlt,
+        // color: colors.thirdAlt,
+        color: 'black',
         fontSize: '1rem',
         lineHeight: '1.42rem',
         textDecoration: 'none',
