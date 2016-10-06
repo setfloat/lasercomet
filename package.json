@@ -13,7 +13,7 @@
   },
   "scripts": {
     "knex": "knex",
-    "heroku-postbuild": "knex migrate:latest; brunch build --production",
+    "heroku-postbuild": "brunch build --production",
     "lint": "eslint --ext .js,.jsx --ignore-pattern public",
     "start": "brunch watch --server"
   },

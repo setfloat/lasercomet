@@ -10,7 +10,7 @@ const express = require('express');
 const knex = require('../knex');
 const router = express.Router();
 
-router.delete('/photos', (req, res, next) => {
+-router.delete('/photos', (req, res, next) => {
   console.log(req);
   // jwt.verify(req.cookies.accessToken, process.env.JWT_SECRET, (err, decoded) => {
   //
@@ -22,7 +22,6 @@ router.delete('/photos', (req, res, next) => {
   //     })
   // })
 })
-
 
 // clicking "cluster" in the navBar should trigger this route.
 
@@ -80,7 +79,6 @@ router.get('/cluster', (req, res, next) => {
 
         return rObj;
       })
-      console.log(searchResponse);
       res.send(searchResponse)
       // res.send(axiosResult.data)
     })
@@ -104,13 +102,11 @@ router.post('/cluster', (req, res, next) => {
     storytime.user_id = decoded.userId;
 
     if (req.body.photo) {
-      console.log('*************', req.body.photo);
 
         return knex('photos')
           .where('pixid', req.body.photo.pixid)
           .del()
           .then((resp) => {
-            console.log(resp);
             res.sendStatus(resp)
           })
           .catch((err) => {
@@ -157,8 +153,6 @@ router.post('/cluster', (req, res, next) => {
           .insert(newPhotoInsert, '*');
       })
       .then((photos) => {
-        console.log('Are you here?');
-        // next line might not be what we want to send back
         const photo = camelizeKeys(photos[0]);
 
             // delete anything you don't want to send back

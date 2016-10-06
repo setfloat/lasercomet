@@ -10,8 +10,6 @@ const knex = require('../knex');
 const router = express.Router();
 
 router.post('/browseCluster', (req, res, next) => {
-  console.log(req.body);
-  console.log(req.body.rec.cluster_id);
   let browsedClusterId = req.body.rec.cluster_id;
   let transformArray = [];
 
@@ -48,7 +46,6 @@ router.post('/browseCluster', (req, res, next) => {
 
         return rObj;
       })
-      console.log(searchResponse);
       res.send(searchResponse)
     })
     .catch((err) => {
