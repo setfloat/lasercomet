@@ -10,40 +10,42 @@ const styleResultsHeader = {
   section: {
     backgroundColor: colors.primeBoldTrans,
     paddingTop: '30px',
-    paddingBottom: '30px'
+    paddingBottom: '50px',
+    height: '40em'
   },
 
-  paper: {
-    width: '80%',
-    paddingTop: '10%',
-    marginLeft: '10%',
-
+  sect: {
+    // width: '80%',
+    // paddingTop: '10%',
+    // marginLeft: '10%',
+    // background: colors.secondAlt,
     // align: 'middle',
     display: 'flex',
     flexWrap: 'wrap',
     flexDirection: 'row',
-    maxHeight: '200px',
-    boxSizing: 'border-box'
+    height: '100px'
   },
   search: {
     position: 'relative',
-    top: '50%',
-    transform: 'translateY(-50%)',
+    // top: '50%',
+    transform: 'translateY(-30%)',
     margin: 'auto',
-    width: '50%'
-
-    // padding: '20%'
+    width: '50%',
+    paddingLeft: '20%',
+    '@media (max-width: 1020px)': {
+      width: '80%',
+    },
   },
   searchField: {
 
-    color: 'white',
+    color: colors.thirdMain,
     backgroundColor: 'rgba(0,0,0,0)',
-    borderColor: colors.secondSoft,
+    borderColor: colors.secondMain,
     borderWidth: '0 0 2px 0',
     fontSize: '160%',
     width: '49%',
     ':focus': {
-      color: colors.thirdMain,
+      color: colors.secondMain,
 
       // backgroundColor: 'rgba(0,0,0,0.3)',
       borderColor: colors.thirdMain,
@@ -69,63 +71,44 @@ const ResultsHeader = React.createClass({
       {
         [event.target.name]: event.target.value
       });
-    // this.setState({ searchInput: event.target.value });
-
-    // this.state.updateAddress(nextAddress);
   },
 
   handleInputChange(event) {
-
     this.setState({ searchInput: event.target.value });
   },
 
   handleSearchSubmit(event) {
-    // console.log(event.target);
     event.preventDefault();
-    // console.log(this.props.fetchPhotos(this.props.searchResultsReducer.searchText));
-    console.log(this.props.searchResultsReducer.searchText);
     this.props.fetchPhotos(this.props.searchResultsReducer.searchText);
     this.props.router.push('/Results');
-
-
-    // axios.post('/api/photos', {
-    //   searchQuery: event.target.value
-    // })
-    // .then((res) => {
-    //   //add to store
-    //   //dynamically create tiles to display them.
-    // })
-    // .catch((err) => {
-    //   // error handling
-    // })
   },
 
-
-////////////////
   render() {
 
-    return <div style={styleResultsHeader.search}>
-      <form
-        onSubmit={this.handleSearchSubmit}
-      >
-        <img
-          height={'50em'}
-          // onChange={this.handleChange}
-          src={'images/search.svg'}
-          style={styleResultsHeader.icon}
-          value={this.state.value}
-
-          // style={styleHero.search}
-        />
-        <input
-          onChange={this.handleChange || this.handleinputChange}
+    return <section style={styleResultsHeader.sect}>
+       <div style={styleResultsHeader.search}>
+        <form
           onSubmit={this.handleSearchSubmit}
-          placeholder={'Find some photos'}
-          style={styleResultsHeader.searchField}
-          type={'text'}
-        />
-      </form>
-    </div>
+        >
+          <img
+            height={'50em'}
+            // onChange={this.handleChange}
+            src={'images/searchDark.svg'}
+            style={styleResultsHeader.icon}
+            value={this.state.value}
+
+            // style={styleHero.search}
+          />
+          <input
+            onChange={this.handleChange}
+            onSubmit={this.handleSearchSubmit}
+            placeholder={'Find some photos'}
+            style={styleResultsHeader.searchField}
+            type={'text'}
+          />
+        </form>
+      </div>
+    </section>
   }
 });
 

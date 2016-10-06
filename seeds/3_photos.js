@@ -472,7 +472,7 @@ exports.seed = function(knex) {
         cluster_id: 3,
         comments: '',
         expanded: false,
-        pixid: 1624522,
+        pixid: 1245822,
         image_height: 2000,
         image_width: 4812,
         pageurl: 'https://pixabay.com/en/cruise-hamburg-aida-prima-port-1624522/',

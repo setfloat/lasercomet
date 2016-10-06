@@ -82,8 +82,12 @@ const ClusterPage = React.createClass({
         height: '20px',
         backgroundColor: colors.primeAlt
       },
-      spacerBlue: {
+      spacerTallRed: {
         height: '4rem',
+        backgroundColor: colors.primeAlt
+      },
+      spacerBlue: {
+        height: '20px',
         backgroundColor: colors.secondMain
       }
 
@@ -126,7 +130,9 @@ const ClusterPage = React.createClass({
       )}
       </section>
       <section style={styles.spacer} />
-      <section style={styles.spacerRed} />
+      <section style={styles.spacerTallRed} />
+      <section style={styles.spacerBlue} />
+
     </div>;
   }
 });

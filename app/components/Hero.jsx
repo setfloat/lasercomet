@@ -1,12 +1,8 @@
-// import Paper from 'material-ui/Paper';
 import Radium from 'radium';
 import React from 'react';
-
-// import axios from 'axios';
 import colors from 'components/Colors';
 import { withRouter } from 'react-router';
 
-// document.designMode = 'on';
 
 
 const styleHero = {
@@ -15,27 +11,27 @@ const styleHero = {
     flexDirection: 'row',
     flexWrap: 'wrap'
   },
+
   heroImg: {
     background: 'url("images/SaltaArgentina.jpeg") center center / cover no-repeat',
     width: '100%',
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
-    // backgroundPosition: 'center',
     height: '60vh'
   },
+
   infoSec: {
     height: '30vh',
     backgroundColor: '#4283fa'
   },
+
   info: {
     backgroundColor: colors.primeBoldTrans,
-
-    // background: 'url("images/dolphinfiller.jpg")
-    // center center / cover no-repeat',
     width: '100%',
     height: '30em'
   },
+
   search: {
     position: 'relative',
     top: '50%',
@@ -53,7 +49,6 @@ const styleHero = {
       paddingRight: '12%'
     }
 
-    // padding: '20%'
   },
   searchBar: {
     position: 'relative',
@@ -69,7 +64,6 @@ const styleHero = {
 
   },
   searchField: {
-
     color: colors.thirdMain,
     backgroundColor: 'rgba(0,0,0,0.1)',
     borderColor: 'white',
@@ -89,10 +83,9 @@ const styleHero = {
     '@media (max-width: 740px)': {
       width: '80%',
       borderWidth: '0 0 4px 0',
-
     }
-    // borderRadius: '4px'
   },
+
   icon: {
     fill: 'white'
   },
@@ -105,12 +98,6 @@ const styleHero = {
 };
 
 const Hero = React.createClass({
-  getInitialState() {
-    return {
-      errors: {}
-      // searchinput
-    };
-  },
 
   handleChange(event) {
     let value = event.target.value;
@@ -131,7 +118,6 @@ const Hero = React.createClass({
     event.preventDefault();
     this.props.fetchPhotos(this.props.searchResultsReducer.searchText);
     this.props.router.push('/Results');
-
   },
 
   render() {
@@ -156,11 +142,9 @@ const Hero = React.createClass({
                 src={'images/search.svg'}
                 style={styleHero.icon}
                 value={this.state.value}
-
-                // style={styleHero.search}
               />
               <input
-                onChange={this.handleChange || this.handleinputChange}
+                onChange={this.handleChange}
                 onSubmit={this.handleSearchSubmit}
                 placeholder={'Find some photos'}
                 style={styleHero.searchField}

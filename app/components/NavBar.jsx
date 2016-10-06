@@ -41,7 +41,6 @@ const navStyles = {
     display: 'flex',
     width: '100%',
     height: `${navHeight.permBar}rem`,
-    // height: '3rem',
     paddingLeft: '24px',
     paddingRight: '24px',
     top: '0px',
@@ -55,7 +54,6 @@ const navStyles = {
     display: 'flex',
     width: '100%',
     height: `${navHeight.permMidge}rem`,
-    // height: '3.2rem',
     paddingLeft: '24px',
     paddingRight: '24px',
     top: '0px',
@@ -69,11 +67,9 @@ const navStyles = {
     display: 'flex',
     width: '100%',
     height: `0.1rem`,
-    // height: '3.2rem',
     paddingLeft: '24px',
     paddingRight: '24px',
     top: '0px',
-    // backgroundColor: 'white',
     backgroundColor: colors.primeAlt,
     zIndex: '1100'
   },
@@ -92,13 +88,18 @@ const navStyles = {
     width: '10%',
     paddingRight: '24px',
     zIndex: '1103',
-    ':hover': { backgroundColor: colors.primeDarkTrans,
-    cursor: 'pointer' }
+  //   ':hover': {
+  //     // backgroundColor: colors.primeDarkTrans,
+  //     cursor: 'pointer'
+  // }
   },
 
-  permIcon: {
-    ':hover': { backgroundColor: colors.primeAltTrans }
-  },
+  // permIcon: {
+  //   ':hover': {
+  //     // backgroundColor: colors.primeAltTrans,
+  //     // cursor: 'pointer'
+  //   }
+  // },
 
   clusters: {
     position: 'relative',
@@ -113,26 +114,31 @@ const navStyles = {
   },
   clusterHover: {
     top: '0',
-    ':hover': { backgroundColor: colors.primeDarkTrans,
-      cursor: 'pointer'}
+    ':hover': {
+      // backgroundColor: colors.primeDarkTrans,
+      cursor: 'pointer'
+    }
   },
   clusterText: {
     paddingTop: '30px',
-    // fontWeight: '500',
     fontSize: '2em',
     color: colors.secondBold,
-    ':hover': { color: colors.secondMain }
+    ':hover': {
+      // color: colors.secondMain,
+      cursor: 'pointer'
+    }
   },
   permClusterText: {
     paddingTop: '10px',
-    // fontWeight: '500',
     fontSize: '2em',
     color: colors.secondMain
-    // ':hover': { color: colors.primeBold }
   },
   permClusterHover: {
     top: '0',
-    ':hover': { backgroundColor: colors.primeSoftTrans }
+    ':hover': {
+      // backgroundColor: colors.primeSoftTrans,
+      cursor: 'pointer'
+    }
   },
   space: {
     width: '40%'
@@ -155,13 +161,8 @@ const NavBar = React.createClass({
 
   render() {
     return <div>
-      <div
-        style={navStyles.dropBar}
-
-      >
-        <div
-          style={navStyles.iconPosit}
-        >
+      <div style={navStyles.dropBar}>
+        <div style={navStyles.iconPosit}>
           <img src={'images/atom-variant.svg'} style={navStyles.icon} />
         </div>
         <div key={62} style={[navStyles.clusters, navStyles.clusterHover]}>
@@ -181,7 +182,6 @@ const NavBar = React.createClass({
           <div
             // style={navStyles.clusterText}
           >
-
             <h4
             onTouchTap={this.handleClusterTouchTap}
             >
@@ -210,7 +210,7 @@ const NavBar = React.createClass({
           <div key={53} style={navStyles.permClusterText}>
             <h4><Link style={navStyles.midgeTextDecoration} to="/">LaserComet</Link></h4>
           </div>
-          </div>
+        </div>
         <div
           style={navStyles.space}
         >

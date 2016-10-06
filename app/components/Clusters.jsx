@@ -103,10 +103,15 @@ const Clusters = React.createClass({
         textDecoration: 'none',
         color: colors.secondBold,
         fontSize: '2em'
-      }
+      },
+      minBlue: {
+        height: '2px',
+        backgroundColor: colors.secondMain
+      },
     };
 
     return <div>
+    <section style={styles.minBlue} />
       <section
         style={styles.sect}
       >
@@ -124,6 +129,7 @@ const Clusters = React.createClass({
         </div>
         )}
       </section>
+      <section style={styles.minBlue} />
       <section style={styles.spacer} />
       <section style={styles.foot}>
       </section>

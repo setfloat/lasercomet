@@ -80,55 +80,52 @@ const styleFeat = {
 const Features = React.createClass({
   render() {
 
-    return  <div>
-    <section style={styleFeat.spacer}>
-
-    </section>
-    <section
-      style={styleFeat.flexContainer}
-    >
-      <div
-        style={styleFeat.box}
+    return <div>
+      <section style={styleFeat.spacer} />
+      <section
+        style={styleFeat.flexContainer}
       >
         <div
-          style={styleFeat.content}
+          style={styleFeat.box}
         >
+          <div
+            style={styleFeat.content}
+          >
+            <img
+              src={'images/telescope.svg'}
+              height={'140em'}
+            />
+            <div>Find: Photos</div>
+          </div>
+        </div>
+        <div
+          style={styleFeat.box}
+        >
+          <div
+            style={styleFeat.content}
+          >
           <img
-            src={'images/telescope.svg'}
-            height={'140em'}
+            src={'images/visualization.svg'}
+            height={'100em'}
           />
-          <div>Find: Photos</div>
+          <div>Gather: Photos to a Cluster</div>
+          </div>
         </div>
-      </div>
-      <div
-        style={styleFeat.box}
-      >
         <div
-          style={styleFeat.content}
+          style={styleFeat.box}
         >
-        <img
-          src={'images/visualization.svg'}
-          height={'100em'}
-        />
-        <div>Gather: Photos to a Cluster</div>
+          <div
+            style={styleFeat.content}
+          >
+          <img
+            src={'images/satellite.svg'}
+            height={'100em'}
+          />
+          <div>Share: Explore our Clusters</div>
+          </div>
         </div>
-      </div>
-      <div
-        style={styleFeat.box}
-      >
-        <div
-          style={styleFeat.content}
-        >
-        <img
-          src={'images/satellite.svg'}
-          height={'100em'}
-        />
-        <div>Share: Explore our Clusters</div>
-        </div>
-      </div>
-    </section>
-    <section style={styleFeat.spacer}>
-    </section>
+      </section>
+      <section style={styleFeat.spacer} />
     </div>;
   }
 });

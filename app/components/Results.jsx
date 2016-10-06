@@ -70,7 +70,8 @@ const Results = React.createClass({
         alignContent: 'space-around',
         alignItems: 'center',
         flexWrap: 'wrap',
-        backgroundColor: colors.primeDarkTrans
+        // backgroundColor: colors.primeDarkTrans
+        backgroundColor: colors.primeAlt
       },
 
       tile: {
@@ -89,11 +90,33 @@ const Results = React.createClass({
         right: '0',
         textAlign: 'center',
         margin: '0'
-      }
+      },
+      spacer: {
+        height: '20px'
+      },
+      spacerRed: {
+        height: '20px',
+        backgroundColor: colors.primeAlt
+      },
+      spacerBlue: {
+        height: '20px',
+        backgroundColor: colors.secondMain
+      },
+      minBlue: {
+        height: '2px',
+        backgroundColor: colors.secondMain
+      },
+      spacerPurple: {
+        height: '20px',
+        backgroundColor: colors.primeDarkTrans
+      },
     };
 
     // console.log(this.props.photos);
     return <div>
+      <section style={styles.minBlue} />
+      {/* <section style={styles.spacerBlue} /> */}
+      {/* <section style={styles.spacerRed} /> */}
       <section
         style={styles.sect}
       >
@@ -121,7 +144,11 @@ const Results = React.createClass({
         </div>
       )}
       </section>
-      {/* <RaisedButton label="More" style={colors.primeBold} /> */}
+      <section style={styles.spacer} />
+      <section style={styles.spacerBlue} />
+      <section style={styles.spacerBlue} />
+      <section style={styles.spacerBlue} />
+      <section style={styles.spacerPurple} />
     </div>;
   }
 });
