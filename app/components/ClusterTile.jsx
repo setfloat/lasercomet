@@ -13,15 +13,7 @@ const ClusterTile = React.createClass({
 
   render() {
     const { photo, i, getBrowseCluster } = this.props;
-    // console.log(photo);
     const styles = {
-      div: {
-        ':hover': {
-
-          // backgroundColor: 'green'
-        }
-      },
-
       paper: {
         position: 'absolute',
         top: '4px',
@@ -33,36 +25,16 @@ const ClusterTile = React.createClass({
         background: `url(${photo.webformatURL}) center center / cover no-repeat`,
         ':hover': {
           zDepth: 5
-        },
-        // background: 'url("images/oceanfill.jpg") center center / cover no-repeat',
+        }
       }
-
-      // depthFind: {
-      //
-      //   ':onHover': 5
-      // }
     };
 
-    return <div
-      style={[
-        // styles.div,
-        styles.paper]}
-    ><Paper
-      // index={i}
-      onTouchTap={this.handleTouchTap}
-      style={styles.paper}
-      zDepth={4}
-    >
-      {/* {(() => {
-        switch (this.props.photo.clicked) {
-          case true: return <button style={styles.saveButton}
-          onTouchTap={this.buttonTouchTap} key={i}>Save to Cluster</button>;
-          case false: return null;
-          default: false;
-        }
-      })()
-      } */}
-    </Paper>
+    return <div style={styles.paper}>
+      <Paper
+        onTouchTap={this.handleTouchTap}
+        style={styles.paper}
+        zDepth={4}
+      />
     </div>;
   }
 });

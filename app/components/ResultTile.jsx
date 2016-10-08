@@ -9,13 +9,12 @@ const ResultTile = React.createClass({
     this.props.clickedPhoto(this.props.photo.pixid);
   },
 
-  buttonTouchTap() {
-    console.log('hello');
+  handleButtonTouchTap() {
     this.props.savePhotoToDb(this.props.photo);
   },
 
   render() {
-    const { photo, i, clickedPhoto } = this.props;
+    const { i, photo } = this.props;
     const styles = {
       paper: {
         position: 'absolute',
@@ -36,7 +35,6 @@ const ResultTile = React.createClass({
         background: `none repeat  0 0 ${colors.secondSoftTrans}`,
         border: `1px solid ${colors.secondSoftTrans}`,
         borderSpacing: '0',
-        // color: colors.thirdAlt,
         color: 'black',
         fontSize: '1rem',
         lineHeight: '1.42rem',
@@ -55,15 +53,17 @@ const ResultTile = React.createClass({
       ]}
     >
       <Paper
-        index={i}
         onTouchTap={this.handleTouchTap}
         style={styles.paper}
         zDepth={4}
       >
         {(() => {
           switch (this.props.photo.clicked) {
-            case true: return <button style={styles.saveButton}
-            onTouchTap={this.buttonTouchTap} key={i}>Save to Cluster</button>;
+            case true: return <button
+              key={i}
+              onTouchTap={this.handleButtonTouchTap}
+              style={styles.saveButton}
+            >Save to Cluster</button>;
             case false: return null;
             default: false;
           }

@@ -5,7 +5,7 @@ import colors from 'components/Colors';
 
 const BrowseTile = React.createClass({
   render() {
-    const { photo, i } = this.props;
+    const { photo } = this.props;
     const styles = {
       paper: {
         position: 'absolute',
@@ -33,7 +33,6 @@ const BrowseTile = React.createClass({
       style={styles.paper}
     >
       <Paper
-        index={i}
         style={styles.paper}
         zDepth={4}
       />
