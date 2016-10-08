@@ -7,22 +7,13 @@ import colors from 'components/Colors';
 
 
 const Clusters = React.createClass({
-  // componentWillMount() {
-  //     this.props.retrieveAllClusters();
-  // },
-
   render() {
     const { photos, i, fullClusters, getBrowseCluster } = this.props;
     const styles = {
       base: {
         boxSizing: 'border-box',
-        // backgroundColor: '#cccff1',
-        // borderColor: 'honeydew',
-        // padding: '1.5em',
         width: '20%',
-        // height: '200px',
         paddingBottom: '20%',
-        // borderWidth: '1px',
         borderStyle: 'solid',
         display: 'inline-block',
         margin: '0',
@@ -65,7 +56,6 @@ const Clusters = React.createClass({
           padding: '8px',
           display:'flex',
           flexDirection: 'row',
-          // justifyContent: 'center',
           alignContent: 'space-around',
           alignItems: 'center',
           flexWrap: 'wrap',
@@ -134,9 +124,9 @@ const Clusters = React.createClass({
       <section style={styles.foot}>
       </section>
       <section style={styles.footBuff }/>
-      {/* <section style={styles.spacer} /> */}
     </div>;
   }
 });
 
+// eslint-disable-next-line new-cap
 export default Radium(Clusters);

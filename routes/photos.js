@@ -2,30 +2,29 @@
 
 const apiKey = process.env.API_KEY;
 const axios = require('axios');
-const { camelizeKeys, decamelizeKeys } = require('humps');
-const ev = require('express-validation');
 const express = require('express');
 
-const validations = require('../validations/photos');
+// const ev = require('express-validation');
+// const validations = require('../validations/photos');
 
 // eslint-disable-next-line new-cap
 const router = express.Router();
 let searchResponse;
 
 router.post('/photos',
+
   //  ev(validations.get),
   (req, res, next) => {
-  let searchQuery = req.body.searchQuery;
-  searchQuery = searchQuery.trim().split(' ');
-  searchQuery = searchQuery.join('+');
+    let searchQuery = req.body.searchQuery;
+
+    searchQuery = searchQuery.trim().split(' ');
+    searchQuery = searchQuery.join('+');
 
   axios.get(`https://pixabay.com/api/?key=${apiKey}&q=${searchQuery}&image_type=photo`)
     .then((result) => {
-      searchResponse = result.data.hits
-      const newResults = {};
-
+      searchResponse = result.data.hits;
       searchResponse = searchResponse.map((obj) => {
-        let rObj = obj;
+        const rObj = obj;
 
         rObj.comments = '';
         rObj.pixid = rObj.id;
@@ -43,11 +42,11 @@ router.post('/photos',
         delete rObj.views;
 
         return rObj;
-      })
+      });
 
       res.send(searchResponse);
     })
     .catch((err) => next(err));
-});
+  });
 
 module.exports = router;

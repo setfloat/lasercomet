@@ -66,7 +66,6 @@ const BrowseClusterPage = React.createClass({
         alignContent: 'space-around',
         alignItems: 'center',
         flexWrap: 'wrap',
-        // backgroundColor: colors.primeDarkTrans
         backgroundColor: colors.primeDarkTrans
       }
     };
@@ -85,11 +84,12 @@ const BrowseClusterPage = React.createClass({
             key={i}
             photo={photo}
           />
-          </div>
+        </div>
         )}
-        </section>
-    </div>
+      </section>
+    </div>;
   }
 });
 
+// eslint-disable-next-line new-cap
 export default Radium(BrowseClusterPage);

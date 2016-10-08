@@ -1,11 +1,8 @@
-// results of search, subset of results page.  stream of photos.
-// import Paper from 'material-ui/Paper';
+// results of search, subfile of results page.  stream of photos.
 import Radium from 'radium';
-// import RaisedButton from 'material-ui/RaisedButton';
 import React from 'react';
 import ResultTile from 'components/ResultTile';
 import colors from 'components/Colors';
-
 
 const Results = React.createClass({
   render() {
@@ -13,15 +10,8 @@ const Results = React.createClass({
     const styles = {
       base: {
         boxSizing: 'border-box',
-        // backgroundColor: '#cccff1',
-        // border: '2px honeydew',
-        // padding: '1.5em',
         width: '20%',
-
-        // height: '200px',
         paddingBottom: '20%',
-
-        // borderWidth: '1px',
         borderStyle: 'solid',
         display: 'inline-block',
         margin: '0',
@@ -70,7 +60,6 @@ const Results = React.createClass({
         alignContent: 'space-around',
         alignItems: 'center',
         flexWrap: 'wrap',
-        // backgroundColor: colors.primeDarkTrans
         backgroundColor: colors.primeAlt
       },
 
@@ -91,32 +80,34 @@ const Results = React.createClass({
         textAlign: 'center',
         margin: '0'
       },
+
       spacer: {
         height: '20px'
       },
+
       spacerRed: {
         height: '20px',
         backgroundColor: colors.primeAlt
       },
+
       spacerBlue: {
         height: '20px',
         backgroundColor: colors.secondMain
       },
+
       minBlue: {
         height: '2px',
         backgroundColor: colors.secondMain
       },
+
       spacerPurple: {
         height: '20px',
         backgroundColor: colors.primeDarkTrans
-      },
+      }
     };
 
-    // console.log(this.props.photos);
     return <div>
       <section style={styles.minBlue} />
-      {/* <section style={styles.spacerBlue} /> */}
-      {/* <section style={styles.spacerRed} /> */}
       <section
         style={styles.sect}
       >
@@ -127,16 +118,19 @@ const Results = React.createClass({
           <ResultTile
             {...this.props}
             clickedPhoto={clickedPhoto}
-            savePhotoToDb={savePhotoToDb}
             i={i}
             key={i}
             photo={photo}
+            savePhotoToDb={savePhotoToDb}
           >
             {(() => {
               switch (photo.clicked) {
-                case true: return <button style={styles.saveButton} key={i}>Save to Cluster</button>;
+                case true: return <button
+                  key={i}
+                  style={styles.saveButton}
+                >Save to Cluster</button>;
                 case false: return null;
-                default: false;
+                default: return false;
               }
             })()
             }

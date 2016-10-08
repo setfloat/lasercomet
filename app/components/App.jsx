@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
   return {
-    // insert states as to what we have
+    // insert states as appear in the store.
     photos: state.photos,
     loginStatus: state.loginStatus,
     clusterPhotos: state.clusterPhotos,

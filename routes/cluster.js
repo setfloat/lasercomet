@@ -87,9 +87,6 @@ router.get('/cluster', (req, res, next) => {
       next(err);
     });
   });
-  // what is sent to client (what does the client want)
-  // client wants their list of photos. specifically, webformaturl for each
-  // photo in their cluster
 });
 
 
@@ -100,7 +97,6 @@ router.post('/cluster', (req, res, next) => {
 
   jwt.verify(req.cookies.accessToken, process.env.JWT_SECRET, (err, decoded) => {
     storytime.user_id = decoded.userId;
-
     if (req.body.photo) {
 
         return knex('photos')
@@ -121,8 +117,6 @@ router.post('/cluster', (req, res, next) => {
         let promise;
 
         if (!cluster) {
-
-          // knex statement to create it cluster
           promise = knex('clusters').insert(storytime, '*');
         }
         else {
@@ -137,7 +131,6 @@ router.post('/cluster', (req, res, next) => {
         newPhotoInsert = req.body;
         newPhotoInsert.cluster_id = cluster.id;
 
-        //camelizing hack
         newPhotoInsert.pageurl = newPhotoInsert.pageURL
         newPhotoInsert.previewurl = newPhotoInsert.previewURL
         newPhotoInsert.webformaturl = newPhotoInsert.webformatURL
@@ -155,7 +148,6 @@ router.post('/cluster', (req, res, next) => {
       .then((photos) => {
         const photo = camelizeKeys(photos[0]);
 
-            // delete anything you don't want to send back
         res.send(photo);
       })
       .catch((err) => {

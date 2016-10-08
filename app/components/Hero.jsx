@@ -3,8 +3,6 @@ import React from 'react';
 import colors from 'components/Colors';
 import { withRouter } from 'react-router';
 
-
-
 const styleHero = {
   heroFlex: {
     display: 'flex',
@@ -13,6 +11,8 @@ const styleHero = {
   },
 
   heroImg: {
+
+    // eslint-disable-next-line max-len
     background: 'url("images/SaltaArgentina.jpeg") center center / cover no-repeat',
     width: '100%',
     display: 'flex',
@@ -44,12 +44,13 @@ const styleHero = {
       paddingLeft: '22%',
       paddingRight: '16%'
     },
+
     '@media (max-width: 740px)': {
       paddingLeft: '16%',
       paddingRight: '12%'
     }
-
   },
+
   searchBar: {
     position: 'relative',
     top: '0%',
@@ -58,11 +59,10 @@ const styleHero = {
     width: '50%',
     '@media (max-width: 740px)': {
       width: '80%',
-      borderWidth: '0 0 4px 0',
-
+      borderWidth: '0 0 4px 0'
     }
-
   },
+
   searchField: {
     color: colors.thirdMain,
     backgroundColor: 'rgba(0,0,0,0.1)',
@@ -72,23 +72,25 @@ const styleHero = {
     width: '49%',
     ':focus': {
       color: 'white',
-      // backgroundColor: 'rgba(0,0,0,0.3)',
       borderColor: colors.thirdMain,
       borderWidth: '0 0 2px 0',
       outline: 'none'
     },
+
     ':active': {
       backgroundColor: 'rgba(0,0,0,0.6)'
     },
+
     '@media (max-width: 740px)': {
       width: '80%',
-      borderWidth: '0 0 4px 0',
+      borderWidth: '0 0 4px 0'
     }
   },
 
   icon: {
     fill: 'white'
   },
+
   title: {
     fontSize: '600%',
     color: 'white',
@@ -100,14 +102,10 @@ const styleHero = {
 const Hero = React.createClass({
 
   handleChange(event) {
-    let value = event.target.value;
-    this.props.searchText(value);
+    const value = event.target.value;
 
-    this.props.searchText(event.target.value)
-    const nextSearchField = Object.assign({}, this.state.searchQuery,
-      {
-        [event.target.name]: event.target.value
-      });
+    this.props.searchText(value);
+    this.props.searchText(event.target.value);
   },
 
   handleInputChange(event) {
@@ -124,21 +122,14 @@ const Hero = React.createClass({
     return <div>
       <section style={styleHero.heroFlex} >
         <div style={styleHero.heroImg} >
-          <div
-            style={styleHero.search}
-          >
+          <div style={styleHero.search}>
             <span style={styleHero.title} >Laser</span>
             <span style={styleHero.title}>Comet</span>
           </div>
-          <div
-            style={styleHero.searchBar}
-          >
-            <form
-              onSubmit={this.handleSearchSubmit}
-            >
+          <div style={styleHero.searchBar}>
+            <form onSubmit={this.handleSearchSubmit}>
               <img
                 height={'50em'}
-                // onChange={this.handleChange}
                 src={'images/search.svg'}
                 style={styleHero.icon}
                 value={this.state.value}
@@ -158,4 +149,5 @@ const Hero = React.createClass({
   }
 });
 
+// eslint-disable-next-line new-cap
 export default withRouter(Radium(Hero));

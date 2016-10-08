@@ -3,33 +3,25 @@
 const { camelizeKeys, decamelizeKeys } = require('humps');
 const bcrypt = require('bcrypt-as-promised');
 const boom = require('boom');
-const ev = require('express-validation');
 const express = require('express');
 const knex = require('../knex');
-const validations = require('../validations/users');
 
+// const ev = require('express-validation');
+// const validations = require('../validations/users');
 // eslint-disable-next-line new-cap
 const router = express.Router();
 
 router.post('/users',
+
   // ev(validations.post),
   (req, res, next) => {
-  const {
-    // username,
-    email,
-    password
-  } = req.body;
+    const {
+      // username,
+      email,
+      password
+    } = req.body;
 
-  knex('users')
-    // .select(knex.raw('1=1'))
-    // .where('username', username)
-    // .first()
-    // .then((exists) => {
-    //   if (exists) {
-    //     throw boom.create(409, 'Username in use');
-    //   }
-    // })
-    // .then('users')
+    knex('users')
       .select(knex.raw('1=1'))
       .where('email', email)
       .first()
@@ -37,6 +29,7 @@ router.post('/users',
         if (exists) {
           throw boom.create(409, 'Email in use');
         }
+
         return bcrypt.hash(password, 12);
       })
     .then((hashedPassword) => {
@@ -60,6 +53,6 @@ router.post('/users',
     .catch((err) => {
       next(err);
     });
-});
+  });
 
 module.exports = router;

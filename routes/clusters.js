@@ -3,60 +3,45 @@
 const axios = require('axios');
 const apiKey = process.env.API_KEY;
 
-const { camelizeKeys, decamelizeKeys } = require('humps');
 const ev = require('express-validation');
 const express = require('express');
 const knex = require('../knex');
 const router = express.Router();
+
 // const validations = require('../validations/clusters');
 
 router.get('/clusters', (req, res, next) => {
-
-  // determine what I am defining to come in with the request
-  // appropriately assign them using destructuring with req.body
-  // restructure them with a new variable.
-  // decamelize that variable to set new row for entry.
-  // check if cluster exists
-  // if it exists, determine the number of photos in that cluster already
-
-  let returnedRows = [];
-  let loopLength;
-  let againArr = [];
-  let pixelArr = [];
-  let spinArr = [];
-  let reassignSpin;
+  const pixelArr = [];
+  const spinArr = [];
   let searchResponse;
 
   knex('clusters')
     .select('*')
     .then((res) => {
       return Promise.all(res.map((obj, index) => {
-          return knex('photos')
-            .select()
-            .first()
-            .where('cluster_id', obj.id)
-            .then((resp) => {
-              if(resp !== undefined) {
-                pixelArr.push(resp.pixid)
-                spinArr.push(resp);
-                reassignSpin = spinArr;
+        return knex('photos')
+          .select()
+          .first()
+          .where('cluster_id', obj.id)
+          .then((resp) => {
+            if (resp !== undefined) {
+              pixelArr.push(resp.pixid);
+              spinArr.push(resp);
+            }
 
-              }
-
-              return;
-            })
-      }))
+            return;
+          });
+      }));
     })
     .then((tresp) => {
 
       return axios.get(`https://pixabay.com/api/?key=${apiKey}&id=${pixelArr
         .join(',')}&image_type=photo`)
         .then((axiosResult) => {
-          searchResponse = axiosResult.data.hits
-          const newResults = {};
+          searchResponse = axiosResult.data.hits;
 
           searchResponse = searchResponse.map((obj) => {
-            let rObj = obj;
+            const rObj = obj;
 
             rObj.comments = '';
             rObj.pixid = rObj.id;
@@ -73,8 +58,6 @@ router.get('/clusters', (req, res, next) => {
             delete rObj.user_id;
             delete rObj.views;
 
-
-
             let res = spinArr.filter((elem) => {
               return (elem !== undefined && elem.pixid === rObj.pixid)
             });
@@ -85,22 +68,11 @@ router.get('/clusters', (req, res, next) => {
         })
         .catch((err) => {
           console.log(err);
-        })
-
-
-
+        });
     })
     .catch((err) => {
       console.log(err);
     });
-
-
-
 });
 
-
 module.exports = router;
-  //
-  //
-  // knex('photos')
-  // .orderby()

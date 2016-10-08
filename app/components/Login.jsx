@@ -1,7 +1,6 @@
 import Joi from 'joi';
 import React from 'react';
 import TextField from 'material-ui/TextField';
-// import classNames from 'classnames';
 
 const schema = Joi.object({
   email: Joi.string().trim().min(3).max(255),
@@ -51,31 +50,11 @@ const Login = React.createClass({
     this.setState({ errors: nextErrors });
   },
 
-  // handleChange(event) {
-  //   const nextLogin = Object.assign({}, this.state.login,
-  //     {
-  //       [event.target.name]: event.target.value
-  //     });
-  //
-  //   this.setState({ login: nextLogin });
-  // },
-
-  // handleTouchTap() {
-  //   this.props.loginUser()
-  // },
-
   handleTouchTap() {
-    console.log('hello')
-    console.log(this.props.loginStatus)
     this.props.acceptLogin(this.props.loginStatus);
   },
 
   render() {
-    // const lrgBtnClassNames = classNames({
-    //   btnLarge: true,
-    //   wavesEffect: true
-    // });
-    //
     const styleFlexMain = {
       fontSize: 24,
       marginBottom: '50px'
@@ -89,6 +68,7 @@ const Login = React.createClass({
     return <div style={styles.loginContent}>
       <h2 style={styles.headline}>Login</h2>
       <TextField
+
         // errorText={errors.email}
         floatingLabelText="Email"
         fullWidth={true}
@@ -99,6 +79,7 @@ const Login = React.createClass({
         value={this.state.email}
       />
       <TextField
+
         // errorText={errors.password}
         floatingLabelText="Password"
         fullWidth={true}
@@ -110,7 +91,6 @@ const Login = React.createClass({
         value={this.state.password}
       />
       <input
-        // className={lrgBtnClassNames}
         onTouchTap={this.handleTouchTap}
         style={styleFlexMain}
         type="button"

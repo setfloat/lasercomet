@@ -64,4 +64,5 @@ const ClusterPhotoTile = React.createClass({
   }
 });
 
+// eslint-disable-next-line new-cap
 export default Radium(ClusterPhotoTile);

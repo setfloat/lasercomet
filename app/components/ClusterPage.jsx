@@ -71,8 +71,6 @@ const ClusterPage = React.createClass({
         alignContent: 'space-around',
         alignItems: 'center',
         flexWrap: 'wrap',
-        // backgroundColor: colors.primeDarkTrans
-        // backgroundColor: colors.primeDarkTrans
         backgroundColor: colors.secondMain
       },
       spacer: {
@@ -94,13 +92,8 @@ const ClusterPage = React.createClass({
     };
 
     return <div>
-      {/* <ClusterTitleCard
-        style={styles.sClusterTitle}
-      /> */}
       <section style={styles.spacer} />
       <section style={styles.spacerRed} />
-      {/* <section style={styles.spacerBlue} /> */}
-
       <section
         style={styles.sect}
       >

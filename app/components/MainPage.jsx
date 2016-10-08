@@ -3,8 +3,6 @@ import Features from 'components/Features';
 import Hero from 'components/Hero';
 import React from 'react';
 
-let waitGate;
-
 const MainPage = React.createClass({
   componentWillMount() {
     this.props.retrieveAllClusters();
@@ -21,10 +19,10 @@ const MainPage = React.createClass({
       />
       <Features />
       <Clusters
-        getBrowseCluster={this.props.getBrowseCluster}
         fullClusters={this.props.fullClusters}
-        retrieveAllClusters={this.props.retrieveAllClusters}
+        getBrowseCluster={this.props.getBrowseCluster}
         photos={this.props.photos}
+        retrieveAllClusters={this.props.retrieveAllClusters}
       />
     </div>;
   }
