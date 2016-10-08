@@ -10,7 +10,7 @@ const express = require('express');
 const knex = require('../knex');
 const router = express.Router();
 
--router.delete('/photos', (req, res, next) => {
+router.delete('/photos', (req, res, next) => {
   console.log(req);
   // jwt.verify(req.cookies.accessToken, process.env.JWT_SECRET, (err, decoded) => {
   //
