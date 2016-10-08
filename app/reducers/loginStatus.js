@@ -4,9 +4,6 @@ const loginStatus = (state = [], action) => {
       const updateLogin = Object.assign({}, state.loginStatus, {
 
       })
-      console.log('made it to loginStatus reducer');
-      console.log(state);
-      console.log(action.loginStatus);
       return action.loginStatus;
     }
 
@@ -17,8 +14,6 @@ const loginStatus = (state = [], action) => {
     }
 
     case 'REGISTER_KEYPRESS': {
-      console.log(state);
-      console.log(action.loginStatus);
       return Object.assign({}, state, {
         [action.name]: action.value
       });

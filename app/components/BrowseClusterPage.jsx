@@ -5,7 +5,7 @@ import colors from 'components/Colors';
 
 const BrowseClusterPage = React.createClass({
   render() {
-    const { i, browseCluster } = this.props;
+    const { i } = this.props;
     const { browsed } = this.props.browseCluster;
 
     const styles = {

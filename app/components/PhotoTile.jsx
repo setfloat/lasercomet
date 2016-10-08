@@ -21,8 +21,6 @@ const PhotoTile = React.createClass({
       stylePaper: {
         backgroundColor: 'blue',
         margin: 'auto'
-
-        // display: 'inline-block'
       },
 
       styleImage: {

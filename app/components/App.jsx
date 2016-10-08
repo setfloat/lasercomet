@@ -2,7 +2,6 @@ import * as actionCreators from '../actions/actionCreators';
 import Main from './Main';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-// import photos from '../data/photos'
 
 const mapStateToProps = (state) => {
   return {
@@ -13,7 +12,7 @@ const mapStateToProps = (state) => {
     searchResultsReducer: state.searchResultsReducer,
     fullClusters: state.fullClusters,
     browseCluster: state.browseCluster
-    };
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {

@@ -65,7 +65,7 @@ const ResultTile = React.createClass({
               style={styles.saveButton}
             >Save to Cluster</button>;
             case false: return null;
-            default: false;
+            default: return false;
           }
         })()
         }
@@ -74,4 +74,5 @@ const ResultTile = React.createClass({
   }
 });
 
+// eslint-disable-next-line new-cap
 export default Radium(ResultTile);

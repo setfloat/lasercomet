@@ -1,24 +1,15 @@
-import AppBar from 'material-ui/AppBar';
-import IconButton from 'material-ui/IconButton';
-import IconMenu from 'material-ui/IconMenu';
-import MenuItem from 'material-ui/MenuItem';
-import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
-import NavigationClose from 'material-ui/svg-icons/navigation/close';
+import { Link } from 'react-router';
 import Radium from 'radium';
 import React from 'react';
 import colors from 'components/Colors';
-import { Link } from 'react-router'
-
 
 const navBarHeight = 3;
-
 const navHeight = {
   dropBar: 1 + navBarHeight,
   permBar: navBarHeight,
   permMidge: 0.1 + navBarHeight,
   dropMidge: 0.1 + navBarHeight
 };
-
 
 const navStyles = {
   dropBar: {
@@ -66,7 +57,7 @@ const navStyles = {
     borderRadius: '0px',
     display: 'flex',
     width: '100%',
-    height: `0.1rem`,
+    height: '0.1rem',
     paddingLeft: '24px',
     paddingRight: '24px',
     top: '0px',
@@ -87,19 +78,8 @@ const navStyles = {
     borderRadius: '0px',
     width: '10%',
     paddingRight: '24px',
-    zIndex: '1103',
-  //   ':hover': {
-  //     // backgroundColor: colors.primeDarkTrans,
-  //     cursor: 'pointer'
-  // }
+    zIndex: '1103'
   },
-
-  // permIcon: {
-  //   ':hover': {
-  //     // backgroundColor: colors.primeAltTrans,
-  //     // cursor: 'pointer'
-  //   }
-  // },
 
   clusters: {
     position: 'relative',
@@ -112,6 +92,7 @@ const navStyles = {
     top: '20px',
     zIndex: '1103'
   },
+
   clusterHover: {
     top: '0',
     ':hover': {
@@ -119,6 +100,7 @@ const navStyles = {
       cursor: 'pointer'
     }
   },
+
   clusterText: {
     paddingTop: '30px',
     fontSize: '2em',
@@ -128,25 +110,29 @@ const navStyles = {
       cursor: 'pointer'
     }
   },
+
   permClusterText: {
     paddingTop: '10px',
     fontSize: '2em',
     color: colors.secondMain
   },
+
   permClusterHover: {
     top: '0',
     ':hover': {
-      // backgroundColor: colors.primeSoftTrans,
       cursor: 'pointer'
     }
   },
+
   space: {
     width: '40%'
   },
+
   textDecoration: {
     textDecoration: 'none',
     color: colors.secondBold
   },
+
   midgeTextDecoration: {
     textDecoration: 'none',
     color: colors.secondMain
@@ -167,7 +153,13 @@ const NavBar = React.createClass({
         </div>
         <div key={62} style={[navStyles.clusters, navStyles.clusterHover]}>
           <div key={33} style={navStyles.clusterText}>
-            <h4><Link style={navStyles.textDecoration} to="/">LaserComet</Link></h4>
+            <h4>
+              <Link
+                style={navStyles.textDecoration}
+                to="/"
+              >LaserComet
+              </Link>
+            </h4>
           </div>
         </div>
         <div
@@ -178,7 +170,14 @@ const NavBar = React.createClass({
           style={navStyles.clusters}
         >
         </div>
-        <div key={1} style={[navStyles.clusters, navStyles.clusterHover, navStyles.clusterText]}>
+        <div
+          key={1}
+          style={[
+            navStyles.clusters,
+            navStyles.clusterHover,
+            navStyles.clusterText
+          ]}
+        >
           <div
             // style={navStyles.clusterText}
           >
@@ -195,11 +194,13 @@ const NavBar = React.createClass({
         </div>
         <div key={2} style={[navStyles.clusters, navStyles.clusterHover]}>
           <div key={3} style={navStyles.clusterText}>
-            <h4><Link style={navStyles.textDecoration} to="/Login">Login</Link></h4>
+            <h4>
+              <Link style={navStyles.textDecoration} to="/Login">Login</Link>
+            </h4>
           </div>
         </div>
       </div>
-      <div style={navStyles.dropMidge}></div>
+      <div style={navStyles.dropMidge} />
       <div
         style={navStyles.permBar}
       >
@@ -208,7 +209,13 @@ const NavBar = React.createClass({
         </div>
         <div key={23} style={[navStyles.clusters, navStyles.clusterHover]}>
           <div key={53} style={navStyles.permClusterText}>
-            <h4><Link style={navStyles.midgeTextDecoration} to="/">LaserComet</Link></h4>
+            <h4>
+              <Link
+                style={navStyles.midgeTextDecoration}
+                to="/"
+              >LaserComet
+              </Link>
+            </h4>
           </div>
         </div>
         <div
@@ -227,16 +234,40 @@ const NavBar = React.createClass({
           style={navStyles.clusters}
         >
         </div>
-        <div key={19} style={[navStyles.clusters, navStyles.clusterHover, navStyles.permClusterText]}>
+        <div
+          key={19}
+          style={[
+            navStyles.clusters,
+            navStyles.clusterHover,
+            navStyles.permClusterText
+          ]}
+        >
           <div
             // style={navStyles.clusterText}
           >
-            <h4><Link style={navStyles.midgeTextDecoration} to="/Cluster">Cluster</Link></h4>
+            <h4>
+              <Link
+                style={navStyles.midgeTextDecoration} to="/Cluster"
+              >Cluster
+              </Link>
+            </h4>
           </div>
         </div>
-        <div key={2234} style={[navStyles.clusters, navStyles.permClusterHover]}>
+        <div
+          key={2234}
+          style={[
+            navStyles.clusters,
+            navStyles.permClusterHover
+          ]}
+        >
           <div key={3234} style={navStyles.permClusterText}>
-            <h4><Link style={navStyles.midgeTextDecoration} to="/Login">Login</Link></h4>
+            <h4>
+              <Link
+                style={navStyles.midgeTextDecoration}
+                to="/Login"
+              >Login
+              </Link>
+            </h4>
           </div>
         </div>
       </div>
@@ -245,4 +276,5 @@ const NavBar = React.createClass({
   }
 });
 
+// eslint-disable-next-line new-cap
 export default Radium(NavBar);

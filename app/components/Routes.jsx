@@ -1,12 +1,12 @@
 import { IndexRoute, Route, Router } from 'react-router';
 import App from './App';
+import BrowseClusterPage from './BrowseClusterPage';
 import ClusterPage from './ClusterPage';
 import Clusters from './Clusters';
 import Hero from './Hero';
 import MainPage from './MainPage';
 import NotFound from './NotFound';
 import React from 'react';
-import BrowseClusterPage from './BrowseClusterPage';
 import ResultsPage from './ResultsPage';
 import UserAuth from './UserAuth';
 import { history } from '../store';

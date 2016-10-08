@@ -1,11 +1,10 @@
 import Joi from 'joi';
 import React from 'react';
 import TextField from 'material-ui/TextField';
-// import classNames from 'classnames';
 
 const schema = Joi.object({
   email: Joi.string().trim().min(3).max(255),
-  password: Joi.string().trim().min(8).max(255),
+  password: Joi.string().trim().min(8).max(255)
 });
 
 const styles = {
@@ -27,7 +26,7 @@ const Register = React.createClass({
     return {
       register: {
         email: '',
-        password: '',
+        password: ''
       },
       errors: {}
     };
@@ -51,28 +50,11 @@ const Register = React.createClass({
     this.setState({ errors: nextErrors });
   },
 
-  // handleChange(event) {
-  //   const nextRegister = Object.assign({}, this.state.register,
-  //     {
-  //       [event.target.name]: event.target.value
-  //     });
-  //
-  //   this.setState({ register: nextRegister });
-  // },
-  //
   handleTouchTap() {
-    console.log('register button');
-    console.log(this.props.loginStatus);
     this.props.registerUser(this.props.loginStatus);
-    // this.props.acceptRegister(this.state.register);
   },
 
   render() {
-    // const lrgBtnClassNames = classNames({
-    //   btnLarge: true,
-    //   wavesEffect: true
-    // });
-
     const styleFlexMain = {
       fontSize: 24,
       marginBottom: '50px'
@@ -107,7 +89,6 @@ const Register = React.createClass({
         value={this.state.password}
       />
       <input
-        // className={lrgBtnClassNames}
         onTouchTap={this.handleTouchTap}
         style={styleFlexMain}
         type="button"
