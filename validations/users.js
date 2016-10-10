@@ -1,6 +1,8 @@
+'use strict';
+
 const Joi = require('joi');
 
-module.exports.get = {
+module.exports.post = {
   body: {
     email: Joi.string()
       .email()

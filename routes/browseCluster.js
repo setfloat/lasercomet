@@ -2,11 +2,19 @@
 
 const axios = require('axios');
 const apiKey = process.env.API_KEY;
+const ev = require('express-validation');
 const express = require('express');
 const knex = require('../knex');
-const router = express.Router();
 
-router.post('/browseCluster', (req, res, next) => {
+// eslint-disable-next-line new-cap
+const router = express.Router();
+const validations = require('../validations/photos');
+
+router.post('/browseCluster',
+
+// ev(validations.post),
+(req, res, next) => {
+  console.log('***********************************', req.body);
   const browsedClusterId = req.body.rec.cluster_id;
   const transformArray = [];
 
@@ -26,6 +34,8 @@ router.post('/browseCluster', (req, res, next) => {
         const rObj = obj;
 
         rObj.pixid = rObj.id;
+
+        // eslint-disable-next-line camelcase
         rObj.cluster_id = obj.cluster_id;
 
         delete rObj.comments;
@@ -41,6 +51,7 @@ router.post('/browseCluster', (req, res, next) => {
 
         return rObj;
       });
+      console.log(searchResponse);
       res.send(searchResponse);
     })
     .catch((err) => {

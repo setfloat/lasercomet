@@ -2,9 +2,6 @@
 import Paper from 'material-ui/Paper';
 import Radium from 'radium';
 import React from 'react';
-import colors from 'components/Colors';
-
-
 
 const ClusterTile = React.createClass({
   handleTouchTap() {
@@ -12,7 +9,7 @@ const ClusterTile = React.createClass({
   },
 
   render() {
-    const { photo, i, getBrowseCluster } = this.props;
+    const { photo, i } = this.props;
     const styles = {
       paper: {
         position: 'absolute',
@@ -22,6 +19,8 @@ const ClusterTile = React.createClass({
         right: '4px',
         textAlign: 'center',
         margin: '0',
+
+// eslint-disable-next-line max-len
         background: `url(${photo.webformatURL}) center center / cover no-repeat`,
         ':hover': {
           zDepth: 5

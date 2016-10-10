@@ -2,9 +2,7 @@
 import ClusterTile from 'components/ClusterTile';
 import Radium from 'radium';
 import React from 'react';
-import Paper from 'material-ui/Paper';
 import colors from 'components/Colors';
-
 
 const Clusters = React.createClass({
   render() {
@@ -28,7 +26,7 @@ const Clusters = React.createClass({
         },
 
         '@media (max-width: 1220px)': {
-          width: `${100/3.01}%`,
+          width: `${100 / 3.01}%`,
           paddingBottom: '33%'
         },
 
@@ -53,13 +51,13 @@ const Clusters = React.createClass({
       },
 
       sect: {
-          padding: '8px',
-          display:'flex',
-          flexDirection: 'row',
-          alignContent: 'space-around',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          backgroundColor: colors.primeAlt
+        padding: '8px',
+        display: 'flex',
+        flexDirection: 'row',
+        alignContent: 'space-around',
+        alignItems: 'center',
+        flexWrap: 'wrap',
+        backgroundColor: colors.primeAlt
       },
       tile: {
         position: 'absolute',
@@ -97,14 +95,12 @@ const Clusters = React.createClass({
       minBlue: {
         height: '2px',
         backgroundColor: colors.secondMain
-      },
+      }
     };
 
     return <div>
-    <section style={styles.minBlue} />
-      <section
-        style={styles.sect}
-      >
+      <section style={styles.minBlue} />
+      <section style={styles.sect}>
         {fullClusters.clusteredCache.map((photo, i) => <div
           key={i}
           style={styles.base}
@@ -121,9 +117,8 @@ const Clusters = React.createClass({
       </section>
       <section style={styles.minBlue} />
       <section style={styles.spacer} />
-      <section style={styles.foot}>
-      </section>
-      <section style={styles.footBuff }/>
+      <section style={styles.foot} />
+      <section style={styles.footBuff} />
     </div>;
   }
 });

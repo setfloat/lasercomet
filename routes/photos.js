@@ -4,21 +4,18 @@ const apiKey = process.env.API_KEY;
 const axios = require('axios');
 const express = require('express');
 
-// const ev = require('express-validation');
-// const validations = require('../validations/photos');
+const ev = require('express-validation');
+const validations = require('../validations/photos');
 
 // eslint-disable-next-line new-cap
 const router = express.Router();
 let searchResponse;
 
-router.post('/photos',
+router.post('/photos', ev(validations.post), (req, res, next) => {
+  let searchQuery = req.body.searchQuery;
 
-  //  ev(validations.get),
-  (req, res, next) => {
-    let searchQuery = req.body.searchQuery;
-
-    searchQuery = searchQuery.trim().split(' ');
-    searchQuery = searchQuery.join('+');
+  searchQuery = searchQuery.trim().split(' ');
+  searchQuery = searchQuery.join('+');
 
   axios.get(`https://pixabay.com/api/?key=${apiKey}&q=${searchQuery}&image_type=photo`)
     .then((result) => {
@@ -47,6 +44,6 @@ router.post('/photos',
       res.send(searchResponse);
     })
     .catch((err) => next(err));
-  });
+});
 
 module.exports = router;
