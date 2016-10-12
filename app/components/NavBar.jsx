@@ -162,14 +162,8 @@ const NavBar = React.createClass({
             </h4>
           </div>
         </div>
-        <div
-          style={navStyles.space}
-        >
-        </div>
-        <div
-          style={navStyles.clusters}
-        >
-        </div>
+        <div style={navStyles.space} />
+        <div style={navStyles.clusters} />
         <div
           key={1}
           style={[
@@ -179,10 +173,11 @@ const NavBar = React.createClass({
           ]}
         >
           <div
+
             // style={navStyles.clusterText}
           >
             <h4
-            onTouchTap={this.handleClusterTouchTap}
+              onTouchTap={this.handleClusterTouchTap}
             >
             {/* <Link
               style={navStyles.textDecoration}
@@ -218,22 +213,10 @@ const NavBar = React.createClass({
             </h4>
           </div>
         </div>
-        <div
-          style={navStyles.space}
-        >
-        </div>
-        <div
-          style={navStyles.space}
-        >
-        </div>
-        <div
-          style={navStyles.space}
-        >
-        </div>
-        <div
-          style={navStyles.clusters}
-        >
-        </div>
+        <div style={navStyles.space} />
+        <div style={navStyles.space} />
+        <div style={navStyles.space} />
+        <div style={navStyles.clusters} />
         <div
           key={19}
           style={[
@@ -243,6 +226,7 @@ const NavBar = React.createClass({
           ]}
         >
           <div
+
             // style={navStyles.clusterText}
           >
             <h4>
@@ -271,7 +255,7 @@ const NavBar = React.createClass({
           </div>
         </div>
       </div>
-      <div style={navStyles.permMidge}></div>
+      <div style={navStyles.permMidge} />
     </div>;
   }
 });
