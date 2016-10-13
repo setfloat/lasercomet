@@ -6,7 +6,7 @@ import colors from 'components/Colors';
 
 const Clusters = React.createClass({
   render() {
-    const { photos, i, fullClusters, getBrowseCluster } = this.props;
+    const { photos, i, fullClusters } = this.props;
     const styles = {
       base: {
         boxSizing: 'border-box',
@@ -111,7 +111,7 @@ const Clusters = React.createClass({
             i={i}
             key={i}
             photo={photo}
-          ></ClusterTile>
+          />
         </div>
         )}
       </section>

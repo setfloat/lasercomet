@@ -1,24 +1,21 @@
-
-// individual cluster view of 12 photos
+// individual cluster view of user's photos
 import ClusterPhotoTile from 'components/ClusterPhotoTile';
-import ClusterTitleCard from 'components/ClusterTitleCard';
 import Radium from 'radium';
 import React from 'react';
 import colors from 'components/Colors';
 
 // console.log(this.props.clusterPhotos);
-
-
 const ClusterPage = React.createClass({
   render() {
-    const { clickedPhoto, clickToDelete, i, clusterPhotos, deletePhoto } = this.props;
+    const {
+      clickedPhoto,
+      clickToDelete,
+      clusterPhotos,
+      deletePhoto,
+      i
+    } = this.props;
     const { userCluster } = this.props.clusterPhotos;
     const styles = {
-      sClusterTitle: {
-        width: 500,
-        height: 100
-      },
-
       base: {
         boxSizing: 'border-box',
         width: '20%',
@@ -88,7 +85,6 @@ const ClusterPage = React.createClass({
         height: '20px',
         backgroundColor: colors.secondMain
       }
-
     };
 
     return <div>
@@ -103,8 +99,8 @@ const ClusterPage = React.createClass({
         >
           <ClusterPhotoTile
             {...this.props}
-            clickedPhoto={clickedPhoto}
             clickToDelete={clickToDelete}
+            clickedPhoto={clickedPhoto}
             deletePhoto={deletePhoto}
             i={i}
             key={i}
@@ -114,7 +110,7 @@ const ClusterPage = React.createClass({
               switch (photo.clicked) {
                 case true: return <button key={i}>Delete from Cluster</button>;
                 case false: return null;
-                default: false;
+                default: return false;
               }
             })()
             }
@@ -130,5 +126,5 @@ const ClusterPage = React.createClass({
   }
 });
 
-
+// eslint-disable-next-line new-cap
 export default Radium(ClusterPage);
