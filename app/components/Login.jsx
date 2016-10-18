@@ -74,7 +74,7 @@ const Login = React.createClass({
         fullWidth={true}
         name="email"
         onBlur={this.handleBlur}
-        onChange={this.props.loginKeypress}
+        onChange={this.props.handleLoginKeypress}
         style={styleTextField}
         value={this.state.email}
       />
@@ -85,7 +85,7 @@ const Login = React.createClass({
         fullWidth={true}
         name="password"
         onBlur={this.handleBlur}
-        onChange={this.props.loginKeypress}
+        onChange={this.props.handleLoginKeypress}
         style={styleTextField}
         type="password"
         value={this.state.password}

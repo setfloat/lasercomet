@@ -83,7 +83,7 @@ const UserAuth = React.createClass({
               <Login
                 acceptLogin={this.acceptLogin}
                 errors={this.state.errors}
-                loginKeypress={this.props.loginKeypress}
+                handleLoginKeypress={this.props.handleLoginKeypress}
                 loginStatus={this.props.loginStatus}
                 userInfo={this.state.login}
               />

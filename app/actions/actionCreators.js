@@ -140,7 +140,7 @@ export const getUserCluster = () => {
 }
 
 
-export const loginKeypress = (event) => {
+export const handleLoginKeypress = (event) => {
   console.log(event.target.value)
   return {
     type: 'LOGIN_KEYPRESS',
