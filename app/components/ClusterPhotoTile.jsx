@@ -14,6 +14,14 @@ const ClusterPhotoTile = React.createClass({
   },
 
   render() {
+    let buttonKeyframes = Radium.keyframes({
+      '0%': {
+        backgroundColor: colors.primeMain
+      },
+      '100%': {
+        backgroundColor: colors.secondMain
+      }
+    });
     const { photo, i } = this.props;
     const styles = {
       paper: {
@@ -31,8 +39,18 @@ const ClusterPhotoTile = React.createClass({
       },
 
       deleteButton: {
+        animation: 'x 3s linear 0s alternate forwards infinite',
+        animationName: buttonKeyframes,
+        background: `none repeat  0 0 ${colors.secondSoftTrans}`,
+        border: `1px solid ${colors.secondSoftTrans}`,
+        borderSpacing: '0',
+        color: 'black',
+        fontSize: '1rem',
+        lineHeight: '1.42rem',
+        textDecoration: 'none',
         ':active': {
-          backgroundColor: colors.thirdMain
+          backgroundColor: colors.primeMainTrans
+
         }
       }
     };

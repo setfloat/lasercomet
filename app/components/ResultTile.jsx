@@ -14,6 +14,14 @@ const ResultTile = React.createClass({
   },
 
   render() {
+    let buttonKeyframes = Radium.keyframes({
+    '0%': {
+      backgroundColor: colors.primeMain
+    },
+    '100%': {
+    backgroundColor: colors.secondMain
+    },
+    });
     const { i, photo } = this.props;
     const styles = {
       paper: {
@@ -32,6 +40,8 @@ const ResultTile = React.createClass({
       },
 
       saveButton: {
+        animation: 'x 3s linear 0s alternate forwards infinite',
+        animationName: buttonKeyframes,
         background: `none repeat  0 0 ${colors.secondSoftTrans}`,
         border: `1px solid ${colors.secondSoftTrans}`,
         borderSpacing: '0',

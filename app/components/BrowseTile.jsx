@@ -20,12 +20,6 @@ const BrowseTile = React.createClass({
         },
 
         background: `url(${photo.webformatURL}) center center / cover no-repeat`
-      },
-
-      deleteButton: {
-        ':active': {
-          backgroundColor: colors.thirdMain
-        }
       }
     };
 
