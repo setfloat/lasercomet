@@ -14,7 +14,7 @@ const ClusterPhotoTile = React.createClass({
   },
 
   render() {
-    let buttonKeyframes = Radium.keyframes({
+    const buttonKeyframes = Radium.keyframes({
       '0%': {
         backgroundColor: colors.primeMain
       },
