@@ -1,7 +1,6 @@
 import Paper from 'material-ui/Paper';
 import Radium from 'radium';
 import React from 'react';
-import colors from 'components/Colors';
 
 const BrowseTile = React.createClass({
   render() {
