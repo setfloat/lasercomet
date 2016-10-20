@@ -14,13 +14,13 @@ const ResultTile = React.createClass({
   },
 
   render() {
-    let buttonKeyframes = Radium.keyframes({
-    '0%': {
-      backgroundColor: colors.primeMain
-    },
-    '100%': {
-    backgroundColor: colors.secondMain
-    },
+    const buttonKeyframes = Radium.keyframes({
+      '0%': {
+        backgroundColor: colors.primeMain
+      },
+      '100%': {
+        backgroundColor: colors.secondMain
+      }
     });
     const { i, photo } = this.props;
     const styles = {
