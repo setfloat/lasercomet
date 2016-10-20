@@ -26,8 +26,8 @@ const styleResultsHeader = {
     width: '50%',
     paddingLeft: '20%',
     '@media (max-width: 1020px)': {
-      width: '80%',
-    },
+      width: '80%'
+    }
   },
 
   searchField: {
@@ -58,7 +58,7 @@ const styleResultsHeader = {
 
 const ResultsHeader = React.createClass({
   handleChange(event) {
-    let value = event.target.value;
+    const value = event.target.value;
 
     this.props.searchText(value);
     this.props.searchText(event.target.value);
