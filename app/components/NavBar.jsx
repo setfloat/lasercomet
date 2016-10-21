@@ -136,6 +136,18 @@ const navStyles = {
   midgeTextDecoration: {
     textDecoration: 'none',
     color: colors.secondMain
+  },
+  desktopNav: {
+    display: 'block',
+    '@media (max-width: 900px)': {
+      display: 'none'
+    }
+  },
+  mobileNav: {
+    display: 'none',
+    '@media (max-width: 900px)': {
+      display: 'block'
+    }
   }
 };
 
@@ -164,34 +176,46 @@ const NavBar = React.createClass({
         </div>
         <div style={navStyles.space} />
         <div style={navStyles.clusters} />
-        <div
-          key={1}
-          style={[
-            navStyles.clusters,
-            navStyles.clusterHover,
-            navStyles.clusterText
-          ]}
-        >
-          <div
 
-            // style={navStyles.clusterText}
-          >
-            <h4
-              onTouchTap={this.handleClusterTouchTap}
-            >
-            {/* <Link
-              style={navStyles.textDecoration}
-              to="/Cluster"
-            >Cluster</Link> */}
-              Cluster
-            </h4>
+        <div style={navStyles.desktopNav}>
+          <div key={74} style={[navStyles.clusters, navStyles.clusterHover]}>
+            <div key={83} style={navStyles.clusterText}>
+              <h4
+                onTouchTap={this.handleClusterTouchTap}
+                style={navStyles.textDecoration}
+              >Cluster
+              </h4>
+            </div>
           </div>
         </div>
-        <div key={2} style={[navStyles.clusters, navStyles.clusterHover]}>
-          <div key={3} style={navStyles.clusterText}>
-            <h4>
-              <Link style={navStyles.textDecoration} to="/Login">Login</Link>
-            </h4>
+        <div style={navStyles.mobileNav}>
+          <div key={27} style={[navStyles.clusters, navStyles.clusterHover]}>
+            <div key={64} style={navStyles.clusterText}>
+              <h4
+                onTouchTap={this.handleClusterTouchTap}
+                style={navStyles.textDecoration}
+              >C
+              </h4>
+            </div>
+          </div>
+        </div>
+
+        <div style={navStyles.desktopNav}>
+          <div key={2} style={[navStyles.clusters, navStyles.clusterHover]}>
+            <div key={3} style={navStyles.clusterText}>
+              <h4>
+                <Link style={navStyles.textDecoration} to="/Login">Login</Link>
+              </h4>
+            </div>
+          </div>
+        </div>
+        <div style={navStyles.mobileNav}>
+          <div key={26} style={[navStyles.clusters, navStyles.clusterHover]}>
+            <div key={63} style={navStyles.clusterText}>
+              <h4>
+                <Link style={navStyles.textDecoration} to="/Login">L</Link>
+              </h4>
+            </div>
           </div>
         </div>
       </div>
@@ -225,15 +249,22 @@ const NavBar = React.createClass({
             navStyles.permClusterText
           ]}
         >
-          <div
-
-            // style={navStyles.clusterText}
-          >
+          <div>
             <h4>
-              <Link
-                style={navStyles.midgeTextDecoration} to="/Cluster"
-              >Cluster
-              </Link>
+              <div style={navStyles.desktopNav}>
+                <div
+                  onTouchTap={this.handleClusterTouchTap}
+                  style={navStyles.midgeTextDecoration}
+                >Cluster
+                </div>
+              </div>
+              <div style={navStyles.mobileNav}>
+                <div
+                  onTouchTap={this.handleClusterTouchTap}
+                  style={navStyles.midgeTextDecoration}
+                >C
+                </div>
+              </div>
             </h4>
           </div>
         </div>
@@ -246,11 +277,20 @@ const NavBar = React.createClass({
         >
           <div key={3234} style={navStyles.permClusterText}>
             <h4>
-              <Link
-                style={navStyles.midgeTextDecoration}
-                to="/Login"
-              >Login
-              </Link>
+              <div style={navStyles.desktopNav}>
+                <Link
+                  style={navStyles.midgeTextDecoration}
+                  to="/Login"
+                >Login
+                </Link>
+              </div>
+              <div style={navStyles.mobileNav}>
+                <Link
+                  style={navStyles.midgeTextDecoration} to="/Login"
+                >L
+                </Link>
+              </div>
+
             </h4>
           </div>
         </div>
