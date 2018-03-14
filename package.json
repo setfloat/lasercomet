@@ -9,7 +9,7 @@
     "url": "lasercomet.com"
   },
   "engines": {
-    "node": "6.5.0"
+    "node": "8.1.0"
   },
   "scripts": {
     "knex": "knex",
