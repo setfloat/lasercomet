@@ -35,7 +35,7 @@
     "javascript-brunch": "^2.0.0",
     "joi": "^9.0.4",
     "jsonwebtoken": "^7.1.9",
-    "knex": "^0.11.10",
+    "knex": "^0.20.1",
     "material-ui": "^0.15.4",
     "morgan": "^1.7.0",
     "path": "^0.12.7",
